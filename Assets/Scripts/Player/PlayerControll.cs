@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerControll : MonoBehaviour
 {
     private bool salto;
+    private Animator animator;
+    private Rigidbody2D rigidbody2d;
+    private SpriteRenderer spriteRenderer;
+
 
     private void Awake()
     {
@@ -13,39 +17,54 @@ public class PlayerControll : MonoBehaviour
 
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     void Update()
     {
         if (Input.GetKey("a"))
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(-1f * Time.deltaTime, 0, 0) * 10f, ForceMode2D.Impulse);
-            GetComponent<Animator>().SetBool("moverse", true);
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                GetComponent<Animator>().SetBool("atacar", true);
-            }
+            rigidbody2d.AddForce(new Vector3(-1f * Time.deltaTime, 0, 0) * 10f, ForceMode2D.Impulse);
+            animator.SetBool("moverse", true);
+            animator.SetBool("saltar", false);
+            
             //gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000f * Time.deltaTime, 0));
-            GetComponent<SpriteRenderer>().flipX = true;
+            spriteRenderer.flipX = true;
         }
         else if (Input.GetKey("d"))
         {
             //GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(1f * Time.deltaTime, 0, 0) * 10f, ForceMode2D.Impulse);
-            GetComponent<Animator>().SetBool("moverse", true);
-            GetComponent<SpriteRenderer>().flipX = false;
+            rigidbody2d.AddForce(new Vector3(1f * Time.deltaTime, 0, 0) * 10f, ForceMode2D.Impulse);
+            animator.SetBool("moverse", true);
+            animator.SetBool("saltar", false);
+            spriteRenderer.flipX = false;
+        }else if (!salto)
+        {
+            animator.SetBool("saltar", true);
+            animator.SetBool("moverse", false);
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0))
+        else
         {
-            GetComponent<Animator>().SetBool("atacar", true);
-        } else
-        {
-            GetComponent<Animator>().SetBool("moverse", false);
-            GetComponent<Animator>().SetBool("atacar", false);
+            animator.SetBool("moverse", false);
         }
         Salto();
+        Atacar();
        
+    }
+
+    void Atacar()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            animator.SetBool("atacar", true);
+        }
+        else
+        {
+            animator.SetBool("atacar", false);
+        }
     }
 
     void Salto()
@@ -53,21 +72,22 @@ public class PlayerControll : MonoBehaviour
         if(Input.GetKeyDown("space") && salto)
         {
             salto = false;
-            GetComponent<Animator>().SetBool("saltar", true);
+            animator.SetBool("saltar", true);
             //Si pulsamos para salta, podemos saltar y la altura es menor que 10, es decir que este en el suelo
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 3f, 0) * 5f, ForceMode2D.Impulse);
+            rigidbody2d.AddForce(new Vector3(0, 3f, 0) * 5f, ForceMode2D.Impulse);
         }
         else
         {
             if(gameObject.transform.position.y > 0)
             {
-                
+
                 //si esta saltando, hacemos que baje
                 //gameObject.transform.Translate(0, -50f * Time.deltaTime, 0);
                 // GetComponent<Rigidbody2D>().AddForce(new Vector3(0, -3f, 0) * 2f, ForceMode2D.Impulse);
-                GetComponent<Rigidbody2D>().AddForce(new Vector3(0, -1f, 0) * 0.5f, ForceMode2D.Impulse);
+                rigidbody2d.AddForce(new Vector3(0, -1f, 0) * 0.5f, ForceMode2D.Impulse);
             }
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -75,7 +95,7 @@ public class PlayerControll : MonoBehaviour
         if (collision.transform.tag == "suelo")
         {
             salto = true;
-            GetComponent<Animator>().SetBool("saltar", false);
+            animator.SetBool("saltar", false);
         }
     }
 
