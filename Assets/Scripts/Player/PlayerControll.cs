@@ -85,14 +85,14 @@ public class PlayerControll : MonoBehaviour
         }
         else
         {
-            if(gameObject.transform.position.y > 0)
-            {
+            /*if(gameObject.transform.position.y > 0)
+            {*/
 
                 //si esta saltando, hacemos que baje
                 //gameObject.transform.Translate(0, -50f * Time.deltaTime, 0);
                 // GetComponent<Rigidbody2D>().AddForce(new Vector3(0, -3f, 0) * 2f, ForceMode2D.Impulse);
-                rigidbody2d.AddForce(new Vector3(0, -2f, 0) * 0.5f, ForceMode2D.Impulse);
-            }
+                rigidbody2d.AddForce(new Vector3(0, -0.2f, 0) /** 0.5f*/, ForceMode2D.Impulse);
+            /*}*/
         }
         
     }
