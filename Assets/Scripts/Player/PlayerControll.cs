@@ -27,21 +27,25 @@ public class PlayerControll : MonoBehaviour
     {
         if (Input.GetKey("a"))
         {
-            rigidbody2d.AddForce(new Vector3(-1f * Time.deltaTime, 0, 0) * 10f, ForceMode2D.Impulse);
+
+            rigidbody2d.AddForce(Vector2.left * Time.deltaTime * 10f, ForceMode2D.Impulse);
+            
             animator.SetBool("moverse", true);
             animator.SetBool("saltar", false);
-            
-            //gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000f * Time.deltaTime, 0));
             spriteRenderer.flipX = true;
+           
         }
         else if (Input.GetKey("d"))
         {
-            //GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
-            rigidbody2d.AddForce(new Vector3(1f * Time.deltaTime, 0, 0) * 10f, ForceMode2D.Impulse);
+
+            rigidbody2d.AddForce(Vector2.right * Time.deltaTime * 10f, ForceMode2D.Impulse);
+            
             animator.SetBool("moverse", true);
             animator.SetBool("saltar", false);
             spriteRenderer.flipX = false;
-        }else if (!salto)
+            
+        }
+        else if (!salto)
         {
             animator.SetBool("saltar", true);
             animator.SetBool("moverse", false);
@@ -49,6 +53,7 @@ public class PlayerControll : MonoBehaviour
         else
         {
             animator.SetBool("moverse", false);
+            rigidbody2d.velocity = Vector2.zero;
         }
         Salto();
         Atacar();
@@ -60,6 +65,8 @@ public class PlayerControll : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             animator.SetBool("atacar", true);
+            
+            
         }
         else
         {
@@ -84,7 +91,7 @@ public class PlayerControll : MonoBehaviour
                 //si esta saltando, hacemos que baje
                 //gameObject.transform.Translate(0, -50f * Time.deltaTime, 0);
                 // GetComponent<Rigidbody2D>().AddForce(new Vector3(0, -3f, 0) * 2f, ForceMode2D.Impulse);
-                rigidbody2d.AddForce(new Vector3(0, -1f, 0) * 0.5f, ForceMode2D.Impulse);
+                rigidbody2d.AddForce(new Vector3(0, -2f, 0) * 0.5f, ForceMode2D.Impulse);
             }
         }
         
