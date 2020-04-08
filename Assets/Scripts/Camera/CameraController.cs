@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
-    public Vector2 offset = new Vector2(0.5f,0.12f);
-    public float dampTime = 0.2f;
+    public Vector2 offset = new Vector2(0.5f,0.5f);
+    public float dampTime = 0f;
     private Vector3 velocity = Vector2.zero;
     public Transform target;
 
@@ -35,9 +35,9 @@ public class CameraController : MonoBehaviour
 		
 		Vector3 destination = transform.position + delta;
 
-		destination = new Vector3(destination.x, offset.y, destination.z);
+		destination = new Vector3(destination.x, destination.y, destination.z);
 
-		transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+		transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity,dampTime);
 
 
 	}
