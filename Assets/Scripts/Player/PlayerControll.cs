@@ -8,11 +8,13 @@ public class PlayerControll : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rigidbody2d;
     private SpriteRenderer spriteRenderer;
+    private float fuerzaMovimiento = 6f;
+    private float fuerzaSalto = 10f;
 
 
     private void Awake()
     {
-        salto = false;
+        salto = true;
     }
 
     void Start()
@@ -20,30 +22,31 @@ public class PlayerControll : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
     }
 
     void Update()
     {
+       
         if (Input.GetKey("a"))
         {
-
-            rigidbody2d.AddForce(Vector2.left * Time.deltaTime * 10f, ForceMode2D.Impulse);
             
+            rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
             animator.SetBool("moverse", true);
             animator.SetBool("saltar", false);
             spriteRenderer.flipX = true;
            
-        }
+        } 
         else if (Input.GetKey("d"))
         {
-
-            rigidbody2d.AddForce(Vector2.right * Time.deltaTime * 10f, ForceMode2D.Impulse);
-            
+            rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
             animator.SetBool("moverse", true);
             animator.SetBool("saltar", false);
             spriteRenderer.flipX = false;
             
+        }
+        else if(Input.GetKeyUp("a") || Input.GetKeyUp("d"))
+        {
+            rigidbody2d.velocity = new Vector2(0f, rigidbody2d.velocity.y);
         }
         else if (!salto)
         {
@@ -53,20 +56,20 @@ public class PlayerControll : MonoBehaviour
         else
         {
             animator.SetBool("moverse", false);
+<<<<<<< HEAD
             
+=======
+>>>>>>> master
         }
         Salto();
         Atacar();
-       
     }
 
     void Atacar()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             animator.SetBool("atacar", true);
-            
-            
         }
         else
         {
@@ -81,20 +84,8 @@ public class PlayerControll : MonoBehaviour
             salto = false;
             animator.SetBool("saltar", true);
             //Si pulsamos para salta, podemos saltar y la altura es menor que 10, es decir que este en el suelo
-            rigidbody2d.AddForce(new Vector3(0, 3f, 0) * 5f, ForceMode2D.Impulse);
+            rigidbody2d.AddForce(new Vector2(0f, 1f) * fuerzaSalto, ForceMode2D.Impulse);
         }
-        else
-        {
-            if(gameObject.transform.position.y > 0)
-            {
-
-                //si esta saltando, hacemos que baje
-                //gameObject.transform.Translate(0, -50f * Time.deltaTime, 0);
-                // GetComponent<Rigidbody2D>().AddForce(new Vector3(0, -3f, 0) * 2f, ForceMode2D.Impulse);
-                rigidbody2d.AddForce(new Vector3(0, -2f, 0) * 0.5f, ForceMode2D.Impulse);
-            }
-        }
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -106,29 +97,5 @@ public class PlayerControll : MonoBehaviour
         }
     }
 
-    /*void Update()
-    {
-        if (Input.GetKey("a"))
-        {
-            //transform.Translate(-20f * Time.deltaTime, 0, 0);
-            //GetComponent<Rigidbody2D>().velocity = (new Vector2(-20f, GetComponent<Rigidbody2D>().velocity.y));
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(-900f * Time.deltaTime, 0));
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (Input.GetKey("d"))
-        {
-            //transform.Translate(20f * Time.deltaTime, 0, 0);
-            //GetComponent<Rigidbody2D>().velocity = (new Vector2(20f, GetComponent<Rigidbody2D>().velocity.y));
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(900f * Time.deltaTime, 0));
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        if (Input.GetKeyDown("space") && salto)
-        {
-            salto = false;
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0 , 500f));
-            //transform.Translate(0, 100f * Time.deltaTime, 0);
-            //GetComponent<Rigidbody2D>().velocity = (new Vector2(GetComponent<Rigidbody2D>().velocity.x, 100f));
-        }
-    }*/
 }
 
