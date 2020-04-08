@@ -9,7 +9,7 @@ public class PlayerControll : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private SpriteRenderer spriteRenderer;
     private float fuerzaMovimiento = 6f;
-    private float fuerzaSalto = 9f;
+    private float fuerzaSalto = 10f;
 
 
     private void Awake()
@@ -63,7 +63,7 @@ public class PlayerControll : MonoBehaviour
 
     void Atacar()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             animator.SetBool("atacar", true);
         }
