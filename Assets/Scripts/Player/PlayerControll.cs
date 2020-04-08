@@ -53,7 +53,7 @@ public class PlayerControll : MonoBehaviour
         else
         {
             animator.SetBool("moverse", false);
-            rigidbody2d.velocity = Vector2.zero;
+            
         }
         Salto();
         Atacar();

@@ -223,8 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239a5cff027028843a56ec7144c342a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0.5, y: 0.12}
-  dampTime: 0.2
+  offset: {x: 0.5, y: 0.5}
+  dampTime: 0
   target: {fileID: 23343468}
 --- !u!1001 &517575632
 PrefabInstance:
