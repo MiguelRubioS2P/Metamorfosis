@@ -56,10 +56,6 @@ public class PlayerControll : MonoBehaviour
         else
         {
             animator.SetBool("moverse", false);
-<<<<<<< HEAD
-            
-=======
->>>>>>> master
         }
         Salto();
         Atacar();
