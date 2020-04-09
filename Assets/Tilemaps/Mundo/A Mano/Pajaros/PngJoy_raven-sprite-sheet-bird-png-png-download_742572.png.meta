@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 9bc3b6cb3f0b5f0459d31284ac6a133f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5663171567955256112
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_0
+  - first:
+      213: 2942517479057892989
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_1
+  - first:
+      213: -6390425784789021654
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_2
+  - first:
+      213: -5186056312558791778
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_3
+  - first:
+      213: 6677363848644436430
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_4
+  - first:
+      213: -8578234633554604357
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_5
+  - first:
+      213: 3064262854310095993
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_6
+  - first:
+      213: 5179541368321734261
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_7
+  - first:
+      213: 5536493206440964345
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_8
+  - first:
+      213: -1524087453992113995
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_9
+  - first:
+      213: 3361424972215250977
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_10
+  - first:
+      213: 4396148045847482758
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_11
+  - first:
+      213: -1036379993841514730
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_12
+  - first:
+      213: 3875617027305711932
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_13
+  - first:
+      213: 276889066667005216
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_14
+  - first:
+      213: 42262032060472282
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_15
+  - first:
+      213: -1987857209450247213
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_16
+  - first:
+      213: 1189377876010014366
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_17
+  - first:
+      213: -4400897858979776980
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_18
+  - first:
+      213: 4281565783816284687
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_19
+  - first:
+      213: 3759810237143155082
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_20
+  - first:
+      213: -8173333764036751665
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_21
+  - first:
+      213: -4538075434917885369
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_22
+  - first:
+      213: 7270913874229097788
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_23
+  - first:
+      213: 2267911241476160460
+    second: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 469
+        width: 146
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc5fe5b67f5861b0800000000000000
+      internalID: -5663171567955256112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_1
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 470
+        width: 144
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76af9c9e0ce5d820800000000000000
+      internalID: 2942517479057892989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 471
+        width: 145
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c472e4b95a057a0800000000000000
+      internalID: -6390425784789021654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_3
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 429
+        width: 144
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93d2c8b24d6708b0800000000000000
+      internalID: -5186056312558791778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_4
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 420
+        width: 144
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1ac7aca03caac50800000000000000
+      internalID: 6677363848644436430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_5
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 414
+        width: 144
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe460bdc0df3f880800000000000000
+      internalID: -8578234633554604357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_6
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 472
+        width: 144
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ce391b4d2768a20800000000000000
+      internalID: 3064262854310095993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_7
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 470
+        width: 145
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576f14e9e6d61e740800000000000000
+      internalID: 5179541368321734261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_8
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 470
+        width: 146
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0f647dc3395dc40800000000000000
+      internalID: 5536493206440964345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 262
+        width: 145
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8ab2a198a59dae0800000000000000
+      internalID: -1524087453992113995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_10
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 263
+        width: 145
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1207400e33e26ae20800000000000000
+      internalID: 3361424972215250977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_11
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 264
+        width: 145
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68154cc1b51420d30800000000000000
+      internalID: 4396148045847482758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_12
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 206
+        width: 144
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61741c6f2e90e91f0800000000000000
+      internalID: -1036379993841514730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_13
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 216
+        width: 143
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3923060725f8c530800000000000000
+      internalID: 3875617027305711932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_14
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 203
+        width: 144
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02550ec9325b7d300800000000000000
+      internalID: 276889066667005216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_15
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 264
+        width: 144
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb53702815269000800000000000000
+      internalID: 42262032060472282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_16
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 262
+        width: 146
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbc48e6666b964e0800000000000000
+      internalID: -1987857209450247213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 55
+        width: 145
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96194b60e4818010800000000000000
+      internalID: 1189377876010014366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_18
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 56
+        width: 145
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26bbb6d6bedce2c0800000000000000
+      internalID: -4400897858979776980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_19
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 58
+        width: 145
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a26da456d2b6b30800000000000000
+      internalID: 4281565783816284687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_20
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 0
+        width: 144
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a818bc78d778d2430800000000000000
+      internalID: 3759810237143155082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_21
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 6
+        width: 143
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce02ebee3c729e80800000000000000
+      internalID: -8173333764036751665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_22
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 15
+        width: 144
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a0bc98f648501c0800000000000000
+      internalID: -4538075434917885369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_23
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 56
+        width: 145
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3572e945a977e460800000000000000
+      internalID: 7270913874229097788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PngJoy_raven-sprite-sheet-bird-png-png-download_742572_24
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 55
+        width: 146
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb3d4a124d397f10800000000000000
+      internalID: 2267911241476160460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
