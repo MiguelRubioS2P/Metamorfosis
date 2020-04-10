@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Sierra_Movimiento : MonoBehaviour
 {
-    public float fuerzaRotacion; // Variable para aplicar la fuerza de rotacion del objecto
+    [SerializeField]
+    private float fuerzaRotacion; // Variable para aplicar la fuerza de rotacion del objecto
+
+    private void Start()
+    {
+        fuerzaRotacion = 1f;
+    }
 
     void Update()
     {

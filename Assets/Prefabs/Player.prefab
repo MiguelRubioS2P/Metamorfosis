@@ -62,7 +62,6 @@ GameObject:
   - component: {fileID: 511326198}
   - component: {fileID: 2582522505003708012}
   - component: {fileID: 5301209332586608533}
-  - component: {fileID: 6436306931739262243}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -166,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a85ab1545933634d889474cb17b3e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escena: 
 --- !u!50 &511326198
 Rigidbody2D:
   serializedVersion: 4
@@ -216,7 +216,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0791986, y: -0.82533467}
+  m_Offset: {x: 0.05535257, y: -0.48781586}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -227,21 +227,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22634935, y: 0.6258819}
+  m_Size: {x: 0.45854974, y: 1.3009195}
   m_EdgeRadius: 0
---- !u!58 &6436306931739262243
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3481917900544003703}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.26999998}
-  serializedVersion: 2
-  m_Radius: 0.4174648

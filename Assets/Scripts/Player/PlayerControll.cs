@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControll : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class PlayerControll : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float fuerzaMovimiento = 6f;
     private float fuerzaSalto = 10f;
+    public string escena;
+    
 
 
     private void Awake()
@@ -22,11 +26,17 @@ public class PlayerControll : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        escena = SceneManager.GetActiveScene().name;
     }
 
     void Update()
     {
-       
+
+        if (spriteRenderer.sprite.name == "Knight_die_08")
+        {
+            SceneManager.LoadScene(escena);
+        }
+
         if (Input.GetKey("a"))
         {
             
@@ -79,7 +89,6 @@ public class PlayerControll : MonoBehaviour
         {
             salto = false;
             animator.SetBool("saltar", true);
-            //Si pulsamos para salta, podemos saltar y la altura es menor que 10, es decir que este en el suelo
             rigidbody2d.AddForce(new Vector2(0f, 1f) * fuerzaSalto, ForceMode2D.Impulse);
         }
     }
@@ -91,7 +100,27 @@ public class PlayerControll : MonoBehaviour
             salto = true;
             animator.SetBool("saltar", false);
         }
+        if(collision.transform.tag == "rodillo" || collision.transform.tag == "pincho")
+        {
+            Morir();
+        }
+        
     }
 
+    /// <summary>
+    /// Método que activa la animación de morir
+    /// </summary>
+   private void Morir()
+    {
+        salto = false;
+        animator.SetBool("saltar", false);
+        animator.SetBool("muerto", true);
+        
+        
+    }
+
+    
+
+    
 }
 
