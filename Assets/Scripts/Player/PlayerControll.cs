@@ -100,7 +100,7 @@ public class PlayerControll : MonoBehaviour
             salto = true;
             animator.SetBool("saltar", false);
         }
-        if(collision.transform.tag == "rodillo" || collision.transform.tag == "pincho")
+        if(collision.transform.tag == "muerte" || collision.transform.tag == "pincho")
         {
             Morir();
         }
@@ -110,17 +110,20 @@ public class PlayerControll : MonoBehaviour
     /// <summary>
     /// Método que activa la animación de morir
     /// </summary>
-   private void Morir()
+    public void Morir()
     {
         salto = false;
         animator.SetBool("saltar", false);
         animator.SetBool("muerto", true);
-        
-        
+
+
+
     }
 
     
 
-    
+
+
+
 }
 
