@@ -30793,6 +30793,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 511326198, guid: caf99e0ce74defe40b3fd95308b7478b, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 91d3e5913638cb04ab13e8df5cad8439, type: 2}
+    - target: {fileID: 1491440423349038290, guid: caf99e0ce74defe40b3fd95308b7478b,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1290153530}
+    - target: {fileID: 1491440423349038290, guid: caf99e0ce74defe40b3fd95308b7478b,
+        type: 3}
+      propertyPath: escena
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2097481609821548980, guid: caf99e0ce74defe40b3fd95308b7478b,
         type: 3}
       propertyPath: m_Layer
