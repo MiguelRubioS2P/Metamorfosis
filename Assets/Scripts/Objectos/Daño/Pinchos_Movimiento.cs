@@ -6,21 +6,21 @@ public class Pinchos_Movimiento : MonoBehaviour
     [SerializeField]
     private float fuerzaMovimiento; // Variable de fuerza de movimiento
     private Vector2 posicionInicial; // Variable donde guardamos la posicion inicial
+    
 
     void Awake()
     {
         //Al inicar cogemos su posicion para poder volver a ella, despues iniciamos la coroutina.
 
         posicionInicial = new Vector2(transform.position.x, transform.position.y);
-       
         fuerzaMovimiento = 1.3f;
         StartCoroutine(Bajar());
         
     }
 
-   
-
     
+
+
     IEnumerator Bajar()
     {
         //Esperamos 3s despues cambiamos su posicion hacia abajo dependiendo de la fuerza, 
@@ -36,4 +36,5 @@ public class Pinchos_Movimiento : MonoBehaviour
     }
 
     
+
 }
