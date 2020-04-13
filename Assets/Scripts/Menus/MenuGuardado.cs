@@ -8,7 +8,12 @@ using UnityEngine.SceneManagement;
 public class MenuGuardado : MonoBehaviour
 {
     public Button slot1, slot2, slot3;
-   
+    private bool selecionado;
+
+    private void Awake()
+    {
+        selecionado = false;
+    }
     public void OnClick()
     {
         // Guardamos en una variable el gameobject selecionado para saber por el 
@@ -16,25 +21,36 @@ public class MenuGuardado : MonoBehaviour
         string boton = EventSystem.current.currentSelectedGameObject.name;
         if (boton == ("Slot 1 Boton"))
         {
+            selecionado = true;
             slot1.image.color = Color.green;
             slot2.image.color = Color.red;
             slot3.image.color = Color.red;
         } else if (boton == ("Slot 2 Boton"))
         {
+            selecionado = true;
             slot2.image.color = Color.green;
             slot1.image.color = Color.red;
             slot3.image.color = Color.red;
         }
         else if (boton == ("Slot 3 Boton"))
         {
+            selecionado = true;
             slot3.image.color = Color.green;
             slot2.image.color = Color.red;
             slot1.image.color = Color.red;
         }  else if (boton == ("Cancelar Boton"))
         {
+            selecionado = false;
             slot1.image.color = Color.red;
             slot2.image.color = Color.red;
             slot3.image.color = Color.red;
+        } else if (boton == "Salir Boton")
+        {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                Application.Quit();
+            #endif
         }
     }
 
@@ -47,6 +63,10 @@ public class MenuGuardado : MonoBehaviour
     public void OnIrMenuNiveles()
     {
         // Aqui iria saber si ya tiene partida empezada o no
-        SceneManager.LoadScene("Menu Niveles");
+        if(selecionado)
+        {
+            SceneManager.LoadScene("Menu Niveles");
+        }
+        
     }
 }
