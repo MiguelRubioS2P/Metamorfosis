@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
 
-    
+    private int dinero;
     
     private void Awake()
     {
@@ -23,8 +23,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    private void Start()
+    {
+        dinero = 0;
+    }
 
+    public void GanarDinero()
+    {
+        dinero++;
+        Debug.Log("El dinero que tengo es: " + dinero);
+    }
 
 
 }
