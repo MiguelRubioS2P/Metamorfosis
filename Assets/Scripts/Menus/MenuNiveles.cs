@@ -72,4 +72,21 @@ public class MenuNiveles : MonoBehaviour
 
         }
     }
+
+    public void Prueba()
+    {
+        Debug.Log("Hola");
+        GameObject body = transform.GetChild(1).gameObject;
+        GameObject mundo1 = body.transform.GetChild(1).gameObject;
+        GameObject nivel1 = mundo1.transform.GetChild(0).gameObject;
+        nivel1.transform.localScale = new Vector3(1.1f,1.1f,1.1f);
+    }
+    public void Prueba2()
+    {
+        Debug.Log("Adios");
+        GameObject body = transform.GetChild(1).gameObject;
+        GameObject mundo1 = body.transform.GetChild(1).gameObject;
+        GameObject nivel1 = mundo1.transform.GetChild(0).gameObject;
+        nivel1.transform.localScale = new Vector3(1f, 1f, 1f);
+    }
 }

@@ -612,6 +612,7 @@ MonoBehaviour:
   slot1: {fileID: 2011354958}
   slot2: {fileID: 1857987760}
   slot3: {fileID: 1226604867}
+  botones: {fileID: 14296138}
 --- !u!1 &369196074
 GameObject:
   m_ObjectHideFlags: 0

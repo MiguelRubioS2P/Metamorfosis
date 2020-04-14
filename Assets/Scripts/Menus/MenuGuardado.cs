@@ -9,10 +9,12 @@ public class MenuGuardado : MonoBehaviour
 {
     public Button slot1, slot2, slot3;
     private bool selecionado;
+    public GameObject botones;
 
     private void Awake()
     {
         selecionado = false;
+        botones.SetActive(false);
     }
     public void OnClick()
     {
@@ -25,12 +27,14 @@ public class MenuGuardado : MonoBehaviour
             slot1.image.color = Color.green;
             slot2.image.color = Color.red;
             slot3.image.color = Color.red;
+            botones.SetActive(true);
         } else if (boton == ("Slot 2 Boton"))
         {
             selecionado = true;
             slot2.image.color = Color.green;
             slot1.image.color = Color.red;
             slot3.image.color = Color.red;
+            botones.SetActive(true);
         }
         else if (boton == ("Slot 3 Boton"))
         {
@@ -38,12 +42,14 @@ public class MenuGuardado : MonoBehaviour
             slot3.image.color = Color.green;
             slot2.image.color = Color.red;
             slot1.image.color = Color.red;
+            botones.SetActive(true);
         }  else if (boton == ("Cancelar Boton"))
         {
             selecionado = false;
             slot1.image.color = Color.red;
             slot2.image.color = Color.red;
             slot3.image.color = Color.red;
+            botones.SetActive(false);
         } else if (boton == "Salir Boton")
         {
             #if UNITY_EDITOR

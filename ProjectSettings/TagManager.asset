@@ -8,6 +8,8 @@ TagManager:
   - pincho
   - rodillo
   - muerte
+  - moneda
+  - personaje
   layers:
   - Default
   - TransparentFX
