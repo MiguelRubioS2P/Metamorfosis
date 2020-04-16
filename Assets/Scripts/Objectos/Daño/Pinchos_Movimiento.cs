@@ -8,6 +8,7 @@ public class Pinchos_Movimiento : MonoBehaviour
     private Vector2 posicionInicial; // Variable donde guardamos la posicion inicial
     
 
+
     void Awake()
     {
         //Al inicar cogemos su posicion para poder volver a ella, despues iniciamos la coroutina.
@@ -18,8 +19,8 @@ public class Pinchos_Movimiento : MonoBehaviour
         
     }
 
-    
 
+   
 
     IEnumerator Bajar()
     {
@@ -36,5 +37,7 @@ public class Pinchos_Movimiento : MonoBehaviour
     }
 
     
+
+
 
 }

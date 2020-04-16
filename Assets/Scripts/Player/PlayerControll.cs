@@ -13,6 +13,7 @@ public class PlayerControll : MonoBehaviour
     private float fuerzaMovimiento = 6f;
     private float fuerzaSalto = 10f;
     public string escena;
+    private GameManager gameManager;
     
 
 
@@ -27,6 +28,7 @@ public class PlayerControll : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         escena = SceneManager.GetActiveScene().name;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -34,6 +36,8 @@ public class PlayerControll : MonoBehaviour
 
         if (spriteRenderer.sprite.name == "Knight_die_08")
         {
+            gameManager.PerderDinero();
+            gameManager.PerderVida();
             SceneManager.LoadScene(escena);
         }
 
@@ -100,8 +104,9 @@ public class PlayerControll : MonoBehaviour
             salto = true;
             animator.SetBool("saltar", false);
         }
-        if(collision.transform.tag == "muerte" || collision.transform.tag == "pincho")
+        if(collision.transform.tag == "pincho" ||collision.transform.tag == "muerte")
         {
+            
             Morir();
         }
         
@@ -115,8 +120,7 @@ public class PlayerControll : MonoBehaviour
         salto = false;
         animator.SetBool("saltar", false);
         animator.SetBool("muerto", true);
-
-
+        
 
     }
 
