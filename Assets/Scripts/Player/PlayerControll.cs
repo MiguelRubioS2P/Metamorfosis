@@ -31,6 +31,7 @@ public class PlayerControll : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         escena = SceneManager.GetActiveScene().name;
         gameManager = FindObjectOfType<GameManager>();
+        
     }
 
     void Update()
