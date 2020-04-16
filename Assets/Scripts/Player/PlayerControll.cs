@@ -14,12 +14,14 @@ public class PlayerControll : MonoBehaviour
     private float fuerzaSalto = 10f;
     public string escena;
     private GameManager gameManager;
+    //private bool muerto;
     
 
 
     private void Awake()
     {
         salto = true;
+        //muerto = false;
     }
 
     void Start()
@@ -38,9 +40,11 @@ public class PlayerControll : MonoBehaviour
         {
             gameManager.PerderDinero();
             gameManager.PerderVida();
+            //muerto = false;
             SceneManager.LoadScene(escena);
         }
 
+        //Input.GetKey("a") && !muerto
         if (Input.GetKey("a"))
         {
             
@@ -49,7 +53,8 @@ public class PlayerControll : MonoBehaviour
             animator.SetBool("saltar", false);
             spriteRenderer.flipX = true;
            
-        } 
+        }
+        //Input.GetKey("d") && !muerto
         else if (Input.GetKey("d"))
         {
             rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
@@ -58,7 +63,8 @@ public class PlayerControll : MonoBehaviour
             spriteRenderer.flipX = false;
             
         }
-        else if(Input.GetKeyUp("a") || Input.GetKeyUp("d"))
+        //(Input.GetKeyUp("a") || Input.GetKeyUp("d")) && !muerto
+        else if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
         {
             rigidbody2d.velocity = new Vector2(0f, rigidbody2d.velocity.y);
         }
@@ -77,6 +83,7 @@ public class PlayerControll : MonoBehaviour
 
     void Atacar()
     {
+        //Input.GetKey(KeyCode.Mouse0) && !muerto
         if (Input.GetKey(KeyCode.Mouse0))
         {
             animator.SetBool("atacar", true);
@@ -89,7 +96,8 @@ public class PlayerControll : MonoBehaviour
 
     void Salto()
     {
-        if(Input.GetKeyDown("space") && salto)
+        //Input.GetKeyDown("space") && salto && !muerto
+        if (Input.GetKeyDown("space") && salto)
         {
             salto = false;
             animator.SetBool("saltar", true);
@@ -117,6 +125,7 @@ public class PlayerControll : MonoBehaviour
     /// </summary>
     public void Morir()
     {
+        //muerto = true;
         salto = false;
         animator.SetBool("saltar", false);
         animator.SetBool("muerto", true);
