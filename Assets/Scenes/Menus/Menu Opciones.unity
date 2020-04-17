@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 12655137}
   - component: {fileID: 12655136}
   - component: {fileID: 12655135}
+  - component: {fileID: 12655139}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -221,6 +222,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &12655139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12655134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0fb3e23e23b7e4090c048f6db5d09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: b5565b61aa0780f48b68f58aa9e2784c, type: 2}
+  pantallaCompleta: {fileID: 156185226}
+  fps: {fileID: 618477772}
+  wasd: {fileID: 1142550433}
+  arrows: {fileID: 1385662811}
 --- !u!1 &30123703
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +786,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &201359374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,13 +1310,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 1876551223}
   m_HandleRect: {fileID: 330305117}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 1
-  m_Value: 100
+  m_MinValue: 0.0001
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12655139}
+        m_MethodName: ControlVoluemnGeneral
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &307131071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,7 +1613,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 360645423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12655139}
+        m_MethodName: MenuPrincipal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &360645423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,8 +2392,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
+      m_Calls:
+      - m_Target: {fileID: 12655139}
+        m_MethodName: CambiarEstadoFPS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
 --- !u!1 &618509028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,7 +3742,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1143792862
 GameObject:
   m_ObjectHideFlags: 0
@@ -5429,7 +5480,7 @@ GameObject:
   - component: {fileID: 1829251545}
   - component: {fileID: 1829251544}
   m_Layer: 0
-  m_Name: Dropdown (1)
+  m_Name: Calidad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5679,7 +5730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.11822796, b: 0, a: 0.87058824}
+  m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 0.87058824}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
