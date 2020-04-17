@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
         vidas = 5;
     }
 
+    public void DineroInicial()
+    {
+        dinero = 0;
+    }
+
     public void GanarDinero()
     {
         dinero++;
@@ -53,6 +58,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void VidasIniciales()
+    {
+        vidas = 5;
+    }
+
     public void GanarVida()
     {
         vidas++;
@@ -61,7 +71,6 @@ public class GameManager : MonoBehaviour
     public void PerderVida()
     {
         vidas--;
-        
     }
 
     public int PintarVida()
