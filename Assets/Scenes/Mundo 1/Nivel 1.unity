@@ -145129,6 +145129,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5096987647149823581, guid: 0896619c00e36c24e89a4424741cdb44,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5096987648259904756, guid: 0896619c00e36c24e89a4424741cdb44,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -145405,7 +145410,7 @@ PrefabInstance:
     - target: {fileID: 9082985620163809457, guid: 8c9fb3046e5d12747839863fdc3570e8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.077
+      value: -1.31
       objectReference: {fileID: 0}
     - target: {fileID: 9082985620163809457, guid: 8c9fb3046e5d12747839863fdc3570e8,
         type: 3}
