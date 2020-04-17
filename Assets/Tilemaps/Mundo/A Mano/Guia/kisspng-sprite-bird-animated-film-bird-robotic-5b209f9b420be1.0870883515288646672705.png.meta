@@ -1,0 +1,674 @@
+fileFormatVersion: 2
+guid: 56ab33c201cb02c4d9ab5e3f754d324b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7623132713544321243
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_0
+  - first:
+      213: 6634637269723894978
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_1
+  - first:
+      213: 4051058798855758987
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_2
+  - first:
+      213: 5490430151808282073
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_3
+  - first:
+      213: 6478403763567888473
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_4
+  - first:
+      213: -6632876392567897726
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_5
+  - first:
+      213: -8469382480710820061
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_6
+  - first:
+      213: 6618240025082107329
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_7
+  - first:
+      213: 5693674707239563586
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_8
+  - first:
+      213: -8885667557419000886
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_9
+  - first:
+      213: -6450030021250836401
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_10
+  - first:
+      213: 3510357029756607997
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_11
+  - first:
+      213: 7131463034049299040
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_12
+  - first:
+      213: -390261626163182022
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_13
+  - first:
+      213: -4422170689346727553
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_14
+  - first:
+      213: -5387642021160037446
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_15
+  - first:
+      213: -4144329362880749729
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_16
+  - first:
+      213: -4697948378298760215
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_17
+  - first:
+      213: 6872600124081766458
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_18
+  - first:
+      213: -1765332402107179387
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_19
+  - first:
+      213: -8663326374880962564
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_20
+  - first:
+      213: 6396234170224803694
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_21
+  - first:
+      213: 2863426312626498049
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_22
+  - first:
+      213: 9119493876450271990
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_23
+  - first:
+      213: 6891300226814989387
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_24
+  - first:
+      213: 4819362791814731408
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_25
+  - first:
+      213: 1499586136726548647
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_26
+  - first:
+      213: 7157142410037904600
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_27
+  - first:
+      213: 8419220449225205817
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_28
+  - first:
+      213: -7905747976038517567
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_29
+  - first:
+      213: 5793519897246165826
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_30
+  - first:
+      213: 1664485863428119102
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_31
+  - first:
+      213: -8275392767050328509
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_32
+  - first:
+      213: -394643126374189284
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_33
+  - first:
+      213: 3809330236033281264
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_34
+  - first:
+      213: 2367201217087672252
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_35
+  - first:
+      213: 8245913737398030299
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_36
+  - first:
+      213: 558117968239324920
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_37
+  - first:
+      213: 2600320291056758435
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_38
+  - first:
+      213: -3632525664041458625
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_39
+  - first:
+      213: 3079862087112072980
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_40
+  - first:
+      213: -3016439852749800395
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_41
+  - first:
+      213: 1741367207749387228
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_42
+  - first:
+      213: -2592494126489961245
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_43
+  - first:
+      213: 440469425116559739
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_44
+  - first:
+      213: -4913628063354081244
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_45
+  - first:
+      213: -6046042043815734415
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_46
+  - first:
+      213: 888911690464278165
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_47
+  - first:
+      213: 1909040673486184869
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_48
+  - first:
+      213: 3875193912105240097
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_49
+  - first:
+      213: -3479294911189881052
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_50
+  - first:
+      213: 4787814379659548764
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_51
+  - first:
+      213: 9019494530374451215
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_52
+  - first:
+      213: 5706207690555453323
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_53
+  - first:
+      213: -4206371689637325977
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_54
+  - first:
+      213: -342023137457610226
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_55
+  - first:
+      213: -6400179094526871382
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_56
+  - first:
+      213: 2749819289085579570
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_57
+  - first:
+      213: -6285744050596107492
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_58
+  - first:
+      213: 1150711098940151852
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_59
+  - first:
+      213: -8613545975485364437
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_60
+  - first:
+      213: 1139844897662321502
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_61
+  - first:
+      213: 3764488071345012431
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_62
+  - first:
+      213: -4767697801102828432
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_63
+  - first:
+      213: 2206059734770418244
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_64
+  - first:
+      213: 3033787120638985252
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_65
+  - first:
+      213: 1810283240886387270
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_66
+  - first:
+      213: 2242721023237435556
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_67
+  - first:
+      213: 4242971029603691956
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_68
+  - first:
+      213: -4717430341211831288
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_69
+  - first:
+      213: -8584769499160942361
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_70
+  - first:
+      213: -3163316826331708354
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_71
+  - first:
+      213: -8720460239431380250
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_72
+  - first:
+      213: 886512000815378404
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_73
+  - first:
+      213: 8837955960450658177
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_74
+  - first:
+      213: -7755761700196219301
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_75
+  - first:
+      213: -7295606304910995031
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_76
+  - first:
+      213: -4266570240826265038
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_77
+  - first:
+      213: 2387582744216977133
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_78
+  - first:
+      213: -1040550154635238328
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_79
+  - first:
+      213: -4871224032226914768
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_80
+  - first:
+      213: 5038022340533442857
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_81
+  - first:
+      213: 6498691971776152499
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_82
+  - first:
+      213: -3907766801058550159
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_83
+  - first:
+      213: -8934786600530314996
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_84
+  - first:
+      213: 1543491725431224525
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_85
+  - first:
+      213: -7889165965778959306
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_86
+  - first:
+      213: -6526936873562136040
+    second: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_87
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 362
+        width: 146
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8087a50decac960800000000000000
+      internalID: 7623132713544321243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 363
+        width: 146
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4d57be177f21c50800000000000000
+      internalID: 6634637269723894978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 364
+        width: 146
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84a40e9380483830800000000000000
+      internalID: 4051058798855758987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_3
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 367
+        width: 171
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd60ae222de13c40800000000000000
+      internalID: 5490430151808282073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_4
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 370
+        width: 182
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958840f16e9e7e950800000000000000
+      internalID: 6478403763567888473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 171
+        width: 146
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2818aed301a43f3a0800000000000000
+      internalID: -6632876392567897726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 166
+        width: 146
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f905aa185b67a80800000000000000
+      internalID: -8469382480710820061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_7
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 170
+        width: 146
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c59a45ec36b8db50800000000000000
+      internalID: 6618240025082107329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_8
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 180
+        width: 146
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241f3a7dafef30f40800000000000000
+      internalID: 5693674707239563586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_9
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 177
+        width: 146
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbd3df4f64cfa480800000000000000
+      internalID: -8885667557419000886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_10
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 6
+        width: 146
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f481db09ed3ec76a0800000000000000
+      internalID: -6450030021250836401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_11
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 6
+        width: 146
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd1071be1b47b030800000000000000
+      internalID: 3510357029756607997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_12
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 23
+        width: 168
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062865968db08f260800000000000000
+      internalID: 7131463034049299040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-sprite-bird-animated-film-bird-robotic-5b209f9b420be1.0870883515288646672705_13
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 22
+        width: 180
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36c3136e13859af0800000000000000
+      internalID: -390261626163182022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
