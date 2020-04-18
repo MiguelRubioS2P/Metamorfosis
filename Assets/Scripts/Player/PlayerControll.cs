@@ -14,6 +14,8 @@ public class PlayerControll : MonoBehaviour
     private float fuerzaSalto = 10f;
     public string escena;
     private GameManager gameManager;
+    public AudioClip sonidoSalto;
+    private AudioSource audioSource;
     //private bool muerto;
     
 
@@ -31,6 +33,8 @@ public class PlayerControll : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         escena = SceneManager.GetActiveScene().name;
         gameManager = FindObjectOfType<GameManager>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = sonidoSalto;
         
     }
 
@@ -103,6 +107,7 @@ public class PlayerControll : MonoBehaviour
             salto = false;
             animator.SetBool("saltar", true);
             rigidbody2d.AddForce(new Vector2(0f, 1f) * fuerzaSalto, ForceMode2D.Impulse);
+            audioSource.Play();
         }
     }
 
