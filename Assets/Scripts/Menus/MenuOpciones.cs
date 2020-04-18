@@ -25,10 +25,12 @@ public class MenuOpciones : MonoBehaviour
         if(fps.isOn)
         {
             GameObject.FindObjectOfType<OptionsManager>().GetComponent<OptionsManager>().fpsText.gameObject.SetActive(true);
+            //FindObjectOfType<OptionsManager>().fpsText.gameObject.SetActive(true);
         }
         else
         {
             GameObject.FindObjectOfType<OptionsManager>().GetComponent<OptionsManager>().fpsText.gameObject.SetActive(false);
+            //FindObjectOfType<OptionsManager>().fpsText.gameObject.SetActive(false);
         }
         
     }
