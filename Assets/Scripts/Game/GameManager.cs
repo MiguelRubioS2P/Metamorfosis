@@ -91,4 +91,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int _dinero
+    {
+        // Añadido para obtener el dinero en el final de nivel
+        get { return dinero; }
+    }
+
 }
