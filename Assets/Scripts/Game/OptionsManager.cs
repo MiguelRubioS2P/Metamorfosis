@@ -21,6 +21,9 @@ public class OptionsManager : MonoBehaviour
     {
         // Al ser don't destroy decimos que sea false a no ser que el usuario lo quiera activar
         fpsText.gameObject.SetActive(false);
+
+        // Resolucion incial
+        Screen.SetResolution(1920, 1080, false);
     }
 
     private void Awake()
@@ -34,5 +37,9 @@ public class OptionsManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+    }
+    public void cambiarResolucion(int width, int height, bool panatallaCompleta)
+    {
+        Screen.SetResolution(width, height, panatallaCompleta);
     }
 }
