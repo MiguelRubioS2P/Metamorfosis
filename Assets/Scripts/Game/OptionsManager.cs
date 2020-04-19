@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class OptionsManager : MonoBehaviour
 {
-    float deltaTime = 0.0f;
-    public Text fpsText;
+    float deltaTime = 0.0f; // Varible donde guardamos los float (FPS)
+    public Text fpsText; // Texto donde mostramos los fps
 
     void Update()
     {
+        // Por cada update sumamos por tiempo el tiempo real al final convertimos en string para mostrar 
         deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
         int numero = (int) fps;
@@ -18,6 +19,7 @@ public class OptionsManager : MonoBehaviour
 
     void Start()
     {
+        // Al ser don't destroy decimos que sea false a no ser que el usuario lo quiera activar
         fpsText.gameObject.SetActive(false);
     }
 
