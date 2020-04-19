@@ -123,7 +123,23 @@ public class PlayerControll : MonoBehaviour
             
             Morir();
         }
+        if(collision.transform.tag == "plataforma")
+        {
+            rigidbody2d.velocity = Vector2.zero;
+            // Estamos haciendo que player sea hijo del elemento con el que colisiona, en este caso la plataforma
+            gameObject.transform.parent = collision.transform;
+            salto = true;
+            animator.SetBool("saltar", false);
+        }
         
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "plataforma")
+        {
+            gameObject.transform.parent = null;
+        }
     }
 
     /// <summary>
