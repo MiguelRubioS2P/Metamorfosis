@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     private int vidas;
     private int dinero;
+    public AudioClip sonidoMoneda;
+    private AudioSource audioSource;
     
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         dinero = 0;
         vidas = 5;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void DineroInicial()
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
     {
         dinero++;
         Debug.Log("El dinero que tengo es: " + dinero);
+        audioSource.clip = sonidoMoneda;
+        audioSource.Play();
     }
 
     public void PerderDinero()
