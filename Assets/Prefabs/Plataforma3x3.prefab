@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 7167385780559104009}
   m_Layer: 0
   m_Name: Plataforma3x3
-  m_TagString: suelo
+  m_TagString: plataforma
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
