@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Pinchos_Movimiento : MonoBehaviour
 {
-    [SerializeField]
-    private float fuerzaMovimiento; // Variable de fuerza de movimiento
+    public float fuerzaMovimiento; // Variable de fuerza de movimiento
     private Vector2 posicionInicial; // Variable donde guardamos la posicion inicial
     
 
@@ -12,11 +11,8 @@ public class Pinchos_Movimiento : MonoBehaviour
     void Awake()
     {
         //Al inicar cogemos su posicion para poder volver a ella, despues iniciamos la coroutina.
-
         posicionInicial = new Vector2(transform.position.x, transform.position.y);
-        fuerzaMovimiento = 1.3f;
         StartCoroutine(Bajar());
-        
     }
 
 
@@ -26,18 +22,10 @@ public class Pinchos_Movimiento : MonoBehaviour
     {
         //Esperamos 3s despues cambiamos su posicion hacia abajo dependiendo de la fuerza, 
         //volvemos a esperar 3s y volvemos a la posicion inicial y volvemos a ejecutar.
-
         yield return new WaitForSeconds(3);
         transform.position = new Vector2(transform.position.x, transform.position.y * fuerzaMovimiento);
         yield return new WaitForSeconds(3);
         transform.position = posicionInicial;
         StartCoroutine(Bajar());
-        
-
     }
-
-    
-
-
-
 }
