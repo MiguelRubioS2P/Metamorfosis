@@ -25,13 +25,24 @@ public class DialogoNivel2 : MonoBehaviour
         
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.tag == "Player")
         {
             Invoke("Icono", temporizadorIcono);
             Invoke("CocoDialogo", temporizadorCoco + temporizadorIcono);
             Invoke("CocoDialogoAdios", temporizadorAdios + temporizadorCoco + temporizadorIcono);
+            Invoke("Autodestruccion", temporizadorAdios + temporizadorCoco + temporizadorIcono + 4f);
+            
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            coco.SetActive(false);
+            mensajeCoco.SetActive(false);
         }
     }
 
@@ -50,5 +61,10 @@ public class DialogoNivel2 : MonoBehaviour
     {
         coco.SetActive(false);
         mensajeCoco.SetActive(false);
+    }
+
+    private void Autodestruccion()
+    {
+        Destroy(gameObject);
     }
 }
