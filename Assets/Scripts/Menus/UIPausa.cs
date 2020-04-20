@@ -8,12 +8,14 @@ public class UIPausa : MonoBehaviour
 
     private PlayerControll player;
     private bool activo;
+    private GameManager gameManager;
 
 
     private void Start()
     {
         player = FindObjectOfType<PlayerControll>();
         activo = false;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -54,6 +56,8 @@ public class UIPausa : MonoBehaviour
 
     public void Principal()
     {
+        gameManager.DineroInicial();
+        gameManager.VidasIniciales();
         SceneManager.LoadScene("Menu Principal");
     }
 
