@@ -17,12 +17,14 @@ public class PlayerControll : MonoBehaviour
     public AudioClip sonidoSalto;
     private AudioSource audioSource;
     //private bool muerto;
-    
+
+    private GameObject RangoAtaque;
 
 
     private void Awake()
     {
         salto = true;
+        RangoAtaque = gameObject.transform.GetChild(0).gameObject;
         //muerto = false;
     }
 
@@ -92,10 +94,12 @@ public class PlayerControll : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             animator.SetBool("atacar", true);
+            RangoAtaque.SetActive(true);
         }
         else
         {
             animator.SetBool("atacar", false);
+            RangoAtaque.SetActive(false);
         }
     }
 
