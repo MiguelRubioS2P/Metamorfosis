@@ -30,9 +30,9 @@ public class DialogoNivel2 : MonoBehaviour
         if(collision.transform.tag == "Player")
         {
             Invoke("Icono", temporizadorIcono);
-            Invoke("CocoDialogo", temporizadorCoco + temporizadorIcono);
-            Invoke("CocoDialogoAdios", temporizadorAdios + temporizadorCoco + temporizadorIcono);
-            Invoke("Autodestruccion", temporizadorAdios + temporizadorCoco + temporizadorIcono + 4f);
+            Invoke("CocoDialogo",temporizadorIcono);
+            //Invoke("CocoDialogoAdios", temporizadorAdios + temporizadorCoco + temporizadorIcono);
+            //Invoke("Autodestruccion", temporizadorAdios + temporizadorCoco + temporizadorIcono + 4f);
             
         }
     }
@@ -41,8 +41,8 @@ public class DialogoNivel2 : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            coco.SetActive(false);
-            mensajeCoco.SetActive(false);
+            Invoke("CocoDialogoAdios",0f);
+            Invoke("Autodestruccion",0f);
         }
     }
 
