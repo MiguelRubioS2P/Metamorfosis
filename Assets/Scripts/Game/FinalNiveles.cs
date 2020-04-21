@@ -14,7 +14,9 @@ public class FinalNiveles : MonoBehaviour
     private GameManager gameManager; //Referencia gamemanager
 
     public Text tieneNivel; // Texto mostramos monedas nivel
-    public int monedasQueTieneNivel; // Varibale para cada nivel que tenga x estrellas
+    public GameObject objetoMonedas; // GO contenedor de todas las monedas del nivel.
+    [SerializeField]
+    private int monedasQueTieneNivel; // Varibale para cada nivel que tenga x estrellas
     public Text monedasNivel; // Texto donde mostramos las monedas que tiene el nivel
 
     public Text rango; // Texto rango
@@ -34,6 +36,7 @@ public class FinalNiveles : MonoBehaviour
     {
         // Obtenemos game manager
         gameManager = FindObjectOfType<GameManager>();
+        monedasQueTieneNivel = objetoMonedas.transform.childCount;
     }
 
     private IEnumerator MenuNiveles()
@@ -60,17 +63,23 @@ public class FinalNiveles : MonoBehaviour
             intermedio.gameObject.SetActive(true);
             avanzado.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
+            gameManager.DineroInicial();
+            gameManager.VidasIniciales();
             SceneManager.LoadScene("Menu Niveles");
         } else if (gameManager._dinero >= monedasQueTieneNivel / 2)
         {
             noob.gameObject.SetActive(true);
             intermedio.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
+            gameManager.DineroInicial();
+            gameManager.VidasIniciales();
             SceneManager.LoadScene("Menu Niveles");
         } else
         {
             noob.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
+            gameManager.DineroInicial();
+            gameManager.VidasIniciales();
             SceneManager.LoadScene("Menu Niveles");
         }
 

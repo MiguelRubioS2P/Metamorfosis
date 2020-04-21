@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     public void PerderDinero()
     {
-        dinero-= 2;
+        dinero = 0;
     }
 
     public int PintarDinero()
