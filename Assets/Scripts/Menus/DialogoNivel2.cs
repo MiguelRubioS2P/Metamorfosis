@@ -5,9 +5,10 @@ using UnityEngine;
 public class DialogoNivel2 : MonoBehaviour
 {
 
-    public GameObject iconoActivar;
-    public GameObject coco;
-    public GameObject mensajeCoco;
+    public GameObject iconoActivar; // icono indicador de activar plataformas
+    public GameObject coco; // Nuestro asistente de controles
+    public GameObject mensajeCoco; // el mensaje que mostramos
+    // Temporizadores para los Invoke
     public float temporizadorIcono = 1f;
     public float temporizadorCoco = 3f;
     public float temporizadorAdios = 6f;

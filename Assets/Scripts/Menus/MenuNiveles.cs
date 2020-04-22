@@ -12,6 +12,7 @@ public class MenuNiveles : MonoBehaviour
     public GameObject nivel1;
     public GameObject nivel2;
     public GameObject nivel3;
+    public GameObject nivel4, nivel5, nivel6, nivel7, nivel8, nivel9;
     public Sprite fotoNivel2;
 
 
@@ -22,33 +23,7 @@ public class MenuNiveles : MonoBehaviour
 
     private void Start()
     {
-        // Cada vez que iniciamos hacemos las comprobaciones del estado de los niveles
-        if (optionsManager.EstadoActivo(nivel1.name))
-        {
-            nivel1.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-            nivel1.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel2.name))
-        {
-            nivel2.GetComponent<Button>().interactable = true;
-            nivel2.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel2;
-           
-        }
-        else
-        {
-            nivel2.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel3.name))
-        {
-            nivel3.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-            nivel3.GetComponent<Button>().interactable = false;
-        }
+        ComprobacionNiveles();
     }
 
     public void OnClickElementos()
@@ -139,5 +114,83 @@ public class MenuNiveles : MonoBehaviour
         nivel1.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
+    private void ComprobacionNiveles()
+    {
+        // Cada vez que iniciamos hacemos las comprobaciones del estado de los niveles
+        if (optionsManager.EstadoActivo(nivel1.name))
+        {
+            nivel1.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            nivel1.GetComponent<Button>().interactable = false;
+        }
+        if (optionsManager.EstadoActivo(nivel2.name))
+        {
+            nivel2.GetComponent<Button>().interactable = true;
+            nivel2.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel2;
+
+        }
+        else
+        {
+            nivel2.GetComponent<Button>().interactable = false;
+        }
+        if (optionsManager.EstadoActivo(nivel3.name))
+        {
+            nivel3.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            nivel3.GetComponent<Button>().interactable = false;
+        }
+        if (optionsManager.EstadoActivo(nivel4.name))
+        {
+            nivel4.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            nivel4.GetComponent<Button>().interactable = false;
+        }
+        if (optionsManager.EstadoActivo(nivel5.name))
+        {
+            nivel5.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            nivel5.GetComponent<Button>().interactable = false;
+        }
+        if (optionsManager.EstadoActivo(nivel6.name))
+        {
+            nivel6.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            nivel6.GetComponent<Button>().interactable = false;
+        }
+        if (optionsManager.EstadoActivo(nivel7.name))
+        {
+            nivel7.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            nivel7.GetComponent<Button>().interactable = false;
+        }
+        if (optionsManager.EstadoActivo(nivel8.name))
+        {
+            nivel8.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            nivel8.GetComponent<Button>().interactable = false;
+        }
+        if (optionsManager.EstadoActivo(nivel9.name))
+        {
+            nivel9.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            nivel9.GetComponent<Button>().interactable = false;
+        }
+    }
     
 }

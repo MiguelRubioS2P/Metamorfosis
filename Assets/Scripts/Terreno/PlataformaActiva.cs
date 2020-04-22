@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class PlataformaActiva : MonoBehaviour
 {
-    public GameObject go;
-    private PlataformaMovil scriptPlataformaMovil;
+
+    // Este script debe ir con un collider para controlar si esta en la región que le 
+    // posibilite activar el GO
+
+    public GameObject go; //GO plataforma que queremos mover
+    private PlataformaMovil scriptPlataformaMovil; // Script de mover plataforma
     private bool encima;
-    // Start is called before the first frame update
+    
     void Start()
     {
         encima = false;
         scriptPlataformaMovil = go.GetComponent<PlataformaMovil>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (encima)
         {
+            // Si pulsamos la E activamos el script de moverse y ya funciona todo
             if (Input.GetKeyDown(KeyCode.E))
             {
                 scriptPlataformaMovil.enabled = true;
@@ -34,6 +39,10 @@ public class PlataformaActiva : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Cuando salimos de la región paramos el movimiento de la plataforma
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player")
