@@ -22,6 +22,9 @@ public class FinalNiveles : MonoBehaviour
     public Text rango; // Texto rango
     public Image noob, intermedio, avanzado; // Imagen de estrellas para el rango
 
+    private string escena; // Nombre de la escena
+    private OptionsManager optionsManager;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Player")
@@ -36,7 +39,12 @@ public class FinalNiveles : MonoBehaviour
     {
         // Obtenemos game manager
         gameManager = FindObjectOfType<GameManager>();
+        // Obtenemos los hijos totales del GO que contiene todas las monedas del nivel
         monedasQueTieneNivel = objetoMonedas.transform.childCount;
+        // Obtenemos el nombre de la escena actualmente activa.
+        escena = SceneManager.GetActiveScene().name;
+        // Obtenemos OptionsManager
+        optionsManager = FindObjectOfType<OptionsManager>();
     }
 
     private IEnumerator MenuNiveles()
@@ -63,25 +71,52 @@ public class FinalNiveles : MonoBehaviour
             intermedio.gameObject.SetActive(true);
             avanzado.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            gameManager.DineroInicial();
-            gameManager.VidasIniciales();
-            SceneManager.LoadScene("Menu Niveles");
+            CargarMenuNiveles();
         } else if (gameManager._dinero >= monedasQueTieneNivel / 2)
         {
             noob.gameObject.SetActive(true);
             intermedio.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            gameManager.DineroInicial();
-            gameManager.VidasIniciales();
-            SceneManager.LoadScene("Menu Niveles");
+            CargarMenuNiveles();
         } else
         {
             noob.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            gameManager.DineroInicial();
-            gameManager.VidasIniciales();
-            SceneManager.LoadScene("Menu Niveles");
+            CargarMenuNiveles();
         }
 
+    }
+
+    /// <summary>
+    /// Método que carga la escena Niveles
+    /// </summary>
+    private void CargarMenuNiveles()
+    {
+        gameManager.DineroInicial();
+        gameManager.VidasIniciales();
+        NivelesDesbloqueados(escena);
+        SceneManager.LoadScene("Menu Niveles");
+    }
+
+    /// <summary>
+    /// Desbloqueamos el nivel que sigue al completar el nivel actual
+    /// </summary>
+    /// <param name="escena"></param>
+    private void NivelesDesbloqueados(string escena)
+    {
+        switch (escena)
+        {
+            case "Nivel 1":
+                // si es nivel 1 hay que desbloquear Nivel 2
+                optionsManager.CambiarEstado("Nivel 2");
+                break;
+            case "Nivel 2":
+                // si es nivel 2 hay que desbloquear Nivel 3
+                optionsManager.CambiarEstado("Nivel 3");
+                break;
+            case "Nivel 3":
+                // si es nivel 3 hay que desbloquear Nivel 4 pero como es pa pre-alpha aqui termina el flujo.
+                break;
+        }
     }
 }
