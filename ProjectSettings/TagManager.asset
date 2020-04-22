@@ -11,6 +11,7 @@ TagManager:
   - moneda
   - personaje
   - plataforma
+  - enemigo mundo 1
   layers:
   - Default
   - TransparentFX
