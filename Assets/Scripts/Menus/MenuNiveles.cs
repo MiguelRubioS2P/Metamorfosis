@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class MenuNiveles : MonoBehaviour
 {
 
-    private OptionsManager optionsManager;
+    private OptionsManager optionsManager; // Obtenemos la referencia del GO DontDestroOnLoad
     public GameObject nivel1;
     public GameObject nivel2;
     public GameObject nivel3;
@@ -117,25 +117,27 @@ public class MenuNiveles : MonoBehaviour
     private void ComprobacionNiveles()
     {
         // Cada vez que iniciamos hacemos las comprobaciones del estado de los niveles
-        if (optionsManager.EstadoActivo(nivel1.name))
+        if (optionsManager.EstadoActivo(nivel1.name,optionsManager.nombrePartida))
         {
             nivel1.GetComponent<Button>().interactable = true;
+            
         }
         else
         {
             nivel1.GetComponent<Button>().interactable = false;
         }
-        if (optionsManager.EstadoActivo(nivel2.name))
+        if (optionsManager.EstadoActivo(nivel2.name, optionsManager.nombrePartida))
         {
             nivel2.GetComponent<Button>().interactable = true;
             nivel2.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel2;
+            
 
         }
         else
         {
             nivel2.GetComponent<Button>().interactable = false;
         }
-        if (optionsManager.EstadoActivo(nivel3.name))
+        if (optionsManager.EstadoActivo(nivel3.name, optionsManager.nombrePartida))
         {
             nivel3.GetComponent<Button>().interactable = true;
         }
@@ -143,7 +145,7 @@ public class MenuNiveles : MonoBehaviour
         {
             nivel3.GetComponent<Button>().interactable = false;
         }
-        if (optionsManager.EstadoActivo(nivel4.name))
+        if (optionsManager.EstadoActivo(nivel4.name, optionsManager.nombrePartida))
         {
             nivel4.GetComponent<Button>().interactable = true;
         }
@@ -151,7 +153,7 @@ public class MenuNiveles : MonoBehaviour
         {
             nivel4.GetComponent<Button>().interactable = false;
         }
-        if (optionsManager.EstadoActivo(nivel5.name))
+        if (optionsManager.EstadoActivo(nivel5.name, optionsManager.nombrePartida))
         {
             nivel5.GetComponent<Button>().interactable = true;
         }
@@ -159,7 +161,7 @@ public class MenuNiveles : MonoBehaviour
         {
             nivel5.GetComponent<Button>().interactable = false;
         }
-        if (optionsManager.EstadoActivo(nivel6.name))
+        if (optionsManager.EstadoActivo(nivel6.name, optionsManager.nombrePartida))
         {
             nivel6.GetComponent<Button>().interactable = true;
         }
@@ -167,7 +169,7 @@ public class MenuNiveles : MonoBehaviour
         {
             nivel6.GetComponent<Button>().interactable = false;
         }
-        if (optionsManager.EstadoActivo(nivel7.name))
+        if (optionsManager.EstadoActivo(nivel7.name, optionsManager.nombrePartida))
         {
             nivel7.GetComponent<Button>().interactable = true;
         }
@@ -175,7 +177,7 @@ public class MenuNiveles : MonoBehaviour
         {
             nivel7.GetComponent<Button>().interactable = false;
         }
-        if (optionsManager.EstadoActivo(nivel8.name))
+        if (optionsManager.EstadoActivo(nivel8.name, optionsManager.nombrePartida))
         {
             nivel8.GetComponent<Button>().interactable = true;
         }
@@ -183,7 +185,7 @@ public class MenuNiveles : MonoBehaviour
         {
             nivel8.GetComponent<Button>().interactable = false;
         }
-        if (optionsManager.EstadoActivo(nivel9.name))
+        if (optionsManager.EstadoActivo(nivel9.name, optionsManager.nombrePartida))
         {
             nivel9.GetComponent<Button>().interactable = true;
         }

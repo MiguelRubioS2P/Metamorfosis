@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Nivel
 {
     private string nombre;
@@ -18,10 +20,5 @@ public class Nivel
         set { estado = value; }
     }
 
-    private Sprite imagen;
-    public Sprite Imagen
-    {
-        get { return imagen; }
-        set { imagen = value; }
-    }
+    
 }
