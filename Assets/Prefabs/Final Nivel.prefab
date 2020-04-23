@@ -124,12 +124,14 @@ MonoBehaviour:
   obtenido: {fileID: 4749229674222599330}
   monedasGameManager: {fileID: 4306310544044870248}
   tieneNivel: {fileID: 8774912428510982906}
+  objetoMonedas: {fileID: 0}
   monedasQueTieneNivel: 0
   monedasNivel: {fileID: 7238927619091954452}
   rango: {fileID: 8044456038189895928}
   noob: {fileID: 9151595602820887758}
   intermedio: {fileID: 8959098519089439948}
   avanzado: {fileID: 6418964761505799110}
+  player: {fileID: 3481917900544003703, guid: caf99e0ce74defe40b3fd95308b7478b, type: 3}
 --- !u!61 &6507582265024804212
 BoxCollider2D:
   m_ObjectHideFlags: 0
