@@ -15,6 +15,7 @@ public class MenuGuardado : MonoBehaviour
     {
         selecionado = false;
         botones.SetActive(false);
+        Cursor.visible = true;
     }
     public void OnClick()
     {

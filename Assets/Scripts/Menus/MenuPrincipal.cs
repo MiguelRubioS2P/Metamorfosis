@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
+    private void Awake()
+    {
+        Cursor.visible = true;
+    }
     public void OnClick()
     {
         string boton = EventSystem.current.currentSelectedGameObject.name;

@@ -16,6 +16,7 @@ public class MenuOpciones : MonoBehaviour
 
     private void Awake()
     {
+        UnityEngine.Cursor.visible = true;
         optionsmanager = FindObjectOfType<OptionsManager>();
     }
     public void ControlVoluemnGeneral(float sliderValue)

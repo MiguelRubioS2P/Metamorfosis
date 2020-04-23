@@ -25,6 +25,7 @@ public class PlayerControll : MonoBehaviour
     {
         salto = true;
         RangoAtaque = gameObject.transform.GetChild(0).gameObject;
+        Cursor.visible = false;
         //muerto = false;
     }
 
