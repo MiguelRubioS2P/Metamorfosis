@@ -18,6 +18,7 @@ public class MenuNiveles : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = true;
         optionsManager = FindObjectOfType<OptionsManager>();
     }
 

@@ -22,6 +22,7 @@ public class MenuGuardado : MonoBehaviour
         slot2Select = false;
         slot3Select = false;
         botones.SetActive(false);
+
         optionsManager = FindObjectOfType<OptionsManager>();
         if (optionsManager.NombrePartidaJugador(slot1.gameObject.name) != null)
         {
@@ -48,6 +49,9 @@ public class MenuGuardado : MonoBehaviour
             slot3.transform.GetChild(1).GetComponent<Text>().text = "Vacio";
         }
 
+
+
+        Cursor.visible = true;
 
     }
     public void OnClick()

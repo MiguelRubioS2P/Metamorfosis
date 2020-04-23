@@ -22,6 +22,7 @@ public class UIMuerte : MonoBehaviour
     {
         gameObject.GetComponent<Canvas>().enabled = true;
         player.gameObject.SetActive(false);
+        Cursor.visible = true;
     }
 
     public void Reiniciar()
@@ -36,6 +37,7 @@ public class UIMuerte : MonoBehaviour
     {
         gameObject.GetComponent<Canvas>().enabled = false;
         player.gameObject.SetActive(true);
+        Cursor.visible = false;
     }
 
     public void Opciones()

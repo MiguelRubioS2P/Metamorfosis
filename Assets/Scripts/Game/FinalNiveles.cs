@@ -24,13 +24,14 @@ public class FinalNiveles : MonoBehaviour
 
     private string escena; // Nombre de la escena
     private OptionsManager optionsManager;
+    private GameObject player;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "Player")
+        if (collision.tag == "Player")
         {
             //Si el player llega a la zona final, lo destruimos para que no se mueva, y iniciamos coroutina
-            collision.gameObject.SetActive(false);
+            Destroy(player);
             StartCoroutine(MenuNiveles());
         }
     }
@@ -45,6 +46,7 @@ public class FinalNiveles : MonoBehaviour
         escena = SceneManager.GetActiveScene().name;
         // Obtenemos OptionsManager
         optionsManager = FindObjectOfType<OptionsManager>();
+        player = FindObjectOfType<PlayerControll>().gameObject;
     }
 
     private IEnumerator MenuNiveles()

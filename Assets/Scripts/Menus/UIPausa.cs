@@ -40,6 +40,7 @@ public class UIPausa : MonoBehaviour
         gameObject.GetComponent<Canvas>().enabled = true;
         activo = true;
         player.gameObject.SetActive(false);
+        Cursor.visible = true;
     }
 
     public void Desactivar()
@@ -47,6 +48,7 @@ public class UIPausa : MonoBehaviour
         gameObject.GetComponent<Canvas>().enabled = false;
         activo = false;
         player.gameObject.SetActive(true);
+        Cursor.visible = false;
     }
 
     public void Opciones()
