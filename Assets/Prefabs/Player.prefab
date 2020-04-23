@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 7364506159056433210}
   m_Layer: 10
   m_Name: Cuerpo
-  m_TagString: personaje
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

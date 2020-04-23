@@ -31,7 +31,7 @@ public class FinalNiveles : MonoBehaviour
         if (collision.tag == "Player")
         {
             //Si el player llega a la zona final, lo destruimos para que no se mueva, y iniciamos coroutina
-            Destroy(player);
+            player.SetActive(false);
             StartCoroutine(MenuNiveles());
         }
     }
@@ -116,6 +116,7 @@ public class FinalNiveles : MonoBehaviour
             case "Nivel 2":
                 // si es nivel 2 hay que desbloquear Nivel 3
                 optionsManager.CambiarEstado("Nivel 3", optionsManager.nombrePartida);
+                optionsManager.GuardarDatos();
                 break;
             case "Nivel 3":
                 // si es nivel 3 hay que desbloquear Nivel 4 pero como es pa pre-alpha aqui termina el flujo.
