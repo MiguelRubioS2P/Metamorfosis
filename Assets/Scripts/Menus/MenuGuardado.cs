@@ -67,6 +67,8 @@ public class MenuGuardado : MonoBehaviour
                 slot2.image.color = Color.red;
                 slot3.image.color = Color.red;
                 botones.SetActive(true);
+                BloquearInputField(IFslot2);
+                BloquearInputField(IFslot3);
             }
             else
             {
@@ -96,6 +98,8 @@ public class MenuGuardado : MonoBehaviour
                 slot1.image.color = Color.red;
                 slot3.image.color = Color.red;
                 botones.SetActive(true);
+                BloquearInputField(IFslot1);
+                BloquearInputField(IFslot3);
             }
             else
             {
@@ -125,6 +129,8 @@ public class MenuGuardado : MonoBehaviour
                 slot2.image.color = Color.red;
                 slot1.image.color = Color.red;
                 botones.SetActive(true);
+                BloquearInputField(IFslot1);
+                BloquearInputField(IFslot2);
             }
             else
             {
@@ -148,6 +154,13 @@ public class MenuGuardado : MonoBehaviour
             slot2.image.color = Color.red;
             slot3.image.color = Color.red;
             botones.SetActive(false);
+            slot1Select = false;
+            slot2Select = false;
+            slot3Select = false;
+            BloquearInputField(IFslot1);
+            BloquearInputField(IFslot2);
+            BloquearInputField(IFslot3);
+            
         } else if (boton == "Salir Boton")
         {
             #if UNITY_EDITOR
