@@ -27,6 +27,7 @@ public class UIMuerte : MonoBehaviour
 
     public void Reiniciar()
     {
+        Debug.Log("Ejecutando este método, Reiniciar() desde UIMuerte");
         // reiniciar la escena propia y recargar las vidas base y las monedas base del gamemanager
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
@@ -47,16 +48,19 @@ public class UIMuerte : MonoBehaviour
 
     public void Niveles()
     {
+        Debug.Log("Ejecutando este método, Niveles() desde UIMuerte");
         SceneManager.LoadScene("Menu Niveles");
     }
 
     public void Principal()
     {
+        Debug.Log("Ejecutando este método, Principal() desde UIMuerte");
         SceneManager.LoadScene("Menu Principal");
     }
 
     public void Salir()
     {
+        Debug.Log("Ejecutando este método, Salir() desde UIMuerte");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

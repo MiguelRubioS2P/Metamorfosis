@@ -34,7 +34,8 @@ public class OptionsManager : MonoBehaviour
         fpsText.gameObject.SetActive(false);
 
         // Resolucion incial
-        Screen.SetResolution(1920, 1080, false);
+        //Screen.SetResolution(1920, 1080, false);
+        
 
         if (File.Exists(rutaDeGuardado))
         {
@@ -52,6 +53,7 @@ public class OptionsManager : MonoBehaviour
     private void Awake()
     {
         rutaDeGuardado = Application.absoluteURL + "datos.dat";
+        Screen.SetResolution(1080, 720, true);
         int count = FindObjectsOfType<OptionsManager>().Length;
         if (count > 1)
         {

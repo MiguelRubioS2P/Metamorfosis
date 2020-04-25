@@ -58,6 +58,7 @@ public class UIPausa : MonoBehaviour
 
     public void Principal()
     {
+        Debug.Log("Ejecutando este método, Principal() desde UIPausa");
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
         SceneManager.LoadScene("Menu Principal");
@@ -65,6 +66,7 @@ public class UIPausa : MonoBehaviour
 
     public void Salir()
     {
+        Debug.Log("Ejecutando este método, Salir() desde UIPausa");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
