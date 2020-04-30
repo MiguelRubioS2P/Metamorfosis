@@ -2,7 +2,7 @@
 #
 
 ProjectSettings/ProjectVersion.txt
-
+*.dat
 /ProjectSettings/ProjectVersion.txt
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
