@@ -141,6 +141,7 @@ public class MenuNiveles : MonoBehaviour
         if (optionsManager.EstadoActivo(nivel3.name, optionsManager.nombrePartida))
         {
             nivel3.GetComponent<Button>().interactable = true;
+            nivel3.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel3;
         }
         else
         {
