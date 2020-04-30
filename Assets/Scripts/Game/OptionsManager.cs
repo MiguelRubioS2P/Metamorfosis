@@ -43,7 +43,7 @@ public class OptionsManager : MonoBehaviour
         }
         else
         {
-            CreacionNiveles();
+            CreacionNiveles(9);
             CreacionPartidas();
         }
         
@@ -72,128 +72,70 @@ public class OptionsManager : MonoBehaviour
     /// <summary>
     /// Método que nos crea los niveles y los añade al List niveles
     /// </summary>
-    private void CreacionNiveles()
+    private void CreacionNiveles(int niveles)
     {
-        Nivel nivel1 = new Nivel();
-        Nivel nivel2 = new Nivel();
-        Nivel nivel3 = new Nivel();
-        Nivel nivel4 = new Nivel();
-        Nivel nivel5 = new Nivel();
-        Nivel nivel6 = new Nivel();
-        Nivel nivel7 = new Nivel();
-        Nivel nivel8 = new Nivel();
-        Nivel nivel9 = new Nivel();
+        // creación de niveles para la lista niveles1
+        for(int i = 1; i <= niveles; i++)
+        {
+            if(i == 1)
+            {
+                niveles1.Add(new Nivel("Nivel " + i, true, 0, 0));
+            }
+            else
+            {
+                niveles1.Add(new Nivel("Nivel " + i, false, 0, 0));
+            }
+        }
 
-        nivel1.Nombre = "Nivel 1";
-        nivel1.Estado = true;
-        nivel2.Nombre = "Nivel 2";
-        nivel2.Estado = false;
-        nivel3.Nombre = "Nivel 3";
-        nivel3.Estado = false;
-        nivel4.Nombre = "Nivel 4";
-        nivel4.Estado = false;
-        nivel5.Nombre = "Nivel 5";
-        nivel5.Estado = false;
-        nivel6.Nombre = "Nivel 6";
-        nivel6.Estado = false;
-        nivel7.Nombre = "Nivel 7";
-        nivel7.Estado = false;
-        nivel8.Nombre = "Nivel 8";
-        nivel8.Estado = false;
-        nivel9.Nombre = "Nivel 9";
-        nivel9.Estado = false;
+        foreach (Nivel n in niveles1)
+        {
+            Debug.Log(n.Nombre);
+            Debug.Log(n.Estado);
+            Debug.Log(n.Monedas);
+            Debug.Log(n.Estrellas);
+        }
 
-        niveles1.Add(nivel1);
-        niveles1.Add(nivel2);
-        niveles1.Add(nivel3);
-        niveles1.Add(nivel4);
-        niveles1.Add(nivel5);
-        niveles1.Add(nivel6);
-        niveles1.Add(nivel7);
-        niveles1.Add(nivel8);
-        niveles1.Add(nivel9);
+        // Creación de niveles para la lista niveles2
+        for (int i = 1; i <= niveles; i++)
+        {
+            if (i == 1)
+            {
+                niveles2.Add(new Nivel("Nivel " + i, true, 0, 0));
+            }
+            else
+            {
+                niveles2.Add(new Nivel("Nivel " + i, false, 0, 0));
+            }
+        }
 
-        Nivel nivel11 = new Nivel();
-        Nivel nivel22 = new Nivel();
-        Nivel nivel33 = new Nivel();
-        Nivel nivel44 = new Nivel();
-        Nivel nivel55 = new Nivel();
-        Nivel nivel66 = new Nivel();
-        Nivel nivel77 = new Nivel();
-        Nivel nivel88 = new Nivel();
-        Nivel nivel99 = new Nivel();
+        foreach (Nivel n in niveles2)
+        {
+            Debug.Log(n.Nombre);
+            Debug.Log(n.Estado);
+            Debug.Log(n.Monedas);
+            Debug.Log(n.Estrellas);
+        }
 
-        nivel11.Nombre = "Nivel 1";
-        nivel11.Estado = true;
-        nivel22.Nombre = "Nivel 2";
-        nivel22.Estado = false;
-        nivel33.Nombre = "Nivel 3";
-        nivel33.Estado = false;
-        nivel44.Nombre = "Nivel 4";
-        nivel44.Estado = false;
-        nivel55.Nombre = "Nivel 5";
-        nivel55.Estado = false;
-        nivel66.Nombre = "Nivel 6";
-        nivel66.Estado = false;
-        nivel77.Nombre = "Nivel 7";
-        nivel77.Estado = false;
-        nivel88.Nombre = "Nivel 8";
-        nivel88.Estado = false;
-        nivel99.Nombre = "Nivel 9";
-        nivel99.Estado = false;
+        // Creación de niveles para la lista niveles3
+        for (int i = 1; i <= niveles; i++)
+        {
+            if (i == 1)
+            {
+                niveles3.Add(new Nivel("Nivel " + i, true, 0, 0));
+            }
+            else
+            {
+                niveles3.Add(new Nivel("Nivel " + i, false, 0, 0));
+            }
+        }
 
-        niveles2.Add(nivel11);
-        niveles2.Add(nivel22);
-        niveles2.Add(nivel33);
-        niveles2.Add(nivel44);
-        niveles2.Add(nivel55);
-        niveles2.Add(nivel66);
-        niveles2.Add(nivel77);
-        niveles2.Add(nivel88);
-        niveles2.Add(nivel99);
-
-
-        Nivel nivel111 = new Nivel();
-        Nivel nivel222 = new Nivel();
-        Nivel nivel333 = new Nivel();
-        Nivel nivel444 = new Nivel();
-        Nivel nivel555 = new Nivel();
-        Nivel nivel666 = new Nivel();
-        Nivel nivel777 = new Nivel();
-        Nivel nivel888 = new Nivel();
-        Nivel nivel999 = new Nivel();
-
-        nivel111.Nombre = "Nivel 1";
-        nivel111.Estado = true;
-        nivel222.Nombre = "Nivel 2";
-        nivel222.Estado = false;
-        nivel333.Nombre = "Nivel 3";
-        nivel333.Estado = false;
-        nivel444.Nombre = "Nivel 4";
-        nivel444.Estado = false;
-        nivel555.Nombre = "Nivel 5";
-        nivel555.Estado = false;
-        nivel666.Nombre = "Nivel 6";
-        nivel666.Estado = false;
-        nivel777.Nombre = "Nivel 7";
-        nivel777.Estado = false;
-        nivel888.Nombre = "Nivel 8";
-        nivel888.Estado = false;
-        nivel999.Nombre = "Nivel 9";
-        nivel999.Estado = false;
-
-        niveles3.Add(nivel111);
-        niveles3.Add(nivel222);
-        niveles3.Add(nivel333);
-        niveles3.Add(nivel444);
-        niveles3.Add(nivel555);
-        niveles3.Add(nivel666);
-        niveles3.Add(nivel777);
-        niveles3.Add(nivel888);
-        niveles3.Add(nivel999);
-
-
-
+        foreach (Nivel n in niveles3)
+        {
+            Debug.Log(n.Nombre);
+            Debug.Log(n.Estado);
+            Debug.Log(n.Monedas);
+            Debug.Log(n.Estrellas);
+        }
     }
 
     /// <summary>
@@ -249,27 +191,6 @@ public class OptionsManager : MonoBehaviour
     }
 
 
-    // Este método no es funcional!!!!!!!!!!!!!!!
-    /// <summary>
-    /// Para obtener la imagen del nivel
-    /// </summary>
-    /// <param name="nivel"></param>
-    /// <returns></returns>
-    //public Sprite ImagenNivel(string nivel)
-    //{
-    //    Sprite foto = null;
-    //    for (int i = 0; i < niveles.Count; i++)
-    //    {
-    //        if (niveles[i].Nombre == nivel)
-    //        {
-    //            foto = niveles[i].Imagen;
-    //            break;
-    //        }
-    //    }
-
-    //    return foto;
-    //}
-
     public void CreacionPartidas()
     {
         Partida partida1 = new Partida();
@@ -304,22 +225,38 @@ public class OptionsManager : MonoBehaviour
     /// <summary>
     /// Este método es para recuperar el nombre que esta guardado en el archivo de guardado
     /// </summary>
-    /// <param name="slot"></param>
-    /// <returns></returns>
+    /// <param name="slot">Ejemplo de valor: Slot 1 Boton</param>
+    /// <returns>Nombre de guardado de la partida</returns>
     public string NombrePartidaJugador(string slot)
     {
-        string nombre = "Vacio";
+        string nombre = null;
 
         for (int i = 0; i < partidas.Count; i++)
         {
             if (partidas[i].slot == slot)
             {
                 nombre = partidas[i].nombre;
+                Debug.Log("Método ejecutado NombrePartidaJugador() " + nombre);
                 break;
             }
         }
 
         return nombre;
+    }
+
+    public bool ExisteNombre(string nombre)
+    {
+        bool existe = false;
+        foreach(Partida p in partidas)
+        {
+            if(p.nombre == nombre)
+            {
+                existe = true;
+                break;
+            }
+        }
+
+        return existe;
     }
 
     public void GuardarDatos()
@@ -328,8 +265,8 @@ public class OptionsManager : MonoBehaviour
         FileStream archivo = File.Create(rutaDeGuardado);
 
         InformacionJuego info = new InformacionJuego();
+        // Aquí guardamos la información de la variable partidas en una nueva variable que se guardará en el archivo.
         info.partidas = partidas;
-        //info.niveles = niveles;
 
         bf.Serialize(archivo, info);
 
@@ -345,10 +282,9 @@ public class OptionsManager : MonoBehaviour
 
             InformacionJuego info = bf.Deserialize(archivo) as InformacionJuego;
 
-            //Debug.Log(info.nombrePartida);
+            // Aquí en partidas tenemos la información del archivo.
             partidas = info.partidas;
-            //niveles = info.niveles;
-
+            
             archivo.Close();
         }
     }

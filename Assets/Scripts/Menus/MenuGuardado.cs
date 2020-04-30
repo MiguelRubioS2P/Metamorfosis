@@ -17,13 +17,17 @@ public class MenuGuardado : MonoBehaviour
 
     private void Awake()
     {
+        // Variables para controlas donde esta el usuario pulsando.
         selecionado = false;
         slot1Select = false;
         slot2Select = false;
         slot3Select = false;
         botones.SetActive(false);
 
+        // Encontramos el OptionsManager script
         optionsManager = FindObjectOfType<OptionsManager>();
+
+        // Controlamos los distintos GO slot que tenemos en la escena
         if (optionsManager.NombrePartidaJugador(slot1.gameObject.name) != null)
         {
             slot1.transform.GetChild(1).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot1.gameObject.name);
@@ -54,6 +58,11 @@ public class MenuGuardado : MonoBehaviour
         Cursor.visible = true;
 
     }
+
+    /// <summary>
+    /// Intentamos saber en cada slot, si tenemos un dato guardado que provenga del archivo de guardado
+    /// Aunque quizás el control del if se pueda hacer con la información directamente con el GO Text que tiene cada slot.
+    /// </summary>
     public void OnClick()
     {
         // Guardamos en una variable el gameobject selecionado para saber por el 
@@ -190,10 +199,21 @@ public class MenuGuardado : MonoBehaviour
             {
                 if (IFslot1.IsActive())
                 {
-                    ElegirNombre(slot1.gameObject.name, IFslot1);
-                    optionsManager.GuardarDatos();
-                    optionsManager.nombrePartida = IFslot1.text;
-                    SceneManager.LoadScene("Menu Niveles");
+                    if (TieneTexto(IFslot1))
+                    {
+                        if (optionsManager.ExisteNombre(IFslot1.text))
+                        {
+                            Debug.Log("No puedes poner ese nombre, ya existe");
+                        }
+                        else
+                        {
+                            ElegirNombre(slot1.gameObject.name, IFslot1);
+                            optionsManager.GuardarDatos();
+                            optionsManager.nombrePartida = IFslot1.text;
+                            SceneManager.LoadScene("Menu Niveles");
+                        }
+                    }
+                    
                 }
                 else
                 {
@@ -207,10 +227,20 @@ public class MenuGuardado : MonoBehaviour
             {
                 if (IFslot2.IsActive())
                 {
-                    ElegirNombre(slot2.gameObject.name, IFslot2);
-                    optionsManager.GuardarDatos();
-                    optionsManager.nombrePartida = IFslot2.text;
-                    SceneManager.LoadScene("Menu Niveles");
+                    if (TieneTexto(IFslot2))
+                    {
+                        if (optionsManager.ExisteNombre(IFslot2.text))
+                        {
+                            Debug.Log("No puedes poner ese nombre, ya existe");
+                        }
+                        else
+                        {
+                            ElegirNombre(slot2.gameObject.name, IFslot2);
+                            optionsManager.GuardarDatos();
+                            optionsManager.nombrePartida = IFslot2.text;
+                            SceneManager.LoadScene("Menu Niveles");
+                        }
+                    }
                 }
                 else
                 {
@@ -223,10 +253,20 @@ public class MenuGuardado : MonoBehaviour
             {
                 if (IFslot3.IsActive())
                 {
-                    ElegirNombre(slot3.gameObject.name, IFslot3);
-                    optionsManager.GuardarDatos();
-                    optionsManager.nombrePartida = IFslot3.text;
-                    SceneManager.LoadScene("Menu Niveles");
+                    if (TieneTexto(IFslot3))
+                    {
+                        if (optionsManager.ExisteNombre(IFslot3.text))
+                        {
+                            Debug.Log("No puedes poner ese nombre, ya existe");
+                        }
+                        else
+                        {
+                            ElegirNombre(slot3.gameObject.name, IFslot3);
+                            optionsManager.GuardarDatos();
+                            optionsManager.nombrePartida = IFslot3.text;
+                            SceneManager.LoadScene("Menu Niveles");
+                        }
+                    }
                 }
                 else
                 {
@@ -250,10 +290,35 @@ public class MenuGuardado : MonoBehaviour
         inputfield.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Añadimos el nombre a la partida para guardarlo
+    /// </summary>
+    /// <param name="slot">El nombre del slot que esta seleccionado</param>
+    /// <param name="nombre">El nombre que esta en el Inputfield del slot seleccionado</param>
     private void ElegirNombre(string slot, InputField nombre)
     {
-        optionsManager.PonerNombreJugador(slot, nombre.text);
+        optionsManager.PonerNombreJugador(slot, nombre.text);    
     }
 
+    /// <summary>
+    /// Comprobamos si el valor que tiene el inputfield es vacio o con espacios pero vacio
+    /// </summary>
+    /// <param name="nombre">valor texto del inputfield</param>
+    /// <returns></returns>
+    private bool TieneTexto(InputField nombre)
+    {
+        bool vacio = false;
+
+        if (nombre.text.Trim().Equals(""))
+        {
+            vacio = false;
+        }
+        else
+        {
+            vacio = true;
+        }
+
+        return vacio;
+    }
     
 }
