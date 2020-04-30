@@ -13,7 +13,7 @@ public class MenuNiveles : MonoBehaviour
     public GameObject nivel2;
     public GameObject nivel3;
     public GameObject nivel4, nivel5, nivel6, nivel7, nivel8, nivel9;
-    public Sprite fotoNivel2;
+    public Sprite fotoNivel2,fotoNivel3;
 
 
     private void Awake()
