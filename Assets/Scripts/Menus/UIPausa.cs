@@ -63,6 +63,7 @@ public class UIPausa : MonoBehaviour
         Debug.Log("Ejecutando este método, Principal() desde UIPausa");
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
+        Time.timeScale = 1;
         SceneManager.LoadScene("Menu Principal");
     }
 
