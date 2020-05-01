@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class UIMuerte : MonoBehaviour
 {
 
-    private PlayerControll player;
+    //private PlayerControll player;
     private string escena;
     private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerControll>();
+        //player = FindObjectOfType<PlayerControll>();
         escena = SceneManager.GetActiveScene().name;
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -21,7 +21,8 @@ public class UIMuerte : MonoBehaviour
     public void Activar()
     {
         gameObject.GetComponent<Canvas>().enabled = true;
-        player.gameObject.SetActive(false);
+        Time.timeScale = 0;
+        //player.gameObject.SetActive(false);
         Cursor.visible = true;
     }
 
@@ -37,7 +38,8 @@ public class UIMuerte : MonoBehaviour
     public void Desactivar()
     {
         gameObject.GetComponent<Canvas>().enabled = false;
-        player.gameObject.SetActive(true);
+        Time.timeScale = 1;
+        //player.gameObject.SetActive(true);
         Cursor.visible = false;
     }
 
@@ -49,12 +51,16 @@ public class UIMuerte : MonoBehaviour
     public void Niveles()
     {
         Debug.Log("Ejecutando este método, Niveles() desde UIMuerte");
+        gameManager.DineroInicial();
+        gameManager.VidasIniciales();
         SceneManager.LoadScene("Menu Niveles");
     }
 
     public void Principal()
     {
         Debug.Log("Ejecutando este método, Principal() desde UIMuerte");
+        gameManager.DineroInicial();
+        gameManager.VidasIniciales();
         SceneManager.LoadScene("Menu Principal");
     }
 

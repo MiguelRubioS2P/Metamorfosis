@@ -39,7 +39,8 @@ public class UIPausa : MonoBehaviour
     {
         gameObject.GetComponent<Canvas>().enabled = true;
         activo = true;
-        player.gameObject.SetActive(false);
+        player.enabled = false;
+        Time.timeScale = 0;
         Cursor.visible = true;
     }
 
@@ -47,7 +48,8 @@ public class UIPausa : MonoBehaviour
     {
         gameObject.GetComponent<Canvas>().enabled = false;
         activo = false;
-        player.gameObject.SetActive(true);
+        Time.timeScale = 1;
+        player.enabled = true;
         Cursor.visible = false;
     }
 
