@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControll : MonoBehaviour
 {
-    private bool salto;
+    private bool salto, muerto, atacar;
     private Animator animator;
     private Rigidbody2D rigidbody2d;
     private SpriteRenderer spriteRenderer;
@@ -16,7 +16,6 @@ public class PlayerControll : MonoBehaviour
     private GameManager gameManager;
     public AudioClip sonidoSalto;
     private AudioSource audioSource;
-    private bool muerto;
 
     private GameObject RangoAtaque;
 
@@ -24,6 +23,7 @@ public class PlayerControll : MonoBehaviour
     private void Awake()
     {
         salto = true;
+        atacar = true;
         RangoAtaque = gameObject.transform.GetChild(0).gameObject;
         Cursor.visible = false;
         muerto = false;
@@ -82,22 +82,33 @@ public class PlayerControll : MonoBehaviour
             animator.SetBool("moverse", false);
         }
         Salto();
-        Atacar();
+        if (atacar)
+        {
+            StartCoroutine(Atacar());
+        }
+        
     }
 
-    void Atacar()
+    
+    IEnumerator Atacar()
     {
         //Input.GetKey(KeyCode.Mouse0) && !muerto
-        if (Input.GetKey(KeyCode.Mouse0) && !muerto)
+        if (Input.GetButtonDown("Fire1") && !muerto)
         {
+            atacar = false;
             animator.SetBool("atacar", true);
             RangoAtaque.SetActive(true);
-        }
-        else
-        {
+            yield return new WaitForSeconds(0.5f);
+
+            atacar = true;
             animator.SetBool("atacar", false);
             RangoAtaque.SetActive(false);
         }
+        /*else
+        {
+            animator.SetBool("atacar", false);
+            RangoAtaque.SetActive(false);
+        }*/
     }
 
     void Salto()
