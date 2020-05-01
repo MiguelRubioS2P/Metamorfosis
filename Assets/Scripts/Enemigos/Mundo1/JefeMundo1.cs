@@ -44,8 +44,7 @@ public class JefeMundo1 : MonoBehaviour
         {
             dentroAreaAtaque = true;
             moverse = true;
-            
-        } 
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -98,7 +97,8 @@ public class JefeMundo1 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.name == "Rango Ataque")
+        Debug.Log(collision.transform.tag);
+        if (collision.transform.tag == "Rango espada")
         {
             StartCoroutine(Daño());
         }

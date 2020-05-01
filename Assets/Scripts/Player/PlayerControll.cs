@@ -88,11 +88,9 @@ public class PlayerControll : MonoBehaviour
         }
         
     }
-
-    
+  
     IEnumerator Atacar()
     {
-        //Input.GetKey(KeyCode.Mouse0) && !muerto
         if (Input.GetButtonDown("Fire1") && !muerto)
         {
             atacar = false;
@@ -104,16 +102,10 @@ public class PlayerControll : MonoBehaviour
             animator.SetBool("atacar", false);
             RangoAtaque.SetActive(false);
         }
-        /*else
-        {
-            animator.SetBool("atacar", false);
-            RangoAtaque.SetActive(false);
-        }*/
     }
 
     void Salto()
     {
-        //Input.GetKeyDown("space") && salto && !muerto
         if (Input.GetKeyDown("space") && salto && !muerto)
         {
             salto = false;
@@ -130,9 +122,8 @@ public class PlayerControll : MonoBehaviour
             salto = true;
             animator.SetBool("saltar", false);
         }
-        if(collision.transform.tag == "pincho" ||collision.transform.tag == "muerte")
+        if(collision.transform.tag == "pincho" || collision.transform.tag == "muerte")
         {
-            
             Morir();
         }
         if(collision.transform.tag == "plataforma")
@@ -163,14 +154,5 @@ public class PlayerControll : MonoBehaviour
         salto = false;
         animator.SetBool("saltar", false);
         animator.SetBool("muerto", true);
-        
-
     }
-
-    
-
-
-
-
 }
-

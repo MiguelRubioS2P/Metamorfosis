@@ -13,6 +13,7 @@ TagManager:
   - plataforma
   - Jefes
   - Ataque Jefes
+  - Rango espada
   layers:
   - Default
   - TransparentFX
