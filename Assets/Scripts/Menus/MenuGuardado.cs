@@ -31,6 +31,7 @@ public class MenuGuardado : MonoBehaviour
         if (optionsManager.NombrePartidaJugador(slot1.gameObject.name) != null)
         {
             slot1.transform.GetChild(1).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot1.gameObject.name);
+            Debug.Log("El último nivel jugado es el nivel " + optionsManager.ObtenerUltimoNivelJugado(optionsManager.nombrePartida));
         }
         else
         {

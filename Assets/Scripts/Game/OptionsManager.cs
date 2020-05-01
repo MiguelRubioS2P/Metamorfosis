@@ -141,7 +141,8 @@ public class OptionsManager : MonoBehaviour
     /// <summary>
     /// Recibimos por parametro el nombre del nivel, y cambiamos el estado del nivel en el List niveles.
     /// </summary>
-    /// <param name="nivel"></param>
+    /// <param name="nivel">Nombre del nivel que buscamos </param>
+    /// <param name="nombre">Nombre del jugador de la partida</param>
     public void CambiarEstado(string nivel,string nombre)
     {
         
@@ -154,6 +155,7 @@ public class OptionsManager : MonoBehaviour
                     if(partidas[i].niveles[n].Nombre == nivel)
                     {
                         partidas[i].niveles[n].Estado = true;
+                        break;
                     }
                 }
             }
@@ -162,9 +164,99 @@ public class OptionsManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Método para añadir las monedas ganadas de un nivel
+    /// </summary>
+    /// <param name="nivel">Nombre del nivel</param>
+    /// <param name="nombrePartida">Nombre de la partida guardada y en juego</param>
+    /// <param name="monedas">Total monedas ganadas del nivel</param>
+    public void SumarMonedasNivel(string nivel,string nombrePartida,int monedas)
+    {
+        foreach(Partida p in partidas)
+        {
+            if(p.nombre == nombrePartida)
+            {
+                foreach(Nivel n in p.niveles)
+                {
+                    if(n.Nombre == nivel)
+                    {
+                        n.Monedas = monedas;
+                        Debug.Log("Total de monedas del nivel: " + n.Nombre + " es de " + n.Monedas + " monedas");
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Método para añadir las estrellas ganadas de un nivel
+    /// </summary>
+    /// <param name="nivel">Nombre del nivel</param>
+    /// <param name="nombrePartida">Nombre de la partida guardada y en juego</param>
+    /// <param name="estrellas">Total estrellas ganadas del nivel</param>
+    public void SumarEstrellasNivel(string nivel,string nombrePartida,int estrellas)
+    {
+        foreach (Partida p in partidas)
+        {
+            if (p.nombre == nombrePartida)
+            {
+                foreach (Nivel n in p.niveles)
+                {
+                    if (n.Nombre == nivel)
+                    {
+                        n.Estrellas = estrellas;
+                        Debug.Log("Total de estrellas del nivel: " + n.Nombre + " es de " + n.Estrellas + " estrellas");
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Método para obtener el nombre del último nivel que ha jugado la partida seleccionada
+    /// </summary>
+    /// <param name="nombrePartida">Nombre de guardado de la partida</param>
+    /// <returns>Nombre del último nivel jugado</returns>
+    public string ObtenerUltimoNivelJugado(string nombrePartida)
+    {
+        string ultimoNivelJugado = "";
+        foreach(Partida p in partidas)
+        {
+            if(p.nombre == nombrePartida)
+            {
+                ultimoNivelJugado = p.ultimoNivel;
+                break;
+            }
+        }
+        return ultimoNivelJugado;
+    }
+
+    /// <summary>
+    /// Método para añadir el último nivel jugado
+    /// </summary>
+    /// <param name="nivel">Nombre del nivel</param>
+    /// <param name="nombrePartida">Nombre de la partida activa</param>
+    public void PonerUltimoNivelJugado(string nivel,string nombrePartida)
+    {
+        foreach(Partida p in partidas)
+        {
+            if(p.nombre == nombrePartida)
+            {
+                p.ultimoNivel = nivel;
+                Debug.Log("El último nivel jugado de la partida: " + p.nombre + " es el nivel " + p.ultimoNivel);
+                break;
+            }
+        }
+    }
+
+    /// <summary>
     /// Devolvemos el valor del estado del nivel que nos piden por parametro.
     /// </summary>
-    /// <param name="nivel"></param>
+    /// <param name="nivel">El nombre del nivel que buscas</param>
+    /// <param name="nombre">El nombre de la partida activa</param>
     /// <returns></returns>
     public bool EstadoActivo(string nivel,string nombre)
     {
@@ -190,6 +282,37 @@ public class OptionsManager : MonoBehaviour
         return estado;
     }
 
+    /// <summary>
+    /// Método para eliminar los datos de una partida guardada
+    /// </summary>
+    /// <param name="nombrePartida">Nombre de la partida guardada</param>
+    public void EliminarPartidaGuardada(string nombrePartida)
+    {
+        List<Nivel> niveles = new List<Nivel>();
+        int numeroNiveles = 9;
+
+        for(int i = 1; i <= numeroNiveles; i++)
+        {
+            if (i == 1)
+            {
+                niveles.Add(new Nivel("Nivel " + i, true, 0, 0));
+            }
+            else
+            {
+                niveles.Add(new Nivel("Nivel " + i, false, 0, 0));
+            }
+        }
+
+        foreach (Partida p in partidas)
+        {
+            if(p.nombre == nombrePartida)
+            {
+                p.niveles = niveles;
+                p.ultimoNivel = "";
+                p.nombre = "";
+            }
+        }
+    }
 
     public void CreacionPartidas()
     {
@@ -209,7 +332,11 @@ public class OptionsManager : MonoBehaviour
         partidas.Add(partida3);
     }
 
-
+    /// <summary>
+    /// Método para añadir un nombre a una partida, para guardar el slot de partidas guardadas
+    /// </summary>
+    /// <param name="slot">Nombre del slot donde se guardara</param>
+    /// <param name="nombre">Nombre para guardar la partida</param>
     public void PonerNombreJugador(string slot, string nombre)
     {
         for(int i = 0; i < partidas.Count; i++)
@@ -244,6 +371,11 @@ public class OptionsManager : MonoBehaviour
         return nombre;
     }
 
+    /// <summary>
+    /// Método para saber si ya hay otra partida con este nombre guardado
+    /// </summary>
+    /// <param name="nombre">Nombre para guardar la partida</param>
+    /// <returns>Boolean</returns>
     public bool ExisteNombre(string nombre)
     {
         bool existe = false;
