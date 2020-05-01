@@ -96,8 +96,8 @@ public class FinalNiveles : MonoBehaviour
     {
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
-        NivelesDesbloqueados(escena);
         GuardarEstrellasYMonedas(estrellas, monedas);
+        NivelesDesbloqueados(escena);
         SceneManager.LoadScene("Menu Niveles");
     }
 
@@ -112,12 +112,11 @@ public class FinalNiveles : MonoBehaviour
             case "Nivel 1":
                 // si es nivel 1 hay que desbloquear Nivel 2
                 optionsManager.CambiarEstado("Nivel 2", optionsManager.nombrePartida);
-                optionsManager.GuardarDatos();
                 break;
             case "Nivel 2":
                 // si es nivel 2 hay que desbloquear Nivel 3
                 optionsManager.CambiarEstado("Nivel 3", optionsManager.nombrePartida);
-                optionsManager.GuardarDatos();
+                
                 break;
             case "Nivel 3":
                 // si es nivel 3 hay que desbloquear Nivel 4 pero como es pa pre-alpha aqui termina el flujo.
@@ -125,6 +124,7 @@ public class FinalNiveles : MonoBehaviour
         }
 
         optionsManager.PonerUltimoNivelJugado(escena, optionsManager.nombrePartida);
+        optionsManager.GuardarDatos();
     }
 
     /// <summary>

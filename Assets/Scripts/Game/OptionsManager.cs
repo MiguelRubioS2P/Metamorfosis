@@ -218,14 +218,14 @@ public class OptionsManager : MonoBehaviour
     /// <summary>
     /// Método para obtener el nombre del último nivel que ha jugado la partida seleccionada
     /// </summary>
-    /// <param name="nombrePartida">Nombre de guardado de la partida</param>
+    /// <param name="slot">Nombre de la posición del slot</param>
     /// <returns>Nombre del último nivel jugado</returns>
-    public string ObtenerUltimoNivelJugado(string nombrePartida)
+    public string ObtenerUltimoNivelJugado(string slot)
     {
         string ultimoNivelJugado = "";
         foreach(Partida p in partidas)
         {
-            if(p.nombre == nombrePartida)
+            if(p.slot == slot)
             {
                 ultimoNivelJugado = p.ultimoNivel;
                 break;
