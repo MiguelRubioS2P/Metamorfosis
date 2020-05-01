@@ -13,8 +13,9 @@ public class JefeMundo1 : MonoBehaviour
     private GameObject player;
     public GameObject final;
     private Rigidbody2D rigidbody2d;
-    private float fuerzaMovimiento = 2f;
-    private bool dentroAreaAtaque;
+
+    private float fuerzaMovimiento = 3f;
+    private bool dentroAreaAtaque, moverse;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
@@ -27,6 +28,7 @@ public class JefeMundo1 : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
 
         dentroAreaAtaque = false;
+        moverse = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
@@ -41,7 +43,8 @@ public class JefeMundo1 : MonoBehaviour
         if (collision.name == "Cuerpo")
         {
             dentroAreaAtaque = true;
-            animator.SetBool("caminar", true);
+            moverse = true;
+            
         } 
     }
 
@@ -50,25 +53,31 @@ public class JefeMundo1 : MonoBehaviour
         if (collision.name == "Cuerpo")
         {
             dentroAreaAtaque = false;
+            moverse = false;
             animator.SetBool("caminar", false);
         }
     }
 
     void Update()
     {
-        if (dentroAreaAtaque)
+        if (dentroAreaAtaque && moverse)
         {
             Moverse();
-            Ataque();
+            StartCoroutine(Ataque());
         }
     }
 
-    void Ataque()
+    IEnumerator Ataque()
     {
         if (Time.time > siguienteDisparo)
         {
+            animator.SetBool("atacar", true);
+            moverse = false;
+            yield return new WaitForSeconds(3f);
             Instantiate(laser, transform.position, Quaternion.identity);
             siguienteDisparo = Time.time + cadaCuantoDispara;
+            moverse = true;
+            animator.SetBool("atacar", false);
         }
     }
 
@@ -76,10 +85,12 @@ public class JefeMundo1 : MonoBehaviour
     {
         if(gameObject.transform.position.x < player.transform.position.x)
         {
+            animator.SetBool("caminar", true);
             spriteRenderer.flipX = true;
             rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
-        } else
+        } else if (gameObject.transform.position.x > player.transform.position.x)
         {
+            animator.SetBool("caminar", true);
             spriteRenderer.flipX = false;
             rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
         }
@@ -87,25 +98,43 @@ public class JefeMundo1 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.collider.name == "Rango Ataque")
         {
-            Debug.Log(collision.collider.name);
-            vidas[vida].gameObject.SetActive(false);
-
-            vida--;
-            if (vida < 0)
-            {
-                StartCoroutine(Muerto());
-            }
+            StartCoroutine(Daño());
         }
     }
 
     IEnumerator Muerto()
     {
         animator.SetBool("muerto", true);
+        rigidbody2d.velocity = new Vector2(0f, 0f);
         final.SetActive(true);
         yield return new WaitForSeconds(1.7f);
         Destroy(gameObject);
+    }
+
+    IEnumerator Daño()
+    {
+        moverse = false;
+        vidas[vida].gameObject.SetActive(false);
+        animator.SetBool("daño", true);
+
+        vida--;
+        if (vida < 0)
+        {
+            StartCoroutine(Muerto());
+        }
+        if (gameObject.transform.position.x < player.transform.position.x)
+        {
+            rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
+        }
+        else
+        {
+            rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
+        }
+            
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("daño", false);
+        moverse = true;
     }
 }

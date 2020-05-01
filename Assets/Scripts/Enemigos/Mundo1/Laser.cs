@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    float velocidadDisparo = 10f;
+    float velocidadDisparo = 12f;
 
     private Rigidbody2D rigidbody2d;
     private PlayerControll player;
     private Vector2 dondeDispara;
-
     private GameManager gameManager;
 
-    private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<PlayerControll>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         
-        
-        dondeDispara = (player.transform.position - transform.position).normalized * velocidadDisparo;
-        
-        rigidbody2d.velocity = new Vector2(dondeDispara.x, dondeDispara.y);
-        Destroy(gameObject, 3f);
+
+        if (gameObject.transform.position.x < player.transform.position.x)
+        {
+            rigidbody2d.velocity = new Vector2(1f * velocidadDisparo, rigidbody2d.velocity.y);
+        }
+        else if (gameObject.transform.position.x > player.transform.position.x)
+        {
+            rigidbody2d.velocity = new Vector2(-1f * velocidadDisparo, rigidbody2d.velocity.y);
+        }
+        Destroy(gameObject, 1f);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

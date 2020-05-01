@@ -11,7 +11,8 @@ TagManager:
   - moneda
   - personaje
   - plataforma
-  - enemigo mundo 1
+  - Jefes
+  - Ataque Jefes
   layers:
   - Default
   - TransparentFX
