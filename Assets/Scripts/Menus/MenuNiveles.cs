@@ -13,7 +13,7 @@ public class MenuNiveles : MonoBehaviour
     public GameObject nivel2;
     public GameObject nivel3;
     public GameObject nivel4, nivel5, nivel6, nivel7, nivel8, nivel9;
-    public Sprite fotoNivel2;
+    public Sprite fotoNivel2,fotoNivel3;
 
 
     private void Awake()
@@ -96,28 +96,12 @@ public class MenuNiveles : MonoBehaviour
         }
     }
 
-    // esto va a los niveles de manera individual junto event trigger component, de momento desactivado hasta encontrar
-    // otra solución para reproducir esto.
-    public void Prueba()
-    {
-        Debug.Log("Hola");
-        GameObject body = transform.GetChild(1).gameObject;
-        GameObject mundo1 = body.transform.GetChild(1).gameObject;
-        GameObject nivel1 = mundo1.transform.GetChild(0).gameObject;
-        nivel1.transform.localScale = new Vector3(1.1f,1.1f,1.1f);
-    }
-    public void Prueba2()
-    {
-        Debug.Log("Adios");
-        GameObject body = transform.GetChild(1).gameObject;
-        GameObject mundo1 = body.transform.GetChild(1).gameObject;
-        GameObject nivel1 = mundo1.transform.GetChild(0).gameObject;
-        nivel1.transform.localScale = new Vector3(1f, 1f, 1f);
-    }
 
+    /// <summary>
+    /// Este Método es el encargado de recuperar el estado de los niveles desbloqueados que tiene el jugador.
+    /// </summary>
     private void ComprobacionNiveles()
     {
-        // Cada vez que iniciamos hacemos las comprobaciones del estado de los niveles
         if (optionsManager.EstadoActivo(nivel1.name,optionsManager.nombrePartida))
         {
             nivel1.GetComponent<Button>().interactable = true;
@@ -141,6 +125,7 @@ public class MenuNiveles : MonoBehaviour
         if (optionsManager.EstadoActivo(nivel3.name, optionsManager.nombrePartida))
         {
             nivel3.GetComponent<Button>().interactable = true;
+            nivel3.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel3;
         }
         else
         {

@@ -107,8 +107,13 @@ public class JefeMundo1 : MonoBehaviour
     IEnumerator Muerto()
     {
         animator.SetBool("muerto", true);
+<<<<<<< HEAD
         rigidbody2d.velocity = new Vector2(0f, 0f);
         final.SetActive(true);
+=======
+        final.GetComponent<SpriteRenderer>().enabled = true;
+        final.GetComponent<BoxCollider2D>().enabled = true;
+>>>>>>> 2493aa1e0399da1d4556e2386fcc4ad210c82d82
         yield return new WaitForSeconds(1.7f);
         Destroy(gameObject);
     }

@@ -20,5 +20,25 @@ public class Nivel
         set { estado = value; }
     }
 
-    
+    private int monedas;
+    public int Monedas
+    {
+        get { return monedas; }
+        set { monedas = value; }
+    }
+
+    private int estrellas;
+    public int Estrellas
+    {
+        get { return estrellas; }
+        set { estrellas = value; }
+    }
+
+    public Nivel(string nombre, bool estado, int monedas, int estrellas)
+    {
+        Nombre = nombre;
+        Estado = estado;
+        Monedas = monedas;
+        Estrellas = estrellas;
+    }
 }

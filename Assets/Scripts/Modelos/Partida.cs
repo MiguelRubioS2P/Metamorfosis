@@ -9,4 +9,5 @@ public class Partida
     public string slot;
     public string nombre;
     public List<Nivel> niveles = new List<Nivel>();
+    public string ultimoNivel;
 }

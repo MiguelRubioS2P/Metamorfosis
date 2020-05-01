@@ -73,18 +73,18 @@ public class FinalNiveles : MonoBehaviour
             intermedio.gameObject.SetActive(true);
             avanzado.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            CargarMenuNiveles();
+            CargarMenuNiveles(3,gameManager.PintarDinero());
         } else if (gameManager._dinero >= monedasQueTieneNivel / 2)
         {
             noob.gameObject.SetActive(true);
             intermedio.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            CargarMenuNiveles();
+            CargarMenuNiveles(2,gameManager.PintarDinero());
         } else
         {
             noob.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            CargarMenuNiveles();
+            CargarMenuNiveles(1,gameManager.PintarDinero());
         }
 
     }
@@ -92,11 +92,12 @@ public class FinalNiveles : MonoBehaviour
     /// <summary>
     /// Método que carga la escena Niveles
     /// </summary>
-    private void CargarMenuNiveles()
+    private void CargarMenuNiveles(int estrellas,int monedas)
     {
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
         NivelesDesbloqueados(escena);
+        GuardarEstrellasYMonedas(estrellas, monedas);
         SceneManager.LoadScene("Menu Niveles");
     }
 
@@ -122,5 +123,18 @@ public class FinalNiveles : MonoBehaviour
                 // si es nivel 3 hay que desbloquear Nivel 4 pero como es pa pre-alpha aqui termina el flujo.
                 break;
         }
+
+        optionsManager.PonerUltimoNivelJugado(escena, optionsManager.nombrePartida);
+    }
+
+    /// <summary>
+    /// Método para guardar las estrellas y las monedas conseguidas en el nivel
+    /// </summary>
+    /// <param name="estrellas">Total de estrellas conseguidas</param>
+    /// <param name="monedas">Total de monedas conseguidas</param>
+    private void GuardarEstrellasYMonedas(int estrellas,int monedas)
+    {
+        optionsManager.SumarMonedasNivel(escena, optionsManager.nombrePartida, monedas);
+        optionsManager.SumarEstrellasNivel(escena, optionsManager.nombrePartida, estrellas);
     }
 }
