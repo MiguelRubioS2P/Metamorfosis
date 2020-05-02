@@ -96,11 +96,11 @@ public class PlayerControll : MonoBehaviour
             atacar = false;
             animator.SetBool("atacar", true);
             RangoAtaque.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
-
+            yield return new WaitForSeconds(0.05f);
+            RangoAtaque.SetActive(false);
+            yield return new WaitForSeconds(0.3f);
             atacar = true;
             animator.SetBool("atacar", false);
-            RangoAtaque.SetActive(false);
         }
     }
 

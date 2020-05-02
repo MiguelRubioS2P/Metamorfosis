@@ -15,7 +15,7 @@ public class JefeMundo1 : MonoBehaviour
     private Rigidbody2D rigidbody2d;
 
     private float fuerzaMovimiento = 3f;
-    private bool dentroAreaAtaque, moverse;
+    private bool dentroAreaAtaque, moverse, meHacenDaño;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
@@ -29,6 +29,7 @@ public class JefeMundo1 : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
 
         dentroAreaAtaque = false;
+        meHacenDaño = false;
         moverse = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -122,26 +123,33 @@ public class JefeMundo1 : MonoBehaviour
 
     IEnumerator Daño()
     {
-        moverse = false;
-        vidas[vida].gameObject.SetActive(false);
-        animator.SetBool("daño", true);
+        if(!meHacenDaño)
+        {
+            meHacenDaño = true;
+            moverse = false;
+            meHacenDaño = true;
+            vidas[vida].gameObject.SetActive(false);
+            animator.SetBool("daño", true);
 
-        vida--;
-        if (vida < 0)
-        {
-            StartCoroutine(Muerto());
-        }
-        if (gameObject.transform.position.x < player.transform.position.x)
-        {
-            rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
-        }
-        else
-        {
-            rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
-        }
+            vida--;
+            if (vida < 0)
+            {
+                StartCoroutine(Muerto());
+            }
+            if (gameObject.transform.position.x < player.transform.position.x)
+            {
+                rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
+            }
+            else
+            {
+                rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
+            }
             
-        yield return new WaitForSeconds(0.5f);
-        animator.SetBool("daño", false);
-        moverse = true;
+            yield return new WaitForSeconds(0.5f);
+            animator.SetBool("daño", false);
+            moverse = true;
+            meHacenDaño = false;
+        }
+        
     }
 }
