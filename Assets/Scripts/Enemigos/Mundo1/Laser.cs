@@ -34,7 +34,6 @@ public class Laser : MonoBehaviour
     {
         if (collision.name == "Cuerpo")
         {
-            Debug.Log("Dado laser");
             gameManager.PerderVida();
             Destroy(gameObject);
         }

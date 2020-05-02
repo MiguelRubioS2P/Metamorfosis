@@ -22,6 +22,7 @@ public class JefeMundo1 : MonoBehaviour
     public Image[] vidas;
 
     private int vida;
+    private float distancia;
     private void Awake()
     {
         player = FindObjectOfType<PlayerControll>().gameObject;
@@ -38,27 +39,9 @@ public class JefeMundo1 : MonoBehaviour
         vida = 4;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.name == "Cuerpo")
-        {
-            dentroAreaAtaque = true;
-            moverse = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.name == "Cuerpo")
-        {
-            dentroAreaAtaque = false;
-            moverse = false;
-            animator.SetBool("caminar", false);
-        }
-    }
-
     void Update()
     {
+        distancia = player.transform.position.x - gameObject.transform.position.x;
         if (dentroAreaAtaque && moverse)
         {
             Moverse();
@@ -70,13 +53,45 @@ public class JefeMundo1 : MonoBehaviour
     {
         if (Time.time > siguienteDisparo)
         {
-            animator.SetBool("atacar", true);
             moverse = false;
+            animator.SetBool("atacar", true);
+            
             yield return new WaitForSeconds(3f);
             Instantiate(laser, transform.position, Quaternion.identity);
-            siguienteDisparo = Time.time + cadaCuantoDispara;
-            moverse = true;
+            yield return new WaitForSeconds(2.2f);
+
             animator.SetBool("atacar", false);
+            moverse = true;
+            
+            siguienteDisparo = Time.time + cadaCuantoDispara;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Cuerpo")
+        {
+            dentroAreaAtaque = true;
+            moverse = true;
+        }
+        if (collision.transform.tag == "Rango espada")
+        {
+            if((distancia > 0 && distancia < 2f) || (distancia < 0 && distancia > -2f))
+            {
+                StartCoroutine(Daño());
+            }
+            
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "Cuerpo")
+        {
+            dentroAreaAtaque = false;
+            moverse = false;
+            animator.SetBool("caminar", false);
         }
     }
 
@@ -92,15 +107,6 @@ public class JefeMundo1 : MonoBehaviour
             animator.SetBool("caminar", true);
             spriteRenderer.flipX = false;
             rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.transform.tag);
-        if (collision.transform.tag == "Rango espada")
-        {
-            StartCoroutine(Daño());
         }
     }
 
