@@ -66,9 +66,18 @@ public class MenuOpciones : MonoBehaviour
         {
             optionsmanager.cambiarResolucion(1920, 1080, pantallaCompleta.isOn);
         }
-        else if (medidas.options[medidas.value].text == "1080 x 720")
+        else if (medidas.options[medidas.value].text == "1366 x 768")
         {
-            optionsmanager.cambiarResolucion(1080, 720, pantallaCompleta.isOn);
+            optionsmanager.cambiarResolucion(1366, 768, pantallaCompleta.isOn);
+        }else if (medidas.options[medidas.value].text == "1280 x 720")
+        {
+            optionsmanager.cambiarResolucion(1280, 720, pantallaCompleta.isOn);
+        }else if (medidas.options[medidas.value].text == "1024 x 768")
+        {
+            optionsmanager.cambiarResolucion(1024, 768, pantallaCompleta.isOn);
+        }else if (medidas.options[medidas.value].text == "800 x 600")
+        {
+            optionsmanager.cambiarResolucion(800, 600, pantallaCompleta.isOn);
         }
     }
 }
