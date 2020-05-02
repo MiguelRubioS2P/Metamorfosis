@@ -47,6 +47,19 @@ public class MenuOpciones : MonoBehaviour
 
     }
 
+    public void CambiarPantallaCompleata()
+    {
+        if (pantallaCompleta.isOn)
+        {
+            Screen.fullScreen = true;
+        }
+        else
+        {
+            Screen.fullScreen = false;
+        }
+
+    }
+
     public void CambiarResolucion(Dropdown medidas)
     {
         if (medidas.options[medidas.value].text == "1920 x 1080")
