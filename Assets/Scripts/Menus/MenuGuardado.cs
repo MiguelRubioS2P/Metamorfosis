@@ -30,7 +30,7 @@ public class MenuGuardado : MonoBehaviour
         // Controlamos los distintos GO slot que tenemos en la escena
         if (optionsManager.NombrePartidaJugador(slot1.gameObject.name) != null)
         {
-            slot1.transform.GetChild(1).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot1.gameObject.name);
+            slot1.transform.GetChild(0).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot1.gameObject.name);
             Debug.Log(optionsManager.ObtenerUltimoNivelJugado(slot1.gameObject.name));
         }
         else
@@ -204,19 +204,19 @@ public class MenuGuardado : MonoBehaviour
                     /*if (TieneTexto(IFslot1))
                     {*/
                         //if (optionsManager.ExisteNombre(IFslot1.text))
-                        if (optionsManager.ExisteNombre(slot1.transform.GetChild(1).GetComponent<Text>().text))
+                        if (optionsManager.ExisteNombre(slot1.transform.GetChild(0).GetComponent<Text>().text))
                         {
                             Debug.Log("No puedes poner ese nombre, ya existe");
                         }
                         else
                         {
                             //ElegirNombre(slot1.gameObject.name, IFslot1);
-                            ElegirNombre(slot1.gameObject.name, slot1.transform.GetChild(1).GetComponent<Text>().text);
+                            ElegirNombre(slot1.gameObject.name, slot1.transform.GetChild(0).GetComponent<Text>().text);
 
                             optionsManager.GuardarDatos();
 
                             //optionsManager.nombrePartida = IFslot1.text;
-                            optionsManager.nombrePartida = slot1.transform.GetChild(1).GetComponent<Text>().text;
+                            optionsManager.nombrePartida = slot1.transform.GetChild(0).GetComponent<Text>().text;
 
                             SceneManager.LoadScene("Menu Niveles");
                         }
@@ -225,7 +225,7 @@ public class MenuGuardado : MonoBehaviour
                 }
                 else
                 {
-                    optionsManager.nombrePartida = slot1.transform.GetChild(1).GetComponent<Text>().text;
+                    optionsManager.nombrePartida = slot1.transform.GetChild(0).GetComponent<Text>().text;
                     SceneManager.LoadScene("Menu Niveles");
                 }
                
