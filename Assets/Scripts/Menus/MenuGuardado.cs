@@ -198,22 +198,29 @@ public class MenuGuardado : MonoBehaviour
         {
             if (slot1Select)
             {
-                if (IFslot1.IsActive())
+                //if (IFslot1.IsActive())
+                if(slot1.transform.GetChild(0).GetComponent<Text>().text != null)
                 {
-                    if (TieneTexto(IFslot1))
-                    {
-                        if (optionsManager.ExisteNombre(IFslot1.text))
+                    /*if (TieneTexto(IFslot1))
+                    {*/
+                        //if (optionsManager.ExisteNombre(IFslot1.text))
+                        if (optionsManager.ExisteNombre(slot1.transform.GetChild(1).GetComponent<Text>().text))
                         {
                             Debug.Log("No puedes poner ese nombre, ya existe");
                         }
                         else
                         {
-                            ElegirNombre(slot1.gameObject.name, IFslot1);
+                            //ElegirNombre(slot1.gameObject.name, IFslot1);
+                            ElegirNombre(slot1.gameObject.name, slot1.transform.GetChild(1).GetComponent<Text>().text);
+
                             optionsManager.GuardarDatos();
-                            optionsManager.nombrePartida = IFslot1.text;
+
+                            //optionsManager.nombrePartida = IFslot1.text;
+                            optionsManager.nombrePartida = slot1.transform.GetChild(1).GetComponent<Text>().text;
+
                             SceneManager.LoadScene("Menu Niveles");
                         }
-                    }
+                    //}
                     
                 }
                 else
@@ -224,7 +231,7 @@ public class MenuGuardado : MonoBehaviour
                
             }
 
-            if (slot2Select)
+            /*if (slot2Select)
             {
                 if (IFslot2.IsActive())
                 {
@@ -274,7 +281,7 @@ public class MenuGuardado : MonoBehaviour
                     optionsManager.nombrePartida = slot3.transform.GetChild(1).GetComponent<Text>().text;
                     SceneManager.LoadScene("Menu Niveles");
                 }
-            }
+            }*/
             
         }
         
@@ -296,9 +303,18 @@ public class MenuGuardado : MonoBehaviour
     /// </summary>
     /// <param name="slot">El nombre del slot que esta seleccionado</param>
     /// <param name="nombre">El nombre que esta en el Inputfield del slot seleccionado</param>
-    private void ElegirNombre(string slot, InputField nombre)
+    /// 
+    //private void ElegirNombre(string slot, InputField nombre)
+    private void ElegirNombre(string slot, string nombre)
     {
-        optionsManager.PonerNombreJugador(slot, nombre.text);    
+        //optionsManager.PonerNombreJugador(slot, nombre.text);    
+        optionsManager.PonerNombreJugador(slot, nombre);
+    }
+
+    public void CambiarNombreSlotInput(Button slot)
+    {
+        slot.transform.GetChild(0).GetComponent<Text>().text = slot.transform.GetChild(2).GetComponent<InputField>().text;
+        slot.transform.GetChild(2).GetComponent<InputField>().gameObject.SetActive(false);
     }
 
     /// <summary>
