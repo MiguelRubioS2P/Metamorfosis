@@ -231,24 +231,31 @@ public class MenuGuardado : MonoBehaviour
                
             }
 
-            /*if (slot2Select)
+            if (slot2Select)
             {
-                if (IFslot2.IsActive())
+                //if (IFslot2.IsActive())
+                if (slot2.transform.GetChild(0).GetComponent<Text>().text != null)
                 {
-                    if (TieneTexto(IFslot2))
-                    {
-                        if (optionsManager.ExisteNombre(IFslot2.text))
+                    /*if (TieneTexto(IFslot2))
+                    {*/
+                        if (optionsManager.ExisteNombre(slot2.transform.GetChild(0).GetComponent<Text>().text))
                         {
                             Debug.Log("No puedes poner ese nombre, ya existe");
                         }
                         else
                         {
-                            ElegirNombre(slot2.gameObject.name, IFslot2);
+                            //ElegirNombre(slot2.gameObject.name, IFslot2);
+                            ElegirNombre(slot2.gameObject.name, slot2.transform.GetChild(0).GetComponent<Text>().text);
+
+
                             optionsManager.GuardarDatos();
-                            optionsManager.nombrePartida = IFslot2.text;
+                        
+                            optionsManager.nombrePartida = slot2.transform.GetChild(0).GetComponent<Text>().text;
+                            //optionsManager.nombrePartida = IFslot2.text;
+
                             SceneManager.LoadScene("Menu Niveles");
                         }
-                    }
+                    //}
                 }
                 else
                 {
@@ -259,29 +266,36 @@ public class MenuGuardado : MonoBehaviour
 
             if (slot3Select)
             {
-                if (IFslot3.IsActive())
+                //if (IFslot3.IsActive())
+                if (slot3.transform.GetChild(0).GetComponent<Text>().text != null)
                 {
-                    if (TieneTexto(IFslot3))
-                    {
-                        if (optionsManager.ExisteNombre(IFslot3.text))
+                    /*if (TieneTexto(IFslot3))
+                    {*/
+                        if (optionsManager.ExisteNombre(slot3.transform.GetChild(0).GetComponent<Text>().text))
                         {
                             Debug.Log("No puedes poner ese nombre, ya existe");
                         }
                         else
                         {
-                            ElegirNombre(slot3.gameObject.name, IFslot3);
+                            //ElegirNombre(slot3.gameObject.name, IFslot3);
+                            ElegirNombre(slot3.gameObject.name, slot3.transform.GetChild(0).GetComponent<Text>().text);
+
                             optionsManager.GuardarDatos();
-                            optionsManager.nombrePartida = IFslot3.text;
+
+
+                            //optionsManager.nombrePartida = IFslot3.text;
+                            optionsManager.nombrePartida = slot3.transform.GetChild(0).GetComponent<Text>().text;
+                        
                             SceneManager.LoadScene("Menu Niveles");
                         }
-                    }
+                    //}
                 }
                 else
                 {
                     optionsManager.nombrePartida = slot3.transform.GetChild(1).GetComponent<Text>().text;
                     SceneManager.LoadScene("Menu Niveles");
                 }
-            }*/
+            }
             
         }
         
