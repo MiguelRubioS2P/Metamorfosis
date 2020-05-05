@@ -131,7 +131,6 @@ MonoBehaviour:
   noob: {fileID: 9151595602820887758}
   intermedio: {fileID: 8959098519089439948}
   avanzado: {fileID: 6418964761505799110}
-  player: {fileID: 3481917900544003703, guid: caf99e0ce74defe40b3fd95308b7478b, type: 3}
 --- !u!61 &6507582265024804212
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -460,10 +459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

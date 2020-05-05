@@ -12,11 +12,13 @@ public class MenuGuardado : MonoBehaviour
     public GameObject botones;
     private OptionsManager optionsManager;
     public InputField IFslot1, IFslot2, IFslot3;
-    private bool slot1Select, slot2Select, slot3Select;
+    private bool slot1Select, slot2Select, slot3Select, vacio;
     
 
     private void Awake()
     {
+        vacio = true;
+
         // Variables para controlas donde esta el usuario pulsando.
         selecionado = false;
         slot1Select = false;
@@ -31,33 +33,19 @@ public class MenuGuardado : MonoBehaviour
         if (optionsManager.NombrePartidaJugador(slot1.gameObject.name) != null)
         {
             slot1.transform.GetChild(0).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot1.gameObject.name);
-            Debug.Log(optionsManager.ObtenerUltimoNivelJugado(slot1.gameObject.name));
-        }
-        else
-        {
-            slot1.transform.GetChild(1).GetComponent<Text>().text = "Vacio";
-        }
+            slot1.transform.GetChild(1).GetComponent<Text>().text = optionsManager.ObtenerUltimoNivelJugado(slot1.gameObject.name);
+        } 
         if (optionsManager.NombrePartidaJugador(slot2.gameObject.name) != null)
         {
-            slot2.transform.GetChild(1).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot2.gameObject.name);
-        }
-        else
-        {
-            slot2.transform.GetChild(1).GetComponent<Text>().text = "Vacio";
-        }
+            slot2.transform.GetChild(0).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot2.gameObject.name);
+            slot2.transform.GetChild(1).GetComponent<Text>().text = optionsManager.ObtenerUltimoNivelJugado(slot2.gameObject.name);
+        } 
         if (optionsManager.NombrePartidaJugador(slot3.gameObject.name) != null)
         {
-            slot3.transform.GetChild(1).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot3.gameObject.name);
+            slot3.transform.GetChild(0).GetComponent<Text>().text = optionsManager.NombrePartidaJugador(slot3.gameObject.name);
+            slot3.transform.GetChild(1).GetComponent<Text>().text = optionsManager.ObtenerUltimoNivelJugado(slot3.gameObject.name);
         }
-        else
-        {
-            slot3.transform.GetChild(1).GetComponent<Text>().text = "Vacio";
-        }
-
-
-
         Cursor.visible = true;
-
     }
 
     /// <summary>
@@ -194,113 +182,79 @@ public class MenuGuardado : MonoBehaviour
     public void OnIrMenuNiveles()
     {
         // Aqui iria saber si ya tiene partida empezada o no
-        if(selecionado)
+        if (selecionado)
         {
             if (slot1Select)
             {
-                //if (IFslot1.IsActive())
-                if(slot1.transform.GetChild(0).GetComponent<Text>().text != null)
+                if (slot1.transform.GetChild(0).GetComponent<Text>().text != "Slot 1")
                 {
-                    /*if (TieneTexto(IFslot1))
-                    {*/
-                        //if (optionsManager.ExisteNombre(IFslot1.text))
-                        if (optionsManager.ExisteNombre(slot1.transform.GetChild(0).GetComponent<Text>().text))
-                        {
-                            Debug.Log("No puedes poner ese nombre, ya existe");
-                        }
-                        else
-                        {
-                            //ElegirNombre(slot1.gameObject.name, IFslot1);
-                            ElegirNombre(slot1.gameObject.name, slot1.transform.GetChild(0).GetComponent<Text>().text);
+                    //Si ya tiene una partida guardada
+                    if (optionsManager.ExisteNombre(slot1.transform.GetChild(0).GetComponent<Text>().text.ToUpper()))
+                    {
+                        optionsManager.nombrePartida = slot1.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
+                        SceneManager.LoadScene("Menu Niveles");
+                    }
+                    else
+                    {
+                        //Sino existe guardo ell nombre y creo la partida
+                        ElegirNombre(slot1.gameObject.name, slot1.transform.GetChild(0).GetComponent<Text>().text.ToUpper());
+                        optionsManager.GuardarDatos();
+                        optionsManager.nombrePartida = slot1.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
+                        SceneManager.LoadScene("Menu Niveles");
 
-                            optionsManager.GuardarDatos();
-
-                            //optionsManager.nombrePartida = IFslot1.text;
-                            optionsManager.nombrePartida = slot1.transform.GetChild(0).GetComponent<Text>().text;
-
-                            SceneManager.LoadScene("Menu Niveles");
-                        }
-                    //}
-                    
+                    }
                 }
-                else
-                {
-                    optionsManager.nombrePartida = slot1.transform.GetChild(0).GetComponent<Text>().text;
-                    SceneManager.LoadScene("Menu Niveles");
-                }
-               
             }
+
 
             if (slot2Select)
             {
-                //if (IFslot2.IsActive())
-                if (slot2.transform.GetChild(0).GetComponent<Text>().text != null)
+                if (slot2.transform.GetChild(0).GetComponent<Text>().text != "Slot 2")
                 {
-                    /*if (TieneTexto(IFslot2))
-                    {*/
-                        if (optionsManager.ExisteNombre(slot2.transform.GetChild(0).GetComponent<Text>().text))
-                        {
-                            Debug.Log("No puedes poner ese nombre, ya existe");
-                        }
-                        else
-                        {
-                            //ElegirNombre(slot2.gameObject.name, IFslot2);
-                            ElegirNombre(slot2.gameObject.name, slot2.transform.GetChild(0).GetComponent<Text>().text);
-
-
-                            optionsManager.GuardarDatos();
-                        
-                            optionsManager.nombrePartida = slot2.transform.GetChild(0).GetComponent<Text>().text;
-                            //optionsManager.nombrePartida = IFslot2.text;
-
-                            SceneManager.LoadScene("Menu Niveles");
-                        }
-                    //}
+                    //Si ya tiene una partida guardada
+                    if (optionsManager.ExisteNombre(slot2.transform.GetChild(0).GetComponent<Text>().text.ToUpper()))
+                    {
+                        optionsManager.nombrePartida = slot2.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
+                        SceneManager.LoadScene("Menu Niveles");
+                    }
+                    else
+                    {
+                        //Sino existe guardo ell nombre y creo la partida
+                        ElegirNombre(slot2.gameObject.name, slot2.transform.GetChild(0).GetComponent<Text>().text.ToUpper());
+                        optionsManager.GuardarDatos();
+                        optionsManager.nombrePartida = slot2.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
+                        SceneManager.LoadScene("Menu Niveles");
+                    }
                 }
-                else
-                {
-                    optionsManager.nombrePartida = slot2.transform.GetChild(1).GetComponent<Text>().text;
-                    SceneManager.LoadScene("Menu Niveles");
-                }
+            }
+            else
+            {
+                Debug.Log("No has introduciodo ningun nombre para el guardado");
             }
 
             if (slot3Select)
             {
-                //if (IFslot3.IsActive())
-                if (slot3.transform.GetChild(0).GetComponent<Text>().text != null)
+                if (slot3.transform.GetChild(0).GetComponent<Text>().text != "Slot 3")
                 {
-                    /*if (TieneTexto(IFslot3))
-                    {*/
-                        if (optionsManager.ExisteNombre(slot3.transform.GetChild(0).GetComponent<Text>().text))
-                        {
-                            Debug.Log("No puedes poner ese nombre, ya existe");
-                        }
-                        else
-                        {
-                            //ElegirNombre(slot3.gameObject.name, IFslot3);
-                            ElegirNombre(slot3.gameObject.name, slot3.transform.GetChild(0).GetComponent<Text>().text);
+                    //Si ya tiene una partida guardada
+                    if (optionsManager.ExisteNombre(slot3.transform.GetChild(0).GetComponent<Text>().text.ToUpper()))
+                    {
+                        optionsManager.nombrePartida = slot3.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
+                        SceneManager.LoadScene("Menu Niveles");
+                    }
+                    else
+                    {
+                        //Sino existe guardo ell nombre y creo la partida
+                        ElegirNombre(slot3.gameObject.name, slot3.transform.GetChild(0).GetComponent<Text>().text.ToUpper());
+                        optionsManager.GuardarDatos();
+                        optionsManager.nombrePartida = slot3.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
+                        SceneManager.LoadScene("Menu Niveles");
 
-                            optionsManager.GuardarDatos();
-
-
-                            //optionsManager.nombrePartida = IFslot3.text;
-                            optionsManager.nombrePartida = slot3.transform.GetChild(0).GetComponent<Text>().text;
-                        
-                            SceneManager.LoadScene("Menu Niveles");
-                        }
-                    //}
-                }
-                else
-                {
-                    optionsManager.nombrePartida = slot3.transform.GetChild(1).GetComponent<Text>().text;
-                    SceneManager.LoadScene("Menu Niveles");
+                    }
                 }
             }
-            
         }
-        
     }
-
 
     private void DesbloquearInputField(InputField inputfield)
     {
@@ -327,29 +281,24 @@ public class MenuGuardado : MonoBehaviour
 
     public void CambiarNombreSlotInput(Button slot)
     {
-        slot.transform.GetChild(0).GetComponent<Text>().text = slot.transform.GetChild(2).GetComponent<InputField>().text;
-        slot.transform.GetChild(2).GetComponent<InputField>().gameObject.SetActive(false);
-    }
-
-    /// <summary>
-    /// Comprobamos si el valor que tiene el inputfield es vacio o con espacios pero vacio
-    /// </summary>
-    /// <param name="nombre">valor texto del inputfield</param>
-    /// <returns></returns>
-    private bool TieneTexto(InputField nombre)
-    {
-        bool vacio = false;
-
-        if (nombre.text.Trim().Equals(""))
+        if(slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper() != "")
         {
-            vacio = false;
+            
+            if (optionsManager.ExisteNombre(slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper()))
+            {
+                Debug.Log("Existe nombre en la BD");
+            }
+            else
+            {
+                slot.transform.GetChild(0).GetComponent<Text>().text = slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper();
+                slot.transform.GetChild(2).GetComponent<InputField>().gameObject.SetActive(false);
+                slot.transform.GetChild(1).GetComponent<Text>().text = optionsManager.ObtenerUltimoNivelJugado(slot.GetComponentInParent<GameObject>().name);
+            }
         }
         else
         {
-            vacio = true;
+            Debug.Log("Nombre de partida vacia");
         }
-
-        return vacio;
-    }
-    
+        
+    }    
 }

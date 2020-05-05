@@ -32,6 +32,7 @@ public class UIMuerte : MonoBehaviour
         // reiniciar la escena propia y recargar las vidas base y las monedas base del gamemanager
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
+        Time.timeScale = 1;
         SceneManager.LoadScene(escena);
     }
 
