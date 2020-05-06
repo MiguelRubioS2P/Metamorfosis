@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Menu Principal.unity
     guid: d02aebdfe0651564a8ff66195edcb883
   - enabled: 1
+    path: Assets/Scenes/Menus/Menu Opciones.unity
+    guid: 0460105f5a046124e8edd8501d4ea637
+  - enabled: 1
     path: Assets/Scenes/Menus/Menu Guardado.unity
     guid: ae872d70fa82d77429cc5c12e21dd1f3
   - enabled: 1
@@ -18,12 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Mundo 1/Nivel 1.unity
     guid: af902071b2279ab4a92f7723b5cccbc2
   - enabled: 1
-    path: Assets/Scenes/Menus/Menu Opciones.unity
-    guid: 0460105f5a046124e8edd8501d4ea637
-  - enabled: 1
     path: Assets/Scenes/Mundo 1/Nivel 2.unity
     guid: 4db6d141977f4284c80c2cc8fab82f5c
   - enabled: 1
     path: Assets/Scenes/Mundo 1/Nivel 3.unity
     guid: b1a93b1f5395e564c95eabb3b3c73309
+  - enabled: 1
+    path: Assets/Scenes/Mundo 2/Nivel 5.unity
+    guid: 9ed5b23b88151d943bbb9f4c00162c80
   m_configObjects: {}
