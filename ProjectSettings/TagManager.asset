@@ -14,6 +14,7 @@ TagManager:
   - Jefes
   - Ataque Jefes
   - Rango espada
+  - pared
   layers:
   - Default
   - TransparentFX
