@@ -13,7 +13,7 @@ public class MenuNiveles : MonoBehaviour
     public GameObject nivel2;
     public GameObject nivel3;
     public GameObject nivel4, nivel5, nivel6, nivel7, nivel8, nivel9;
-    public Sprite fotoNivel2,fotoNivel3;
+    public Sprite fotoNivel2,fotoNivel3,fotoNivel4,fotoNivel5,fotoNivel6,fotoNivel7,fotoNivel8,fotoNivel9;
 
 
     private void Awake()
@@ -67,11 +67,11 @@ public class MenuNiveles : MonoBehaviour
         string boton = EventSystem.current.currentSelectedGameObject.name;
         if (boton == "Nivel 4")
         {
-
+            SceneManager.LoadScene("Nivel 4");
         }
         else if (boton == "Nivel 5")
         {
-
+            SceneManager.LoadScene("Nivel 5");
         }
         else if (boton == "Nivel 6")
         {

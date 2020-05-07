@@ -120,6 +120,14 @@ public class FinalNiveles : MonoBehaviour
                 break;
             case "Nivel 3":
                 // si es nivel 3 hay que desbloquear Nivel 4 pero como es pa pre-alpha aqui termina el flujo.
+                optionsManager.CambiarEstado("Nivel 4", optionsManager.nombrePartida);
+                break;
+            case "Nivel 4":
+                optionsManager.CambiarEstado("Nivel 5", optionsManager.nombrePartida);
+                break;
+            case "Nivel 5":
+                break;
+            case "Nivel 6":
                 break;
         }
 
