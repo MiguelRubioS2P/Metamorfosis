@@ -9,6 +9,7 @@ public class OptionsManager : MonoBehaviour
 {
     float deltaTime = 0.0f; // Varible donde guardamos los float (FPS)
     public Text fpsText; // Texto donde mostramos los fps
+    // Cada variable son los niveles de un slot
     List<Nivel> niveles1 = new List<Nivel>();
     List<Nivel> niveles2 = new List<Nivel>();
     List<Nivel> niveles3 = new List<Nivel>();
