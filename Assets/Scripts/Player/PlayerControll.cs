@@ -152,10 +152,10 @@ public class PlayerControll : MonoBehaviour
         animator.SetBool("daño", true);
         if (direcion)
         {
-            rigidbody2d.velocity = new Vector2(2f * fuerzaMovimiento, rigidbody2d.velocity.y);
+            rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
         } else
         {
-            rigidbody2d.velocity = new Vector2(-2f * fuerzaMovimiento, rigidbody2d.velocity.y);
+            rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
         }
         yield return new WaitForSeconds(1f);
         animator.SetBool("daño", false);

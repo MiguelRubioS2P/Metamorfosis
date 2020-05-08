@@ -142,10 +142,9 @@ public class Pinchos : MonoBehaviour
 
     IEnumerator Muerto()
     {
+        rigidbody2d.velocity = new Vector2(0f, 0f);
         moverse = false;
         animator.SetBool("muerto", true);
-        rigidbody2d.velocity = new Vector2(0f, 0f);
-        
         yield return new WaitForSeconds(2.05f);
         Destroy(gameObject);
     }
