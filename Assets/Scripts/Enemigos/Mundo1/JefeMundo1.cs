@@ -101,18 +101,19 @@ public class JefeMundo1 : MonoBehaviour
         if(gameObject.transform.position.x < player.transform.position.x)
         {
             animator.SetBool("caminar", true);
-            spriteRenderer.flipX = true;
+            gameObject.transform.eulerAngles = new Vector2(0, 180);
             rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
         } else if (gameObject.transform.position.x > player.transform.position.x)
         {
             animator.SetBool("caminar", true);
-            spriteRenderer.flipX = false;
+            gameObject.transform.eulerAngles = new Vector2(0, 0);
             rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
         }
     }
 
     IEnumerator Muerto()
     {
+        moverse = false;
         animator.SetBool("muerto", true);
         rigidbody2d.velocity = new Vector2(0f, 0f);
         final.GetComponent<SpriteRenderer>().enabled = true;
@@ -127,7 +128,6 @@ public class JefeMundo1 : MonoBehaviour
         {
             meHacenDaño = true;
             moverse = false;
-            meHacenDaño = true;
             vidas[vida].gameObject.SetActive(false);
             animator.SetBool("daño", true);
 
