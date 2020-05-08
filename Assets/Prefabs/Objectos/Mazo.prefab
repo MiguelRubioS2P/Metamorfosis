@@ -120,7 +120,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.6}
-  m_ConnectedAnchor: {x: 0, y: -0.21000004}
+  m_ConnectedAnchor: {x: 0, y: -0.2100029}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -281,7 +281,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.6}
-  m_ConnectedAnchor: {x: 0, y: -1.03}
+  m_ConnectedAnchor: {x: 0, y: -1.0300026}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -442,7 +442,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.6}
-  m_ConnectedAnchor: {x: 0, y: -0.18000007}
+  m_ConnectedAnchor: {x: 0, y: -0.1800003}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -614,7 +614,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.6}
-  m_ConnectedAnchor: {x: 0, y: -0.22000027}
+  m_ConnectedAnchor: {x: 0, y: -0.22000122}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -786,7 +786,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 1.37}
-  m_ConnectedAnchor: {x: 0, y: -0.20000029}
+  m_ConnectedAnchor: {x: 0, y: -0.20000076}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1018,7 +1018,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.6}
-  m_ConnectedAnchor: {x: 0, y: -0.2800002}
+  m_ConnectedAnchor: {x: 0, y: -0.27999878}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1179,7 +1179,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.6}
-  m_ConnectedAnchor: {x: 0, y: -0.31999993}
+  m_ConnectedAnchor: {x: 0, y: -0.3200035}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1340,7 +1340,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.6}
-  m_ConnectedAnchor: {x: 0, y: -0.27999973}
+  m_ConnectedAnchor: {x: 0, y: -0.2800026}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1534,7 +1534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7816141822917363179}
-  - component: {fileID: 1728928943254302009}
+  - component: {fileID: 6044299503126980086}
   m_Layer: 0
   m_Name: Mazo
   m_TagString: Untagged
@@ -1565,7 +1565,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1728928943254302009
+--- !u!114 &6044299503126980086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1574,9 +1574,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7816141822917363182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 646c9d0208e53c94cb9dc10f067e0c42, type: 3}
+  m_Script: {fileID: 11500000, guid: 3faacbb2bcd53fe4080d1e905661a7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bola: {fileID: 4665249418768424207}
   fuerza: 15
-  tiempo: 6
+  tiempo: 7

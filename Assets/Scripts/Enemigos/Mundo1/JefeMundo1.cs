@@ -101,12 +101,12 @@ public class JefeMundo1 : MonoBehaviour
         if(gameObject.transform.position.x < player.transform.position.x)
         {
             animator.SetBool("caminar", true);
-            spriteRenderer.flipX = true;
+            gameObject.transform.eulerAngles = new Vector2(0, 180);
             rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
         } else if (gameObject.transform.position.x > player.transform.position.x)
         {
             animator.SetBool("caminar", true);
-            spriteRenderer.flipX = false;
+            gameObject.transform.eulerAngles = new Vector2(0, 0);
             rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
         }
     }
