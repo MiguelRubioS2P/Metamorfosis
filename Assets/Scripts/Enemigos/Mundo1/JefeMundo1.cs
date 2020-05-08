@@ -113,6 +113,7 @@ public class JefeMundo1 : MonoBehaviour
 
     IEnumerator Muerto()
     {
+        moverse = false;
         animator.SetBool("muerto", true);
         rigidbody2d.velocity = new Vector2(0f, 0f);
         final.GetComponent<SpriteRenderer>().enabled = true;
@@ -127,7 +128,6 @@ public class JefeMundo1 : MonoBehaviour
         {
             meHacenDaño = true;
             moverse = false;
-            meHacenDaño = true;
             vidas[vida].gameObject.SetActive(false);
             animator.SetBool("daño", true);
 

@@ -134,7 +134,31 @@ public class PlayerControll : MonoBehaviour
             salto = true;
             animator.SetBool("saltar", false);
         }
-        
+        if (collision.transform.tag == "Ataque Jefe" || collision.transform.tag == "Ataque")
+        {
+            if (collision.transform.position.x < gameObject.transform.position.x )
+            {
+                StartCoroutine(Daño(true));
+            }
+            if (collision.transform.position.x > gameObject.transform.position.x)
+            {
+                StartCoroutine(Daño(false));
+            }
+
+        }
+    }
+    IEnumerator Daño(bool direcion)
+    {
+        animator.SetBool("daño", true);
+        if (direcion)
+        {
+            rigidbody2d.velocity = new Vector2(2f * fuerzaMovimiento, rigidbody2d.velocity.y);
+        } else
+        {
+            rigidbody2d.velocity = new Vector2(-2f * fuerzaMovimiento, rigidbody2d.velocity.y);
+        }
+        yield return new WaitForSeconds(1f);
+        animator.SetBool("daño", false);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
