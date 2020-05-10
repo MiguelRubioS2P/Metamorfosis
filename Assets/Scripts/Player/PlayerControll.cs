@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControll : MonoBehaviour
 {
-    private bool salto, muerto, atacar;
+    private bool salto, atacar;
     private Animator animator;
     private Rigidbody2D rigidbody2d;
     private SpriteRenderer spriteRenderer;
@@ -18,6 +18,7 @@ public class PlayerControll : MonoBehaviour
     private AudioSource audioSource;
 
     private GameObject RangoAtaque;
+    public bool muerto;
 
 
     private void Awake()

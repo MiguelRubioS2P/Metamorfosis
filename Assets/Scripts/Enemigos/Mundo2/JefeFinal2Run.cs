@@ -17,19 +17,39 @@ public class JefeFinal2Run : StateMachineBehaviour
         player = FindObjectOfType<PlayerControll>().transform;
         rb2d = animator.GetComponent<Rigidbody2D>();
         jefeFinal2 = animator.GetComponent<JefeFinal2>();
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        jefeFinal2.LookAtPlayer();
-        Vector2 target = new Vector2(player.position.x, rb2d.position.y);
-        Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
-        rb2d.MovePosition(nuevaPosicion);
-
-        if(Vector2.Distance(player.position,rb2d.position) <= rangoAtaque)
+        if (jefeFinal2.moverse)
         {
-            animator.SetTrigger("Atacar");
+            if (!jefeFinal2.stun)
+            {
+                jefeFinal2.LookAtPlayer();
+                Vector2 target = new Vector2(player.position.x, rb2d.position.y);
+                Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
+                rb2d.MovePosition(nuevaPosicion);
+
+                if (Vector2.Distance(player.position, rb2d.position) <= rangoAtaque)
+                {
+                    animator.SetTrigger("Atacar");
+                }
+            }
+            else
+            {
+                animator.SetTrigger("Stun");
+            }
+        }
+        else
+        {
+            Vector2 posicionPrincipio = Vector2.MoveTowards(rb2d.position, jefeFinal2.posicionInicial, velocidad * Time.fixedDeltaTime);
+            rb2d.MovePosition(posicionPrincipio);
+            if(posicionPrincipio == jefeFinal2.posicionInicial)
+            {
+                animator.SetBool("Moverse", false);
+            }
         }
     }
 

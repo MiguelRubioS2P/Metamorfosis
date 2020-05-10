@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class JefeFinal2Arma : MonoBehaviour
 {
-	public int attackDamage = 20;
-	public int enragedAttackDamage = 40;
-
 	public Vector3 attackOffset;
 	public float attackRange = 2f;
 	public LayerMask attackMask;
