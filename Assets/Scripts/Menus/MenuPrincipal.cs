@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
+    private TranscionMenus transcion;
+    
     private void Awake()
     {
+        transcion = FindObjectOfType<TranscionMenus>();
         Cursor.visible = true;
     }
     public void OnClick()
@@ -15,11 +18,12 @@ public class MenuPrincipal : MonoBehaviour
         string boton = EventSystem.current.currentSelectedGameObject.name;
         if (boton == "Play Boton")
         {
-            SceneManager.LoadScene("Menu Guardado");
+            StartCoroutine(transcion.cambioEscena("Menu Guardado"));
+
         } 
         else if (boton == "Opciones Boton")
         {
-            SceneManager.LoadScene("Menu Opciones");
+            StartCoroutine(transcion.cambioEscena("Menu Opciones"));
         } 
         else if (boton == "Salir Boton")
         {

@@ -13,9 +13,10 @@ public class MenuOpciones : MonoBehaviour
 
     public Dropdown resolucion;
     private OptionsManager optionsmanager;
-
+    private TranscionMenus transcion;
     private void Awake()
     {
+        transcion = FindObjectOfType<TranscionMenus>();
         UnityEngine.Cursor.visible = true;
         optionsmanager = FindObjectOfType<OptionsManager>();
     }
@@ -28,7 +29,7 @@ public class MenuOpciones : MonoBehaviour
     public void MenuPrincipal()
     {
         // Si volvemos atras 
-        SceneManager.LoadScene("Menu Principal");
+        StartCoroutine(transcion.cambioEscena("Menu Principal"));
     }
 
     public void CambiarEstadoFPS()

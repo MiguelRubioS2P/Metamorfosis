@@ -13,10 +13,12 @@ public class MenuGuardado : MonoBehaviour
     private OptionsManager optionsManager;
     public InputField IFslot1, IFslot2, IFslot3;
     private bool slot1Select, slot2Select, slot3Select, vacio;
-    
+    private TranscionMenus transcion;
+
 
     private void Awake()
     {
+        transcion = FindObjectOfType<TranscionMenus>();
         vacio = true;
 
         // Variables para controlas donde esta el usuario pulsando.
@@ -176,7 +178,7 @@ public class MenuGuardado : MonoBehaviour
     public void OnVolverMenu()
     {
         // Volver al menu
-        SceneManager.LoadScene("Menu Principal");
+        StartCoroutine(transcion.cambioEscena("Menu Principal"));
     }
 
     public void OnIrMenuNiveles()
@@ -192,7 +194,7 @@ public class MenuGuardado : MonoBehaviour
                     if (optionsManager.ExisteNombre(slot1.transform.GetChild(0).GetComponent<Text>().text.ToUpper()))
                     {
                         optionsManager.nombrePartida = slot1.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
-                        SceneManager.LoadScene("Menu Niveles");
+                        StartCoroutine(transcion.cambioEscena("Menu Niveles"));
                     }
                     else
                     {
@@ -200,7 +202,7 @@ public class MenuGuardado : MonoBehaviour
                         ElegirNombre(slot1.gameObject.name, slot1.transform.GetChild(0).GetComponent<Text>().text.ToUpper());
                         optionsManager.GuardarDatos();
                         optionsManager.nombrePartida = slot1.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
-                        SceneManager.LoadScene("Menu Niveles");
+                        StartCoroutine(transcion.cambioEscena("Menu Niveles"));
 
                     }
                 }
@@ -215,7 +217,7 @@ public class MenuGuardado : MonoBehaviour
                     if (optionsManager.ExisteNombre(slot2.transform.GetChild(0).GetComponent<Text>().text.ToUpper()))
                     {
                         optionsManager.nombrePartida = slot2.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
-                        SceneManager.LoadScene("Menu Niveles");
+                        StartCoroutine(transcion.cambioEscena("Menu Niveles"));
                     }
                     else
                     {
@@ -223,7 +225,7 @@ public class MenuGuardado : MonoBehaviour
                         ElegirNombre(slot2.gameObject.name, slot2.transform.GetChild(0).GetComponent<Text>().text.ToUpper());
                         optionsManager.GuardarDatos();
                         optionsManager.nombrePartida = slot2.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
-                        SceneManager.LoadScene("Menu Niveles");
+                        StartCoroutine(transcion.cambioEscena("Menu Niveles"));
                     }
                 }
             }
@@ -240,7 +242,7 @@ public class MenuGuardado : MonoBehaviour
                     if (optionsManager.ExisteNombre(slot3.transform.GetChild(0).GetComponent<Text>().text.ToUpper()))
                     {
                         optionsManager.nombrePartida = slot3.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
-                        SceneManager.LoadScene("Menu Niveles");
+                        StartCoroutine(transcion.cambioEscena("Menu Niveles"));
                     }
                     else
                     {
@@ -248,7 +250,7 @@ public class MenuGuardado : MonoBehaviour
                         ElegirNombre(slot3.gameObject.name, slot3.transform.GetChild(0).GetComponent<Text>().text.ToUpper());
                         optionsManager.GuardarDatos();
                         optionsManager.nombrePartida = slot3.transform.GetChild(0).GetComponent<Text>().text.ToUpper();
-                        SceneManager.LoadScene("Menu Niveles");
+                        StartCoroutine(transcion.cambioEscena("Menu Niveles"));
 
                     }
                 }
