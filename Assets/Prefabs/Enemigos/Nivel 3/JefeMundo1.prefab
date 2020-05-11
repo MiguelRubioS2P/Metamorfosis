@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2572574623501454649}
   - component: {fileID: 7172742501952170021}
   - component: {fileID: 1391805169}
-  - component: {fileID: 8289383308018199941}
   - component: {fileID: 154240511}
+  - component: {fileID: 4540181468039730417}
+  - component: {fileID: 7356549518268182308}
   m_Layer: 0
   m_Name: JefeMundo1
   m_TagString: Jefes
@@ -188,26 +189,6 @@ PolygonCollider2D:
       - {x: -0.445, y: -0.49499997}
       - {x: -0.39499998, y: -0.445}
       - {x: -0.315, y: -0.525}
---- !u!114 &8289383308018199941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447204424060952899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f80288aff35b4d44ab2da240669a13db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laser: {fileID: 4740516316273841432, guid: 868ca7805d4bd434992242f13c685156, type: 3}
-  final: {fileID: 0}
-  vidas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!50 &154240511
 Rigidbody2D:
   serializedVersion: 4
@@ -227,8 +208,40 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &4540181468039730417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447204424060952899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c3a5a253222fb4191e324c1d02a887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laser: {fileID: 4740516316273841432, guid: 868ca7805d4bd434992242f13c685156, type: 3}
+--- !u!114 &7356549518268182308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447204424060952899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8593d2740fe9f2d458d38572bfe2fee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  final: {fileID: 0}
 --- !u!1 &8141911917551021709
 GameObject:
   m_ObjectHideFlags: 0
