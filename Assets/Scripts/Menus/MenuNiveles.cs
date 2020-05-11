@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MenuNiveles : MonoBehaviour
 {
-
+    private TranscionMenus transcion;
     private OptionsManager optionsManager; // Obtenemos la referencia del GO DontDestroOnLoad
     public GameObject nivel1;
     public GameObject nivel2;
@@ -20,6 +20,7 @@ public class MenuNiveles : MonoBehaviour
     {
         Cursor.visible = true;
         optionsManager = FindObjectOfType<OptionsManager>();
+        transcion = FindObjectOfType<TranscionMenus>();
     }
 
     private void Start()
@@ -32,7 +33,7 @@ public class MenuNiveles : MonoBehaviour
         string boton = EventSystem.current.currentSelectedGameObject.name;
         if(boton == "Atras Boton")
         {
-            SceneManager.LoadScene("Menu Guardado");
+            StartCoroutine(transcion.cambioEscena("Menu Guardado"));
         }
         else if (boton == "Salir Boton")
         {
@@ -49,16 +50,16 @@ public class MenuNiveles : MonoBehaviour
         string boton = EventSystem.current.currentSelectedGameObject.name;
         if(boton == "Nivel 1")
         {
-            SceneManager.LoadScene("Nivel 1");
+            StartCoroutine(transcion.cambioEscena("Nivel 1"));
         } else if (boton == "Nivel 2")
         {
             Debug.Log("Pulsando Botón Nivel 2");
-            SceneManager.LoadScene("Nivel 2");
+            StartCoroutine(transcion.cambioEscena("Nivel 2"));
         }
         else if (boton == "Nivel 3")
         {
             Debug.Log("Pulsando Botón Nivel 3");
-            SceneManager.LoadScene("Nivel 3");
+            StartCoroutine(transcion.cambioEscena("Nivel 3"));
         }
     }
 
@@ -67,15 +68,15 @@ public class MenuNiveles : MonoBehaviour
         string boton = EventSystem.current.currentSelectedGameObject.name;
         if (boton == "Nivel 4")
         {
-            SceneManager.LoadScene("Nivel 4");
+            StartCoroutine(transcion.cambioEscena("Nivel 4"));
         }
         else if (boton == "Nivel 5")
         {
-            SceneManager.LoadScene("Nivel 5");
+            StartCoroutine(transcion.cambioEscena("Nivel 5"));
         }
         else if (boton == "Nivel 6")
         {
-
+            StartCoroutine(transcion.cambioEscena("Nivel 6"));
         }
     }
 
