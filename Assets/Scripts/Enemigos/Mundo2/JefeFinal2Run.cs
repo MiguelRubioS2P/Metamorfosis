@@ -23,33 +23,40 @@ public class JefeFinal2Run : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (jefeFinal2.moverse)
+        if (!jefeFinal2.muerto)
         {
-            if (!jefeFinal2.stun)
+            if (jefeFinal2.moverse)
             {
-                jefeFinal2.LookAtPlayer();
-                Vector2 target = new Vector2(player.position.x, rb2d.position.y);
-                Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
-                rb2d.MovePosition(nuevaPosicion);
-
-                if (Vector2.Distance(player.position, rb2d.position) <= rangoAtaque)
+                if (!jefeFinal2.stun)
                 {
-                    animator.SetTrigger("Atacar");
+                    jefeFinal2.LookAtPlayer();
+                    Vector2 target = new Vector2(player.position.x, rb2d.position.y);
+                    Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
+                    rb2d.MovePosition(nuevaPosicion);
+
+                    if (Vector2.Distance(player.position, rb2d.position) <= rangoAtaque)
+                    {
+                        animator.SetTrigger("Atacar");
+                    }
+                }
+                else
+                {
+                    animator.SetTrigger("Stun");
                 }
             }
             else
             {
-                animator.SetTrigger("Stun");
+                Vector2 posicionPrincipio = Vector2.MoveTowards(rb2d.position, jefeFinal2.posicionInicial, velocidad * Time.fixedDeltaTime);
+                rb2d.MovePosition(posicionPrincipio);
+                if (posicionPrincipio == jefeFinal2.posicionInicial)
+                {
+                    animator.SetBool("Moverse", false);
+                }
             }
         }
         else
         {
-            Vector2 posicionPrincipio = Vector2.MoveTowards(rb2d.position, jefeFinal2.posicionInicial, velocidad * Time.fixedDeltaTime);
-            rb2d.MovePosition(posicionPrincipio);
-            if(posicionPrincipio == jefeFinal2.posicionInicial)
-            {
-                animator.SetBool("Moverse", false);
-            }
+            animator.SetTrigger("Morir");
         }
     }
 

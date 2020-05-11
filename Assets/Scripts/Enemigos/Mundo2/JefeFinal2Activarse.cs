@@ -7,6 +7,7 @@ public class JefeFinal2Activarse : MonoBehaviour
 
     private JefeFinal2 jefeFinal2;
     private Animator animator;
+    public Canvas interfazJefeFinal;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class JefeFinal2Activarse : MonoBehaviour
         {
             animator.SetBool("Moverse", true);
             jefeFinal2.moverse = true;
+            interfazJefeFinal.gameObject.SetActive(true);
         }
 
         if(collision.transform.tag == "Jefes")

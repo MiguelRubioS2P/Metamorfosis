@@ -126,6 +126,7 @@ public class FinalNiveles : MonoBehaviour
                 optionsManager.CambiarEstado("Nivel 5", optionsManager.nombrePartida);
                 break;
             case "Nivel 5":
+                optionsManager.CambiarEstado("Nivel 6", optionsManager.nombrePartida);
                 break;
             case "Nivel 6":
                 break;
