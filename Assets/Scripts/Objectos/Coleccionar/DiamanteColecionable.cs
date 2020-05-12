@@ -13,7 +13,7 @@ public class DiamanteColecionable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "personaje")
         {
             for(int i = 0; i < cuantoVale; i++)
             {
