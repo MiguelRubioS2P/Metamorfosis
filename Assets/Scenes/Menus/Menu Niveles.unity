@@ -262,10 +262,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: eaeee8d898ea43447a14a1a7a11146a8, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 100
     m_Alignment: 4
@@ -476,7 +476,7 @@ PrefabInstance:
     - target: {fileID: 3918338344258302724, guid: 7c4f210766e96ed419485d7cffea2e7b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3918338344258302724, guid: 7c4f210766e96ed419485d7cffea2e7b,
         type: 3}
@@ -547,6 +547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Crossfade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918338344258302731, guid: 7c4f210766e96ed419485d7cffea2e7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4f210766e96ed419485d7cffea2e7b, type: 3}
@@ -734,7 +739,7 @@ RectTransform:
   - {fileID: 43005627}
   - {fileID: 536698611}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1015,7 +1020,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: 165.625
-  m_PreferredHeight: 96.875
+  m_PreferredHeight: 46.875
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -1038,21 +1043,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: eaeee8d898ea43447a14a1a7a11146a8, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 100
+    m_BestFit: 1
+    m_MinSize: 5
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mundo 3
-
-'
+  m_Text: Mundo 3
 --- !u!222 &578048282
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1468,7 +1471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1096694926
 GameObject:
@@ -2432,7 +2435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517860456
 GameObject:
@@ -2945,7 +2948,7 @@ PrefabInstance:
     - target: {fileID: 6629306353847029855, guid: e77899eefd7278747a4e924d4b5a260b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6629306353847029855, guid: e77899eefd7278747a4e924d4b5a260b,
         type: 3}
@@ -3041,10 +3044,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: e07937588de7f6f48bf1c717ed14b155, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 100
     m_Alignment: 4
@@ -3653,7 +3656,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 156.25
+  m_PreferredWidth: 165.625
   m_PreferredHeight: 46.875
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -3677,10 +3680,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_Font: {fileID: 12800000, guid: eaeee8d898ea43447a14a1a7a11146a8, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 100
     m_Alignment: 4
