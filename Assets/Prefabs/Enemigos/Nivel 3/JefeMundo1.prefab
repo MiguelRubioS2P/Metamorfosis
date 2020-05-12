@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 154240511}
   - component: {fileID: 4540181468039730417}
   - component: {fileID: 7356549518268182308}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: JefeMundo1
   m_TagString: Jefes
   m_Icon: {fileID: 0}
