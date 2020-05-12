@@ -767,7 +767,7 @@ MonoBehaviour:
   nivel7: {fileID: 1096694926}
   nivel8: {fileID: 1151456226}
   nivel9: {fileID: 1597012980}
-  fotoNivel2: {fileID: 21300000, guid: 30d6d42103d0f994cb3b5ca97369473f, type: 3}
+  fotoNivel2: {fileID: 21300000, guid: 7dc9cc8f06f154640980399feb1980f5, type: 3}
   fotoNivel3: {fileID: 21300000, guid: f2aea45f722a32440aafb056b38186ae, type: 3}
   fotoNivel4: {fileID: 0}
   fotoNivel5: {fileID: 0}
