@@ -129,12 +129,8 @@ GameObject:
   - component: {fileID: 1491440423349038290}
   - component: {fileID: 511326198}
   - component: {fileID: 8356587647718921899}
-<<<<<<< HEAD
   - component: {fileID: 2292600215693551398}
   m_Layer: 10
-=======
-  m_Layer: 0
->>>>>>> MiguelRubio
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
