@@ -30,4 +30,9 @@ public class Jefe1_Daño : StateMachineBehaviour
             rb2d.velocity = new Vector2(3f, rb2d.velocity.y);
         }
     }
+
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        jefe.PararRecibirDaño();
+    }
 }

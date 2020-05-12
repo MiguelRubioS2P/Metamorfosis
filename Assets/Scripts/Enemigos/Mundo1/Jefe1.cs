@@ -41,14 +41,14 @@ public class Jefe1 : MonoBehaviour
         {
             animator.SetBool("caminar", true);
         }
-        if (collision.transform.tag == "Rango espada")
-        {
-            Debug.Log("Daño espada");
-            if (Vector2.Distance(player.transform.position, gameObject.transform.position) <= rangoDaño)
-            {
-                animator.SetBool("daño", true);
-            }
-        }
+        //if (collision.transform.tag == "Rango espada")
+        //{
+        //    Debug.Log("Daño espada");
+        //    if (Vector2.Distance(player.transform.position, gameObject.transform.position) <= rangoDaño)
+        //    {
+        //        animator.SetBool("daño", true);
+        //    }
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -57,11 +57,11 @@ public class Jefe1 : MonoBehaviour
         {
             animator.SetBool("caminar", false);
         }
-        if (collision.transform.tag == "Rango espada")
-        {
-            animator.SetBool("daño", false);
+        //if (collision.transform.tag == "Rango espada")
+        //{
+        //    animator.SetBool("daño", false);
 
-        }
+        //}
     }
 
     public int PerderVida()
@@ -76,6 +76,18 @@ public class Jefe1 : MonoBehaviour
         final.GetComponent<SpriteRenderer>().enabled = true;
         final.GetComponent<BoxCollider2D>().enabled = true;
         Destroy(gameObject, 1.5f);
+    }
+
+    public void RecibirDaño()
+    {
+        
+        animator.SetBool("daño", true);
+        Debug.Log(vida);
+    }
+
+    public void PararRecibirDaño()
+    {
+        animator.SetBool("daño", false);
     }
 
 }

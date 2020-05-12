@@ -58,15 +58,19 @@ public class PlayerControll : MonoBehaviour
             
             rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
             animator.SetBool("moverse", true);
-            spriteRenderer.flipX = true;
-           
+            //spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+
+
         }
         else if (Input.GetKey("d") && (salto || !salto) && !muerto)
         {
             rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
             animator.SetBool("moverse", true);
-            spriteRenderer.flipX = false;
-            
+            //spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1f, 1f, 1f);
+
+
         }
         //(Input.GetKeyUp("a") || Input.GetKeyUp("d")) && !muerto
         else if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
@@ -83,10 +87,10 @@ public class PlayerControll : MonoBehaviour
             animator.SetBool("moverse", false);
         }
         Salto();
-        if (atacar)
-        {
-            StartCoroutine(Atacar());
-        }
+        //if (atacar)
+        //{
+        //    StartCoroutine(Atacar());
+        //}
         
     }
   

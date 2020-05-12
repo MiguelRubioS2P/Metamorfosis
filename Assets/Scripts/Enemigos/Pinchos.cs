@@ -27,7 +27,7 @@ public class Pinchos : MonoBehaviour
         atacando = false;
         meHacenDaño = false;
         gameManager = FindObjectOfType<GameManager>();
-        vidas = 1;
+        vidas = 2;
     }
 
     void Update()
@@ -61,14 +61,14 @@ public class Pinchos : MonoBehaviour
         {
             moverse = true;
         }
-        if (collision.transform.tag == "Rango espada")
-        {
-            if ((distancia > 0 && distancia < 2f) || (distancia < 0 && distancia > -2f))
-            {
-                StartCoroutine(Daño());
-            }
+        //if (collision.transform.tag == "Rango espada")
+        //{
+        //    if ((distancia > 0 && distancia < 2f) || (distancia < 0 && distancia > -2f))
+        //    {
+        //        StartCoroutine(Daño());
+        //    }
 
-        }
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -110,34 +110,47 @@ public class Pinchos : MonoBehaviour
         
     }
 
-    IEnumerator Daño()
+    //IEnumerator Daño()
+    //{
+    //    if (!meHacenDaño)
+    //    {
+    //        meHacenDaño = true;
+    //        moverse = false;
+    //        animator.SetBool("daño", true);
+
+    //        vidas--;
+    //        if (vidas < 0)
+    //        {
+    //            StartCoroutine(Muerto());
+    //        }
+    //        if (gameObject.transform.position.x < player.transform.position.x)
+    //        {
+    //            rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
+    //        }
+    //        else
+    //        {
+    //            rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
+    //        }
+
+    //        yield return new WaitForSeconds(0.35f);
+    //        animator.SetBool("daño", false);
+    //        moverse = true;
+    //        meHacenDaño = false;
+    //    }
+
+    //}
+
+    public void RecibirDaño(int daño)
     {
-        if (!meHacenDaño)
+        moverse = false;
+        animator.SetBool("daño", true);
+        vidas -= daño;
+        if(vidas <= 0)
         {
-            meHacenDaño = true;
-            moverse = false;
-            animator.SetBool("daño", true);
-
-            vidas--;
-            if (vidas < 0)
-            {
-                StartCoroutine(Muerto());
-            }
-            if (gameObject.transform.position.x < player.transform.position.x)
-            {
-                rigidbody2d.velocity = new Vector2(-1f * fuerzaMovimiento, rigidbody2d.velocity.y);
-            }
-            else
-            {
-                rigidbody2d.velocity = new Vector2(1f * fuerzaMovimiento, rigidbody2d.velocity.y);
-            }
-
-            yield return new WaitForSeconds(0.35f);
-            animator.SetBool("daño", false);
-            moverse = true;
-            meHacenDaño = false;
+            StartCoroutine(Muerto());
         }
-
+        animator.SetBool("daño", false);
+        moverse = true;
     }
 
     IEnumerator Muerto()

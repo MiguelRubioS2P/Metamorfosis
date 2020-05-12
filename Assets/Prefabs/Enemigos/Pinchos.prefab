@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 6000489384157174296}
   - component: {fileID: 426547504441547004}
   - component: {fileID: 1417588165513392348}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pinchos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,8 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b407c123a833efe4d9f1417b2ba18be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  derecha: {fileID: 1417588165513392348}
-  izquierda: {fileID: 0}
 --- !u!50 &426547504441547004
 Rigidbody2D:
   serializedVersion: 4
