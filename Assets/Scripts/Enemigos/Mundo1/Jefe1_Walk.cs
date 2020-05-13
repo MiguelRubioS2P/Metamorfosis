@@ -9,7 +9,7 @@ public class Jefe1_Walk : StateMachineBehaviour
     private Rigidbody2D rb2d;
 
     private float velocidad = 2.5f;
-    public float rangoAtaque = 5f;
+    public float rangoAtaque = 1000f;
     private float siguienteDisparo = 5f;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -28,7 +28,7 @@ public class Jefe1_Walk : StateMachineBehaviour
         Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
         rb2d.MovePosition(nuevaPosicion);
 
-        if (Vector2.Distance(player.position, rb2d.position) <= rangoAtaque)
+        if (Vector2.Distance(player.position, rb2d.position) < 10f)
         {
             if (Time.time > siguienteDisparo)
             {

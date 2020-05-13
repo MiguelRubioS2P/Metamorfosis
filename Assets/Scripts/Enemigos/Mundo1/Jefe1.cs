@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class Jefe1 : MonoBehaviour
 {
     private GameObject player;
-    private bool isFlipped;
-    private float rangoDaño = 3f;
+    public bool isFlipped;
     public Image[] vidas;
     private int vida = 4;
     public GameObject final;
@@ -41,14 +40,6 @@ public class Jefe1 : MonoBehaviour
         {
             animator.SetBool("caminar", true);
         }
-        //if (collision.transform.tag == "Rango espada")
-        //{
-        //    Debug.Log("Daño espada");
-        //    if (Vector2.Distance(player.transform.position, gameObject.transform.position) <= rangoDaño)
-        //    {
-        //        animator.SetBool("daño", true);
-        //    }
-        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -57,11 +48,6 @@ public class Jefe1 : MonoBehaviour
         {
             animator.SetBool("caminar", false);
         }
-        //if (collision.transform.tag == "Rango espada")
-        //{
-        //    animator.SetBool("daño", false);
-
-        //}
     }
 
     public int PerderVida()
