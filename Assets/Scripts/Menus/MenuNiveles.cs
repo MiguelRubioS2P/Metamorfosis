@@ -135,6 +135,7 @@ public class MenuNiveles : MonoBehaviour
         if (optionsManager.EstadoActivo(nivel4.name, optionsManager.nombrePartida))
         {
             nivel4.GetComponent<Button>().interactable = true;
+            nivel4.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel4;
         }
         else
         {
@@ -143,6 +144,7 @@ public class MenuNiveles : MonoBehaviour
         if (optionsManager.EstadoActivo(nivel5.name, optionsManager.nombrePartida))
         {
             nivel5.GetComponent<Button>().interactable = true;
+            nivel5.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel5;
         }
         else
         {
@@ -151,6 +153,7 @@ public class MenuNiveles : MonoBehaviour
         if (optionsManager.EstadoActivo(nivel6.name, optionsManager.nombrePartida))
         {
             nivel6.GetComponent<Button>().interactable = true;
+            nivel6.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel6;
         }
         else
         {
