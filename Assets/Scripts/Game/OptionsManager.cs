@@ -38,18 +38,18 @@ public class OptionsManager : MonoBehaviour
         {
             primeraVez = false;
         }
-        if (level == 5)
+        if (level == 5 || level == 6)
         {
             transform.GetChild(0).GetComponent<AudioSource>().Stop();
         }
-        if (level == 6 || level == 7 || level == 9 || level == 10 || level == 12 || level == 13)
+        if (level == 7 || level == 8 || level == 10 || level == 11 || level == 13 || level == 14)
         {
             //Niveles nommales
             jugando = true;
             transform.GetChild(0).GetComponent<AudioSource>().clip = canciones[Random.Range(1,4)];
             transform.GetChild(0).GetComponent<AudioSource>().Play();
         }
-        if (level == 8 || level == 11 || level == 14)
+        if (level == 9 || level == 12 || level == 15)
         {
             //Musica pelea jefes
             jugando = true;

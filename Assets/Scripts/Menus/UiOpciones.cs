@@ -23,6 +23,7 @@ public class UiOpciones : MonoBehaviour
         }
     }
 
+
     public void Desactivar()
     {
         gameObject.GetComponent<Canvas>().enabled = false;
@@ -30,15 +31,20 @@ public class UiOpciones : MonoBehaviour
         Cursor.visible = false;
     }
 
+    public void Activar()
+    {
+        Time.timeScale = 0;
+        Cursor.visible = true;
+    }
+
     private void Awake()
     {
-        UnityEngine.Cursor.visible = true;
         optionsmanager = FindObjectOfType<OptionsManager>();
     }
-    public void ControlVoluemnGeneral(float sliderValue)
+    public void ControlVoluemnGeneral(Slider sliderValue)
     {
         // Si modificamos el valor del slider, modificamos "Volume" del audio mixer
-        mixer.SetFloat("Volumen", Mathf.Log10(sliderValue) * 20);
+        mixer.SetFloat("Volumen", Mathf.Log10(sliderValue.value) * 20);
     }
 
     public void Atras()

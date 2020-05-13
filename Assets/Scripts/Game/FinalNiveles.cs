@@ -26,6 +26,7 @@ public class FinalNiveles : MonoBehaviour
     private OptionsManager optionsManager;
     private GameObject player;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -98,7 +99,7 @@ public class FinalNiveles : MonoBehaviour
         gameManager.VidasIniciales();
         GuardarEstrellasYMonedas(estrellas, monedas);
         NivelesDesbloqueados(escena);
-        SceneManager.LoadScene("Menu Niveles");
+        SceneManager.LoadScene("FinalizarNivel");
     }
 
     /// <summary>
