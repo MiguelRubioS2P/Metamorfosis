@@ -7,6 +7,7 @@ public class UIPausa : MonoBehaviour
 {
 
     private PlayerControll player;
+    private PlayerCombate scriptPlayerCombate;
     private bool activo;
     private GameManager gameManager;
     public GameObject menuOpciones;
@@ -17,6 +18,7 @@ public class UIPausa : MonoBehaviour
         player = FindObjectOfType<PlayerControll>();
         activo = false;
         gameManager = FindObjectOfType<GameManager>();
+        scriptPlayerCombate = FindObjectOfType<PlayerCombate>();
     }
 
     private void Update()
@@ -41,6 +43,7 @@ public class UIPausa : MonoBehaviour
         gameObject.GetComponent<Canvas>().enabled = true;
         activo = true;
         player.enabled = false;
+        scriptPlayerCombate.enabled = false;
         Time.timeScale = 0;
         Cursor.visible = true;
     }
@@ -51,6 +54,7 @@ public class UIPausa : MonoBehaviour
         activo = false;
         Time.timeScale = 1;
         player.enabled = true;
+        scriptPlayerCombate.enabled = true;
         Cursor.visible = false;
     }
 

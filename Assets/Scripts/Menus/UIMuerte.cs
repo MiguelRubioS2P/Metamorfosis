@@ -6,23 +6,26 @@ using UnityEngine.SceneManagement;
 public class UIMuerte : MonoBehaviour
 {
 
-    //private PlayerControll player;
+    private PlayerControll player;
+    private PlayerCombate scriptPlayerCombate;
     private string escena;
     private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        //player = FindObjectOfType<PlayerControll>();
+        player = FindObjectOfType<PlayerControll>();
         escena = SceneManager.GetActiveScene().name;
         gameManager = FindObjectOfType<GameManager>();
+        scriptPlayerCombate = FindObjectOfType<PlayerCombate>();
     }
 
     public void Activar()
     {
         gameObject.GetComponent<Canvas>().enabled = true;
         Time.timeScale = 0;
-        //player.gameObject.SetActive(false);
+        player.enabled = false;
+        scriptPlayerCombate.enabled = false;
         Cursor.visible = true;
     }
 
@@ -32,6 +35,8 @@ public class UIMuerte : MonoBehaviour
         // reiniciar la escena propia y recargar las vidas base y las monedas base del gamemanager
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
+        player.enabled = true;
+        scriptPlayerCombate.enabled = true;
         Time.timeScale = 1;
         SceneManager.LoadScene(escena);
     }
