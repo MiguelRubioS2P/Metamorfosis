@@ -69,10 +69,7 @@ public class OptionsManager : MonoBehaviour
         transform.GetChild(0).GetComponent<AudioSource>().volume = 0.5f;
         // Al ser don't destroy decimos que sea false a no ser que el usuario lo quiera activar
         fpsText.gameObject.SetActive(false);
-
-        // Resolucion incial
-        Screen.SetResolution(1920, 1080, false);
-        
+                
 
         if (File.Exists(rutaDeGuardado))
         {

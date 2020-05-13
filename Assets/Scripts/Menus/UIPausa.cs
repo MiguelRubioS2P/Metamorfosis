@@ -9,6 +9,7 @@ public class UIPausa : MonoBehaviour
     private PlayerControll player;
     private bool activo;
     private GameManager gameManager;
+    public GameObject menuOpciones;
 
 
     private void Start()
@@ -53,11 +54,6 @@ public class UIPausa : MonoBehaviour
         Cursor.visible = false;
     }
 
-    public void Opciones()
-    {
-        Debug.Log("Menú opciones");
-    }
-
     public void Principal()
     {
         Debug.Log("Ejecutando este método, Principal() desde UIPausa");
@@ -75,5 +71,11 @@ public class UIPausa : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void Opciones()
+    {
+        gameObject.GetComponent<Canvas>().enabled = false;
+        menuOpciones.GetComponent<Canvas>().enabled = true;
     }
 }
