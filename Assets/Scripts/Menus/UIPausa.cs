@@ -81,5 +81,6 @@ public class UIPausa : MonoBehaviour
     {
         gameObject.GetComponent<Canvas>().enabled = false;
         menuOpciones.GetComponent<Canvas>().enabled = true;
+        menuOpciones.GetComponent<UiOpciones>().Activar();
     }
 }

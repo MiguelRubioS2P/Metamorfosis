@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class MenuOpciones : MonoBehaviour
 {
     public AudioMixer mixer; // Contiene la pista de audio
-    public UnityEngine.UI.Toggle pantallaCompleta, fps, wasd, arrows; // Checks de opciones
+    public Toggle pantallaCompleta, fps, wasd, arrows; // Checks de opciones
 
     public Dropdown resolucion;
     private OptionsManager optionsmanager;
