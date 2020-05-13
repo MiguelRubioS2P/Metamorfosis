@@ -769,13 +769,12 @@ MonoBehaviour:
   nivel9: {fileID: 1597012980}
   fotoNivel2: {fileID: 21300000, guid: 7dc9cc8f06f154640980399feb1980f5, type: 3}
   fotoNivel3: {fileID: 21300000, guid: f2aea45f722a32440aafb056b38186ae, type: 3}
-  fotoNivel4: {fileID: 0}
-  fotoNivel5: {fileID: 0}
-  fotoNivel6: {fileID: 0}
+  fotoNivel4: {fileID: 21300000, guid: c0523feb93fa46a43bb01e8d2fe59145, type: 3}
+  fotoNivel5: {fileID: 21300000, guid: 56bfaafc418f582489972c586559f532, type: 3}
+  fotoNivel6: {fileID: 21300000, guid: a1fa328265cccde43a27d97344d8fe8a, type: 3}
   fotoNivel7: {fileID: 0}
   fotoNivel8: {fileID: 0}
   fotoNivel9: {fileID: 0}
-  menu: {fileID: 8300000, guid: b6f613bb85808cc4f9b5e2fbcf13d8ad, type: 3}
 --- !u!114 &377489545
 MonoBehaviour:
   m_ObjectHideFlags: 0
