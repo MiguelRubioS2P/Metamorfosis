@@ -37,9 +37,9 @@ public class GameManager : MonoBehaviour
         dinero = 0;
     }
 
-    public void GanarDinero()
+    public void GanarDinero(int cantidad)
     {
-        dinero++;
+        dinero+=cantidad;
         Debug.Log("El dinero que tengo es: " + dinero);
         audioSource.clip = sonidoMoneda;
         audioSource.Play();

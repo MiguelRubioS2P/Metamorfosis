@@ -15,7 +15,7 @@ public class MonedaController : MonoBehaviour
     {
         if(collision.transform.tag == "personaje")
         {
-            gameManager.GanarDinero();
+            gameManager.GanarDinero(1);
             Destroy(gameObject);
         }
     }

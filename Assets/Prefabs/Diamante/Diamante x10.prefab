@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1131764903944989138}
   - component: {fileID: 4927360047230166028}
+  - component: {fileID: -5090925894522685803}
   m_Layer: 0
   m_Name: Diamante x10
   m_TagString: Untagged
@@ -81,3 +82,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5090925894522685803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131764903944989139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b3c8428a1cd3a49b18fd81299ea7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
