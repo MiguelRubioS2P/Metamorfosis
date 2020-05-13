@@ -36,10 +36,10 @@ public class PlayerCombate : MonoBehaviour
             if(enemigo.name == "Jefe Final 2")
             {
                 enemigo.GetComponent<JefeFinal2>().RecibirDaño(1);
-            }else if(enemigo.name == "Pinchos")
+            }else if(enemigo.tag == "Ataque")
             {
                 enemigo.GetComponent<Pinchos>().RecibirDaño(1);
-            }else if(enemigo.name == "JefeMundo1")
+            }else if(enemigo.tag == "Jefes")
             {
                 enemigo.GetComponent<Jefe1>().RecibirDaño();
             }

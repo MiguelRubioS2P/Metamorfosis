@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 973183221}
   m_Layer: 12
   m_Name: sword_man
-  m_TagString: Jefes
+  m_TagString: jefefinal2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

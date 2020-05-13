@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 1417588165513392348}
   m_Layer: 12
   m_Name: Pinchos
-  m_TagString: Untagged
+  m_TagString: Ataque
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
