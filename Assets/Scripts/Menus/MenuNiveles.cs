@@ -50,16 +50,16 @@ public class MenuNiveles : MonoBehaviour
         string boton = EventSystem.current.currentSelectedGameObject.name;
         if(boton == "Nivel 1")
         {
-            StartCoroutine(transcion.cambioEscena("Nivel 1"));
+            transcion.cargarNivelEscena("Nivel 1");
         } else if (boton == "Nivel 2")
         {
             Debug.Log("Pulsando Botón Nivel 2");
-            StartCoroutine(transcion.cambioEscena("Nivel 2"));
+           transcion.cargarNivelEscena("Nivel 2");
         }
         else if (boton == "Nivel 3")
         {
             Debug.Log("Pulsando Botón Nivel 3");
-            StartCoroutine(transcion.cambioEscena("Nivel 3"));
+            transcion.cargarNivelEscena("Nivel 3");
         }
     }
 
@@ -68,15 +68,15 @@ public class MenuNiveles : MonoBehaviour
         string boton = EventSystem.current.currentSelectedGameObject.name;
         if (boton == "Nivel 4")
         {
-            StartCoroutine(transcion.cambioEscena("Nivel 4"));
+            transcion.cargarNivelEscena("Nivel 4");
         }
         else if (boton == "Nivel 5")
         {
-            StartCoroutine(transcion.cambioEscena("Nivel 5"));
+            transcion.cargarNivelEscena("Nivel 5");
         }
         else if (boton == "Nivel 6")
         {
-            StartCoroutine(transcion.cambioEscena("Nivel 6"));
+            transcion.cargarNivelEscena("Nivel 6");
         }
     }
 

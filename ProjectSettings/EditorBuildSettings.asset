@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Menu Niveles.unity
     guid: 61d8f4cc5837cd6499b1ffd17c9fb524
   - enabled: 1
+    path: Assets/Scenes/CargarNivel.unity
+    guid: d5f5f5278105ff242a81a1a432789286
+  - enabled: 1
     path: Assets/Scenes/Mundo 1/Nivel 1.unity
     guid: af902071b2279ab4a92f7723b5cccbc2
   - enabled: 1

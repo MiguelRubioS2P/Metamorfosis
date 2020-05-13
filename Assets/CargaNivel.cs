@@ -1,37 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CargaNivel : MonoBehaviour
 {
-    //public GameObject LoadingText;
-    //public Text ProgressIndicator;
     public Image LoadingBar;
     float currentValue;
     public float speed;
+    
+    private static string _escena;
 
-    // Use this for initialization
-    void Start()
-    {
+    public Text textoNivel;
+    private static char[] caracteresAnimacion;
+    private int i = 0;
+    private float cadaCuantoLetra = 0f;
+    private float ratioLetra = 0.2f;
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (currentValue < 100)
         {
             currentValue += speed * Time.deltaTime;
-            //ProgressIndicator.text = ((int)currentValue).ToString() + "%";
-            //LoadingText.SetActive(true);
+            if (i < caracteresAnimacion.Length && Time.time > cadaCuantoLetra)
+            {
+                cadaCuantoLetra = Time.time + ratioLetra;
+                textoNivel.text = textoNivel.text + caracteresAnimacion[i];
+                i++;
+            }
         }
         else
         {
-            //LoadingText.SetActive(false);
-            //ProgressIndicator.text = "Done";
+            cambioEscena();
         }
 
         LoadingBar.fillAmount = currentValue / 100;
+    }
+
+    
+
+    private void cambioEscena()
+    {
+        SceneManager.LoadScene(_escena);
+    }
+
+    public void SetEscena(string escena)
+    {
+        _escena = escena;
+        caracteresAnimacion = escena.ToCharArray();
     }
 }

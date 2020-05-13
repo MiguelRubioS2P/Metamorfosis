@@ -184,6 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3918338344258302725}
+  cargarNivel: {fileID: 443848011203926853, guid: e59f74d21e25a6541927de45b08e674d,
+    type: 3}
 --- !u!1 &3918338344691604366
 GameObject:
   m_ObjectHideFlags: 0
