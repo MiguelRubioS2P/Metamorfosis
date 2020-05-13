@@ -14,7 +14,7 @@ public class InicioJuego : MonoBehaviour
 
     IEnumerator CargarJuego()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Menu Principal");
     }
 }
