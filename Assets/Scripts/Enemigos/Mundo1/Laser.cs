@@ -7,8 +7,7 @@ public class Laser : MonoBehaviour
     float velocidadDisparo = 12f;
 
     private Rigidbody2D rigidbody2d;
-    private PlayerControll player;
-    private Vector2 dondeDispara;
+    private Jefe1 jefe;
     private GameManager gameManager;
 
 
@@ -16,14 +15,14 @@ public class Laser : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         rigidbody2d = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<PlayerControll>();
+        jefe = FindObjectOfType<Jefe1>();
         
 
-        if (gameObject.transform.position.x < player.transform.position.x)
+        if (jefe.isFlipped)
         {
             rigidbody2d.velocity = new Vector2(1f * velocidadDisparo, rigidbody2d.velocity.y);
         }
-        else if (gameObject.transform.position.x > player.transform.position.x)
+        else
         {
             rigidbody2d.velocity = new Vector2(-1f * velocidadDisparo, rigidbody2d.velocity.y);
         }
