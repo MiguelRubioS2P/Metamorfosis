@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionsManager : MonoBehaviour
@@ -16,9 +17,11 @@ public class OptionsManager : MonoBehaviour
     private string rutaDeGuardado;
     List<Partida> partidas = new List<Partida>();
     public string nombrePartida;
-    
-    
-    
+
+
+    public AudioClip[] canciones;
+    private bool primeraVez = true;
+    private bool jugando = false;
 
     void Update()
     {
@@ -27,6 +30,38 @@ public class OptionsManager : MonoBehaviour
         float fps = 1.0f / deltaTime;
         int numero = (int) fps;
         fpsText.text = numero.ToString();
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 4 && primeraVez)
+        {
+            primeraVez = false;
+        }
+        if (level == 5)
+        {
+            transform.GetChild(0).GetComponent<AudioSource>().Stop();
+        }
+        if (level == 6 || level == 7 || level == 9 || level == 10 || level == 12 || level == 13)
+        {
+            //Niveles nommales
+            jugando = true;
+            transform.GetChild(0).GetComponent<AudioSource>().clip = canciones[Random.Range(1,4)];
+            transform.GetChild(0).GetComponent<AudioSource>().Play();
+        }
+        if (level == 8 || level == 11 || level == 14)
+        {
+            //Musica pelea jefes
+            jugando = true;
+            transform.GetChild(0).GetComponent<AudioSource>().clip = canciones[5];
+            transform.GetChild(0).GetComponent<AudioSource>().Play();
+        }
+        if (level == 1 && !primeraVez || level == 4 && jugando)
+        {
+            jugando = false;
+            transform.GetChild(0).GetComponent<AudioSource>().clip = canciones[0];
+            transform.GetChild(0).GetComponent<AudioSource>().Play();
+        }
     }
 
     void Start()

@@ -18,6 +18,7 @@ public class CargaNivel : MonoBehaviour
     private float cadaCuantoLetra = 0f;
     private float ratioLetra = 0.2f;
 
+    
     void Update()
     {
         if (currentValue < 100)

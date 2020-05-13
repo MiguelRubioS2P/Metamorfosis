@@ -128,6 +128,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 443848011203926853, guid: e59f74d21e25a6541927de45b08e674d,
+        type: 3}
+      propertyPath: canciones.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 443848011203926853, guid: e59f74d21e25a6541927de45b08e674d,
+        type: 3}
+      propertyPath: canciones.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c20dc1321df3b8a46a08223a1c54884b, type: 3}
+    - target: {fileID: 443848011203926853, guid: e59f74d21e25a6541927de45b08e674d,
+        type: 3}
+      propertyPath: canciones.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c20dc1321df3b8a46a08223a1c54884b, type: 3}
     - target: {fileID: 976684913913101720, guid: e59f74d21e25a6541927de45b08e674d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -187,6 +202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CargaNiveles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362204062150906243, guid: e59f74d21e25a6541927de45b08e674d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e59f74d21e25a6541927de45b08e674d, type: 3}

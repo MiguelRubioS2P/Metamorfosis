@@ -301,6 +301,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpsText: {fileID: 4100726065874066729}
   nombrePartida: 
+  canciones:
+  - {fileID: 8300000, guid: b6f613bb85808cc4f9b5e2fbcf13d8ad, type: 3}
+  - {fileID: 8300000, guid: c20dc1321df3b8a46a08223a1c54884b, type: 3}
+  - {fileID: 8300000, guid: 334f0b797a2114444a76415b192d3b7a, type: 3}
+  - {fileID: 8300000, guid: 5843450834d971540a496703dca5ee46, type: 3}
+  - {fileID: 8300000, guid: 1eaf67728b22712459032d51b219350f, type: 3}
+  - {fileID: 8300000, guid: 46f4dfc429bb1b641990f7df95a77676, type: 3}
 --- !u!1 &4100726065421334271
 GameObject:
   m_ObjectHideFlags: 0
