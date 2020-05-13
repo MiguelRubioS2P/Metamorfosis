@@ -16,7 +16,7 @@ public class DiamanteColecionable : MonoBehaviour
         
         if(collision.transform.tag == "personaje")
         {
-            gameManager.GanarDinero(10);
+            gameManager.GanarDineroDiamantes(10);
             Destroy(gameObject);
         }
     }

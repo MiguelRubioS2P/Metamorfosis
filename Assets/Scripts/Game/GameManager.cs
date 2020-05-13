@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
 
     private int vidas;
-    private int dinero;
+    private int dineroMonedasNivel;
+    private int dineroDiamantes;
     public AudioClip sonidoMoneda;
     private AudioSource audioSource;
     
@@ -27,39 +28,56 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        dinero = 0;
+        dineroMonedasNivel = 0;
+        dineroDiamantes = 0;
         vidas = 5;
         audioSource = GetComponent<AudioSource>();
     }
 
     public void DineroInicial()
     {
-        dinero = 0;
+        dineroMonedasNivel = 0;
+        dineroDiamantes = 0;
     }
 
     public void GanarDinero(int cantidad)
     {
-        dinero+=cantidad;
-        Debug.Log("El dinero que tengo es: " + dinero);
+        dineroMonedasNivel += cantidad;
+        Debug.Log("El dinero que tengo es: " + dineroMonedasNivel);
+        audioSource.clip = sonidoMoneda;
+        audioSource.Play();
+    }
+
+    public void GanarDineroDiamantes(int cantidad)
+    {
+        dineroDiamantes += cantidad;
         audioSource.clip = sonidoMoneda;
         audioSource.Play();
     }
 
     public void PerderDinero()
     {
-        dinero = 0;
+        dineroMonedasNivel = 0;
+        dineroDiamantes = 0;
+    }
+
+    public int DineroTotal()
+    {
+        int dineroTotal = dineroDiamantes + dineroMonedasNivel;
+        Debug.Log("El dinero total en este nivel es: " + dineroTotal);
+        return dineroTotal;
     }
 
     public int PintarDinero()
     {
-        if(dinero < 0)
+        if(dineroMonedasNivel < 0)
         {
-            dinero = 0;
-            return dinero;
+            dineroMonedasNivel = 0;
+            return dineroMonedasNivel;
         }
         else
         {
-            return dinero;
+            return dineroMonedasNivel;
         }
     }
 
@@ -94,7 +112,7 @@ public class GameManager : MonoBehaviour
     public int _dinero
     {
         // Añadido para obtener el dinero en el final de nivel
-        get { return dinero; }
+        get { return dineroMonedasNivel; }
     }
 
 }

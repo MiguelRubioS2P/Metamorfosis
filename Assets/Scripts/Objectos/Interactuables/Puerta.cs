@@ -40,7 +40,7 @@ public class Puerta : MonoBehaviour
         {
             dentro = false;
             indicador.SetActive(false);
-            Destroy(indicador);
+            
         }
     }
 

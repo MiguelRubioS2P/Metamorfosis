@@ -74,18 +74,18 @@ public class FinalNiveles : MonoBehaviour
             intermedio.gameObject.SetActive(true);
             avanzado.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            CargarMenuNiveles(3,gameManager.PintarDinero());
+            CargarMenuNiveles(3,gameManager.DineroTotal());
         } else if (gameManager._dinero >= monedasQueTieneNivel / 2)
         {
             noob.gameObject.SetActive(true);
             intermedio.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            CargarMenuNiveles(2,gameManager.PintarDinero());
+            CargarMenuNiveles(2, gameManager.DineroTotal());
         } else
         {
             noob.gameObject.SetActive(true);
             yield return new WaitForSeconds(3);
-            CargarMenuNiveles(1,gameManager.PintarDinero());
+            CargarMenuNiveles(1, gameManager.DineroTotal());
         }
 
     }

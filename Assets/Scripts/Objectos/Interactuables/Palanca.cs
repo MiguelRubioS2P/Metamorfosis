@@ -41,7 +41,7 @@ public class Palanca : MonoBehaviour
         {
             dentro = false;
             indicador.SetActive(false);
-            Destroy(indicador);
+            
         }
     }
 }
