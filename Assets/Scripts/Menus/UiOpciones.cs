@@ -11,35 +11,36 @@ public class UiOpciones : MonoBehaviour
 
     public Dropdown resolucion;
     private OptionsManager optionsmanager;
+    private ControladorMenu scriptControladorMenu;
 
 
     public GameObject menuPause;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Desactivar();
-        }
-    }
+    
 
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        Desactivar();
+    //    }
+    //}
 
+    
     public void Desactivar()
     {
-        gameObject.GetComponent<Canvas>().enabled = false;
+        //gameObject.GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1;
         Cursor.visible = false;
-    }
-
-    public void Activar()
-    {
-        Time.timeScale = 0;
-        Cursor.visible = true;
+        scriptControladorMenu.estaActivoPausa = false;
+        scriptControladorMenu.estaActivoOpciones = false;
+        gameObject.SetActive(false);
     }
 
     private void Awake()
     {
         optionsmanager = FindObjectOfType<OptionsManager>();
+        scriptControladorMenu = FindObjectOfType<ControladorMenu>();
     }
     public void ControlVoluemnGeneral(Slider sliderValue)
     {
@@ -49,10 +50,10 @@ public class UiOpciones : MonoBehaviour
 
     public void Atras()
     {
-        // Si volvemos atras 
-        gameObject.GetComponent<Canvas>().enabled = false;
-        menuPause.GetComponent<Canvas>().enabled = true;
-        //menuPause.Desactivar();
+        scriptControladorMenu.estaActivoPausa = true;
+        menuPause.SetActive(true);
+        scriptControladorMenu.estaActivoOpciones = false;
+        gameObject.SetActive(false);
 
     }
 

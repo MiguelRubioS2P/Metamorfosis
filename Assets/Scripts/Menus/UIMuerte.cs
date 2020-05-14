@@ -10,6 +10,7 @@ public class UIMuerte : MonoBehaviour
     private PlayerCombate scriptPlayerCombate;
     private string escena;
     private GameManager gameManager;
+    private ControladorMenu controladorMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class UIMuerte : MonoBehaviour
         escena = SceneManager.GetActiveScene().name;
         gameManager = FindObjectOfType<GameManager>();
         scriptPlayerCombate = FindObjectOfType<PlayerCombate>();
+        controladorMenu = FindObjectOfType<ControladorMenu>();
     }
 
     public void Activar()
@@ -37,6 +39,7 @@ public class UIMuerte : MonoBehaviour
         gameManager.VidasIniciales();
         player.enabled = true;
         scriptPlayerCombate.enabled = true;
+        controladorMenu.estaActivoMuerte = false;
         Time.timeScale = 1;
         SceneManager.LoadScene(escena);
     }
@@ -45,6 +48,7 @@ public class UIMuerte : MonoBehaviour
     {
         gameObject.GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1;
+        controladorMenu.estaActivoMuerte = false;
         //player.gameObject.SetActive(true);
         Cursor.visible = false;
     }
@@ -60,6 +64,7 @@ public class UIMuerte : MonoBehaviour
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
         Time.timeScale = 1;
+        controladorMenu.estaActivoMuerte = false;
         SceneManager.LoadScene("Menu Niveles");
     }
 
@@ -69,6 +74,7 @@ public class UIMuerte : MonoBehaviour
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
         Time.timeScale = 1;
+        controladorMenu.estaActivoMuerte = false;
         SceneManager.LoadScene("Menu Principal");
     }
 

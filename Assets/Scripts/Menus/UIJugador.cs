@@ -11,12 +11,15 @@ public class UIJugador : MonoBehaviour
     private int vidas,dinero;
     private GameObject menuMuerte;
     private UIMuerte scriptUIMuerte;
+    private ControladorMenu controladorMenu;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         menuMuerte = GameObject.Find("UI de Muerte");
         scriptUIMuerte = menuMuerte.GetComponent<UIMuerte>();
+        scriptUIMuerte.gameObject.SetActive(false);
+        controladorMenu = FindObjectOfType<ControladorMenu>();
         
     }
 
@@ -27,7 +30,9 @@ public class UIJugador : MonoBehaviour
 
         if(vidas == 0)
         {
+            scriptUIMuerte.gameObject.SetActive(true);
             scriptUIMuerte.Activar();
+            controladorMenu.estaActivoMuerte = true;
         }
 
         textoMonedas.text = dinero.ToString();

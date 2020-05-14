@@ -8,40 +8,20 @@ public class UIPausa : MonoBehaviour
 
     private PlayerControll player;
     private PlayerCombate scriptPlayerCombate;
-    private bool activo;
     private GameManager gameManager;
     public GameObject menuOpciones;
+    private ControladorMenu scriptControladorMenu;
 
-
-    private void Start()
+    private void Awake()
     {
         player = FindObjectOfType<PlayerControll>();
-        activo = false;
         gameManager = FindObjectOfType<GameManager>();
         scriptPlayerCombate = FindObjectOfType<PlayerCombate>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (activo)
-            {
-                Desactivar();
-            }
-            else
-            {
-                Activar();
-            }
-
-        }
-        
+        scriptControladorMenu = FindObjectOfType<ControladorMenu>();
     }
 
     public void Activar()
     {
-        gameObject.GetComponent<Canvas>().enabled = true;
-        activo = true;
         player.enabled = false;
         scriptPlayerCombate.enabled = false;
         Time.timeScale = 0;
@@ -50,12 +30,13 @@ public class UIPausa : MonoBehaviour
 
     public void Desactivar()
     {
-        gameObject.GetComponent<Canvas>().enabled = false;
-        activo = false;
+        
         Time.timeScale = 1;
         player.enabled = true;
         scriptPlayerCombate.enabled = true;
         Cursor.visible = false;
+        scriptControladorMenu.estaActivoPausa = false;
+        gameObject.SetActive(false);
     }
 
     public void Principal()
@@ -79,8 +60,10 @@ public class UIPausa : MonoBehaviour
 
     public void Opciones()
     {
-        gameObject.GetComponent<Canvas>().enabled = false;
-        menuOpciones.GetComponent<Canvas>().enabled = true;
-        menuOpciones.GetComponent<UiOpciones>().Activar();
+        //gameObject.GetComponent<Canvas>().enabled = false;
+        gameObject.SetActive(false);
+        scriptControladorMenu.estaActivoOpciones = true;
+        menuOpciones.SetActive(true);
+        //menuOpciones.GetComponent<UiOpciones>().Activar();
     }
 }
