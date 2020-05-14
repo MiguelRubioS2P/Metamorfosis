@@ -18,6 +18,8 @@ public class OptionsManager : MonoBehaviour
     public List<Partida> partidas = new List<Partida>();
     public string nombrePartida;
 
+    public int _utlimasMonedasConseguidas, _ultimasEstrellasConseguidas;
+    public string _ultimaEscenaJugada;
 
     public AudioClip[] canciones;
     private bool primeraVez = true;
@@ -455,5 +457,24 @@ public class OptionsManager : MonoBehaviour
         }
     }
 
-    
+    // Para poder comprobar record desde un script no asociado 
+
+    public void SetEstrellas(int estrellas)
+    {
+        _ultimasEstrellasConseguidas = estrellas;
+    }
+
+    public void SetMonedas(int monedas)
+    {
+        _utlimasMonedasConseguidas = monedas;
+
+    }
+
+    public void SetEscena(string escena)
+    {
+        _ultimaEscenaJugada = escena;
+
+    }
+
+
 }

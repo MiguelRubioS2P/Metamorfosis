@@ -26,6 +26,8 @@ public class FinalNiveles : MonoBehaviour
     private OptionsManager optionsManager;
     private GameObject player;
 
+    private FinalizarNivel final;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,6 +50,8 @@ public class FinalNiveles : MonoBehaviour
         // Obtenemos OptionsManager
         optionsManager = FindObjectOfType<OptionsManager>();
         player = FindObjectOfType<PlayerControll>().gameObject;
+
+        final = FindObjectOfType<FinalizarNivel>();
     }
 
     private IEnumerator MenuNiveles()
@@ -97,7 +101,10 @@ public class FinalNiveles : MonoBehaviour
     {
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
-        GuardarEstrellasYMonedas(estrellas, monedas);
+        //GuardarEstrellasYMonedas(estrellas, monedas);
+        optionsManager.SetEstrellas(estrellas);
+        optionsManager.SetMonedas(monedas);
+        optionsManager.SetEscena(escena);
         NivelesDesbloqueados(escena);
         SceneManager.LoadScene("FinalizarNivel");
     }
@@ -142,9 +149,9 @@ public class FinalNiveles : MonoBehaviour
     /// </summary>
     /// <param name="estrellas">Total de estrellas conseguidas</param>
     /// <param name="monedas">Total de monedas conseguidas</param>
-    private void GuardarEstrellasYMonedas(int estrellas,int monedas)
+    /*private void GuardarEstrellasYMonedas(int estrellas,int monedas)
     {
         optionsManager.SumarMonedasNivel(escena, optionsManager.nombrePartida, monedas);
         optionsManager.SumarEstrellasNivel(escena, optionsManager.nombrePartida, estrellas);
-    }
+    }*/
 }
