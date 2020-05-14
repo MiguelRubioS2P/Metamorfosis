@@ -14,11 +14,12 @@ public class MenuGuardado : MonoBehaviour
     public InputField IFslot1, IFslot2, IFslot3;
     private bool slot1Select, slot2Select, slot3Select, vacio;
     private TranscionMenus transcion;
-
+    private UISalir salir;
 
     private void Awake()
     {
         transcion = FindObjectOfType<TranscionMenus>();
+        salir = FindObjectOfType<UISalir>();
         vacio = true;
 
         // Variables para controlas donde esta el usuario pulsando.
@@ -170,11 +171,7 @@ public class MenuGuardado : MonoBehaviour
             
         } else if (boton == "Salir Boton")
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            salir.salirJuego();
         }
     }
 

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class MenuNiveles : MonoBehaviour
 {
     private TranscionMenus transcion;
+    private UISalir salir;
     private OptionsManager optionsManager; // Obtenemos la referencia del GO DontDestroOnLoad
     public GameObject nivel1;
     public GameObject nivel2;
@@ -21,6 +22,7 @@ public class MenuNiveles : MonoBehaviour
         Cursor.visible = true;
         optionsManager = FindObjectOfType<OptionsManager>();
         transcion = FindObjectOfType<TranscionMenus>();
+        salir = FindObjectOfType<UISalir>();
     }
 
     private void Start()
@@ -37,11 +39,7 @@ public class MenuNiveles : MonoBehaviour
         }
         else if (boton == "Salir Boton")
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            salir.salirJuego();
         }
     }
     
