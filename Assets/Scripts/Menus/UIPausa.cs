@@ -43,11 +43,20 @@ public class UIPausa : MonoBehaviour
 
     public void Niveles()
     {
-        Debug.Log("Ejecutando este método, Principal() desde UIPausa");
+        Debug.Log("Ejecutando este método, Niveles() desde UIPausa");
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu Niveles");
+    }
+
+    public void Principal()
+    {
+        Debug.Log("Ejecutando este método, Principal() desde UIPausa");
+        gameManager.DineroInicial();
+        gameManager.VidasIniciales();
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu Principal");
     }
 
     public void Salir()
