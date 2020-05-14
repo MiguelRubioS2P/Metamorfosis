@@ -15,7 +15,7 @@ public class OptionsManager : MonoBehaviour
     List<Nivel> niveles2 = new List<Nivel>();
     List<Nivel> niveles3 = new List<Nivel>();
     private string rutaDeGuardado;
-    List<Partida> partidas = new List<Partida>();
+    public List<Partida> partidas = new List<Partida>();
     public string nombrePartida;
 
 
