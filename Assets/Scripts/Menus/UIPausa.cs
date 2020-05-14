@@ -10,20 +10,13 @@ public class UIPausa : MonoBehaviour
     private PlayerCombate scriptPlayerCombate;
     private GameManager gameManager;
     public GameObject menuOpciones;
-<<<<<<< HEAD
     private ControladorMenu scriptControladorMenu;
-=======
     private UISalir salir;
->>>>>>> master
 
     private void Awake()
     {
         player = FindObjectOfType<PlayerControll>();
-<<<<<<< HEAD
-=======
         salir = FindObjectOfType<UISalir>();
-        activo = false;
->>>>>>> master
         gameManager = FindObjectOfType<GameManager>();
         scriptPlayerCombate = FindObjectOfType<PlayerCombate>();
         scriptControladorMenu = FindObjectOfType<ControladorMenu>();
@@ -59,6 +52,7 @@ public class UIPausa : MonoBehaviour
 
     public void Salir()
     {
+        Debug.Log("Método Salir en el script UIPausa");
         salir.salirJuego();
     }
 
