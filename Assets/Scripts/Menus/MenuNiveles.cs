@@ -10,12 +10,10 @@ public class MenuNiveles : MonoBehaviour
     private TranscionMenus transcion;
     private UISalir salir;
     private OptionsManager optionsManager; // Obtenemos la referencia del GO DontDestroOnLoad
-    public GameObject nivel1;
-    public GameObject nivel2;
-    public GameObject nivel3;
-    public GameObject nivel4, nivel5, nivel6, nivel7, nivel8, nivel9;
-    public Sprite fotoNivel2,fotoNivel3,fotoNivel4,fotoNivel5,fotoNivel6,fotoNivel7,fotoNivel8,fotoNivel9;
 
+    public GameObject[] niveles;
+    public Sprite[] fotosNivel;
+    private int indiceFoto = 0;
 
     private void Awake()
     {
@@ -43,56 +41,10 @@ public class MenuNiveles : MonoBehaviour
         }
     }
     
-    public void OnClickMundo1()
+    public void OnClickMundo()
     {
         string boton = EventSystem.current.currentSelectedGameObject.name;
-        if(boton == "Nivel 1")
-        {
-            transcion.cargarNivelEscena("Nivel 1");
-        } else if (boton == "Nivel 2")
-        {
-            Debug.Log("Pulsando Botón Nivel 2");
-           transcion.cargarNivelEscena("Nivel 2");
-        }
-        else if (boton == "Nivel 3")
-        {
-            Debug.Log("Pulsando Botón Nivel 3");
-            transcion.cargarNivelEscena("Nivel 3");
-        }
-    }
-
-    public void OnClickMundo2()
-    {
-        string boton = EventSystem.current.currentSelectedGameObject.name;
-        if (boton == "Nivel 4")
-        {
-            transcion.cargarNivelEscena("Nivel 4");
-        }
-        else if (boton == "Nivel 5")
-        {
-            transcion.cargarNivelEscena("Nivel 5");
-        }
-        else if (boton == "Nivel 6")
-        {
-            transcion.cargarNivelEscena("Nivel 6");
-        }
-    }
-
-    public void OnClickMundo3()
-    {
-        string boton = EventSystem.current.currentSelectedGameObject.name;
-        if (boton == "Nivel 7")
-        {
-
-        }
-        else if (boton == "Nivel 8")
-        {
-
-        }
-        else if (boton == "Nivel 9")
-        {
-
-        }
+        StartCoroutine(transcion.cambioEscena(boton));
     }
 
 
@@ -101,86 +53,46 @@ public class MenuNiveles : MonoBehaviour
     /// </summary>
     private void ComprobacionNiveles()
     {
-        if (optionsManager.EstadoActivo(nivel1.name,optionsManager.nombrePartida))
+        foreach (GameObject i in niveles)
         {
-            nivel1.GetComponent<Button>().interactable = true;
-            
-        }
-        else
-        {
-            nivel1.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel2.name, optionsManager.nombrePartida))
-        {
-            nivel2.GetComponent<Button>().interactable = true;
-            nivel2.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel2;
-            
-
-        }
-        else
-        {
-            nivel2.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel3.name, optionsManager.nombrePartida))
-        {
-            nivel3.GetComponent<Button>().interactable = true;
-            nivel3.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel3;
-        }
-        else
-        {
-            nivel3.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel4.name, optionsManager.nombrePartida))
-        {
-            nivel4.GetComponent<Button>().interactable = true;
-            nivel4.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel4;
-        }
-        else
-        {
-            nivel4.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel5.name, optionsManager.nombrePartida))
-        {
-            nivel5.GetComponent<Button>().interactable = true;
-            nivel5.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel5;
-        }
-        else
-        {
-            nivel5.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel6.name, optionsManager.nombrePartida))
-        {
-            nivel6.GetComponent<Button>().interactable = true;
-            nivel6.transform.GetChild(0).GetComponent<Image>().sprite = fotoNivel6;
-        }
-        else
-        {
-            nivel6.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel7.name, optionsManager.nombrePartida))
-        {
-            nivel7.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-            nivel7.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel8.name, optionsManager.nombrePartida))
-        {
-            nivel8.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-            nivel8.GetComponent<Button>().interactable = false;
-        }
-        if (optionsManager.EstadoActivo(nivel9.name, optionsManager.nombrePartida))
-        {
-            nivel9.GetComponent<Button>().interactable = true;
-        }
-        else
-        {
-            nivel9.GetComponent<Button>().interactable = false;
+            if (optionsManager.EstadoActivo(i.name, optionsManager.nombrePartida))
+            {
+                activarSegunEstrellas(i);
+            }
+            else
+            {
+                i.GetComponent<Button>().interactable = false;
+            }
         }
     }
     
+    private void activarSegunEstrellas(GameObject nivel)
+    {
+        nivel.GetComponent<Button>().interactable = true;
+        nivel.transform.GetChild(0).GetComponent<Image>().sprite = fotosNivel[indiceFoto];
+        indiceFoto++;
+
+        for (int i = 1; i <= 3; i++)
+        {
+            nivel.transform.GetChild(i).gameObject.SetActive(true);
+        }
+
+        foreach (Partida i in optionsManager.partidas)
+        {
+            if (i.nombre.Equals(optionsManager.nombrePartida))
+            {
+                foreach (Nivel z in i.niveles)
+                {
+                    if (z.Nombre.Equals(nivel.name))
+                    {
+                        for (int j = 1; j <= z.Estrellas; j++)
+                        {
+                            nivel.transform.GetChild(j).GetComponent<Image>().color = Color.white;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
 }

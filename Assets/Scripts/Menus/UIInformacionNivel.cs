@@ -20,39 +20,6 @@ public class UIInformacionNivel : MonoBehaviour
     }
     public void Mostrar(Button boton)
     {
-        //Version Obteniendo de nuevo el archivo
-        /* gameObject.GetComponent<Canvas>().enabled = true;
-
-         if (File.Exists(Application.absoluteURL + "datos.dat"))
-         {
-             BinaryFormatter bf = new BinaryFormatter();
-             FileStream archivo = File.Open(Application.absoluteURL + "datos.dat", FileMode.Open);
-
-             InformacionJuego info = bf.Deserialize(archivo) as InformacionJuego;
-
-             partidas = info.partidas;
-
-             archivo.Close();
-         }
-
-         foreach(Partida i in partidas)
-         {
-             if(i.nombre.Equals(option.nombrePartida))
-             {
-                 foreach(Nivel z in i.niveles)
-                 {
-                    if(z.Nombre.Equals(boton.name))
-                     {
-                         nivel.text = z.Nombre;
-                         monedas.text = z.Monedas.ToString();
-                         estrellas.text = z.Estrellas.ToString();
-                     }
-                 }
-             }
-
-         }*/
-
-
         //Version usando el option manager
 
         gameObject.GetComponent<Canvas>().enabled = true;
