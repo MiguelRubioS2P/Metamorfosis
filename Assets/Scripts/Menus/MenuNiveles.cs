@@ -55,7 +55,7 @@ public class MenuNiveles : MonoBehaviour
     {
         foreach (GameObject i in niveles)
         {
-            if (optionsManager.EstadoActivo(i.name, optionsManager.nombrePartida))
+            if (optionsManager.EstadoActivo(i.name, optionsManager.GetNombrePartida()))
             {
                 activarSegunEstrellas(i);
             }
@@ -65,21 +65,22 @@ public class MenuNiveles : MonoBehaviour
             }
         }
     }
-    
+
     private void activarSegunEstrellas(GameObject nivel)
     {
-        nivel.GetComponent<Button>().interactable = true;
-        nivel.transform.GetChild(0).GetComponent<Image>().sprite = fotosNivel[indiceFoto];
-        indiceFoto++;
+        
+            nivel.GetComponent<Button>().interactable = true;
+            nivel.transform.GetChild(0).GetComponent<Image>().sprite = fotosNivel[indiceFoto];
+            indiceFoto++;
 
-        for (int i = 1; i <= 3; i++)
-        {
-            nivel.transform.GetChild(i).gameObject.SetActive(true);
-        }
+            for (int i = 1; i <= 3; i++)
+            {
+                nivel.transform.GetChild(i).gameObject.SetActive(true);
+            }
 
         foreach (Partida i in optionsManager.partidas)
         {
-            if (i.nombre.Equals(optionsManager.nombrePartida))
+            if (i.nombre == optionsManager.GetNombrePartida())
             {
                 foreach (Nivel z in i.niveles)
                 {
@@ -94,5 +95,6 @@ public class MenuNiveles : MonoBehaviour
             }
 
         }
+
     }
 }

@@ -476,5 +476,10 @@ public class OptionsManager : MonoBehaviour
 
     }
 
+    public string GetNombrePartida()
+    {
+        return nombrePartida;
+    }
+
 
 }

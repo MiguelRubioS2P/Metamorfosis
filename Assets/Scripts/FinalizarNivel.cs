@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class FinalizarNivel : MonoBehaviour
 {
     private Animator animator;
-    private static int _estrellas, _monedas;
-    private static string _escena;
     private OptionsManager option;
     List<Partida> partidas = new List<Partida>();
     private void Awake()
@@ -37,7 +35,7 @@ public class FinalizarNivel : MonoBehaviour
         partidas = option.partidas;
         foreach (Partida i in partidas)
         {
-            if (i.nombre.Equals(option.nombrePartida))
+            if (i.nombre == option.GetNombrePartida())
             {
                 foreach (Nivel z in i.niveles)
                 {
@@ -60,8 +58,8 @@ public class FinalizarNivel : MonoBehaviour
     /// </summary>
     private void GuardarEstrellasYMonedas()
     {
-        option.SumarMonedasNivel(option._ultimaEscenaJugada, option.nombrePartida, option._utlimasMonedasConseguidas);
-        option.SumarEstrellasNivel(option._ultimaEscenaJugada, option.nombrePartida, option._ultimasEstrellasConseguidas);
+        option.SumarMonedasNivel(option._ultimaEscenaJugada, option.GetNombrePartida(), option._utlimasMonedasConseguidas);
+        option.SumarEstrellasNivel(option._ultimaEscenaJugada, option.GetNombrePartida(), option._ultimasEstrellasConseguidas);
     }
 
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -101,7 +103,7 @@ public class FinalNiveles : MonoBehaviour
     {
         gameManager.DineroInicial();
         gameManager.VidasIniciales();
-        //GuardarEstrellasYMonedas(estrellas, monedas);
+
         optionsManager.SetEstrellas(estrellas);
         optionsManager.SetMonedas(monedas);
         optionsManager.SetEscena(escena);
@@ -115,43 +117,21 @@ public class FinalNiveles : MonoBehaviour
     /// <param name="escena"></param>
     private void NivelesDesbloqueados(string escena)
     {
-        switch (escena)
+        for (int i = 0; i < escena.Length; i++)
         {
-            case "Nivel 1":
-                // si es nivel 1 hay que desbloquear Nivel 2
-                optionsManager.CambiarEstado("Nivel 2", optionsManager.nombrePartida);
-                break;
-            case "Nivel 2":
-                // si es nivel 2 hay que desbloquear Nivel 3
-                optionsManager.CambiarEstado("Nivel 3", optionsManager.nombrePartida);
-                
-                break;
-            case "Nivel 3":
-                // si es nivel 3 hay que desbloquear Nivel 4 pero como es pa pre-alpha aqui termina el flujo.
-                optionsManager.CambiarEstado("Nivel 4", optionsManager.nombrePartida);
-                break;
-            case "Nivel 4":
-                optionsManager.CambiarEstado("Nivel 5", optionsManager.nombrePartida);
-                break;
-            case "Nivel 5":
-                optionsManager.CambiarEstado("Nivel 6", optionsManager.nombrePartida);
-                break;
-            case "Nivel 6":
-                break;
+            string[] valores = Regex.Split(escena, @"\D+");
+
+            foreach (string value in valores)
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    int j = int.Parse(value);
+                    optionsManager.CambiarEstado("Nivel " + (j+1), optionsManager.GetNombrePartida());
+                } 
+            }
         }
 
         optionsManager.PonerUltimoNivelJugado(escena, optionsManager.nombrePartida);
         optionsManager.GuardarDatos();
     }
-
-    /// <summary>
-    /// Método para guardar las estrellas y las monedas conseguidas en el nivel
-    /// </summary>
-    /// <param name="estrellas">Total de estrellas conseguidas</param>
-    /// <param name="monedas">Total de monedas conseguidas</param>
-    /*private void GuardarEstrellasYMonedas(int estrellas,int monedas)
-    {
-        optionsManager.SumarMonedasNivel(escena, optionsManager.nombrePartida, monedas);
-        optionsManager.SumarEstrellasNivel(escena, optionsManager.nombrePartida, estrellas);
-    }*/
 }

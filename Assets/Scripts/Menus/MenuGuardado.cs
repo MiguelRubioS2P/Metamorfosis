@@ -295,7 +295,9 @@ public class MenuGuardado : MonoBehaviour
             {
                 slot.transform.GetChild(0).GetComponent<Text>().text = slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper();
                 slot.transform.GetChild(2).GetComponent<InputField>().gameObject.SetActive(false);
-                slot.transform.GetChild(1).GetComponent<Text>().text = optionsManager.ObtenerUltimoNivelJugado(slot.GetComponentInParent<GameObject>().name);
+                //-
+                slot.transform.GetChild(1).GetComponent<Text>().text = optionsManager.ObtenerUltimoNivelJugado(slot.gameObject.name);
+                //-
                 slot.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(true);
             }
         }
