@@ -8,10 +8,12 @@ public class EfectoZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
 
     private Button boton;
+    private UIInformacionNivel info;
 
     private void Start()
     {
         boton = GetComponent<Button>();
+        info = FindObjectOfType<UIInformacionNivel>();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -19,6 +21,7 @@ public class EfectoZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         {
             Debug.Log("Es posible interactuar con el botón");
             gameObject.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+            info.Mostrar(boton);
         }
         else
         {
@@ -31,6 +34,7 @@ public class EfectoZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (boton.interactable)
         {
+            info.Esconder();
             Debug.Log("Es posible interactuar con el botón");
             gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         }
