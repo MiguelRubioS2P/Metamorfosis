@@ -10,7 +10,11 @@ public class UIMuerte : MonoBehaviour
     private PlayerCombate scriptPlayerCombate;
     private string escena;
     private GameManager gameManager;
+<<<<<<< HEAD
     private ControladorMenu controladorMenu;
+=======
+    private UISalir salir;
+>>>>>>> master
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +23,11 @@ public class UIMuerte : MonoBehaviour
         escena = SceneManager.GetActiveScene().name;
         gameManager = FindObjectOfType<GameManager>();
         scriptPlayerCombate = FindObjectOfType<PlayerCombate>();
+<<<<<<< HEAD
         controladorMenu = FindObjectOfType<ControladorMenu>();
+=======
+        salir = FindObjectOfType<UISalir>();
+>>>>>>> master
     }
 
     public void Activar()
@@ -80,12 +88,7 @@ public class UIMuerte : MonoBehaviour
 
     public void Salir()
     {
-        Debug.Log("Ejecutando este método, Salir() desde UIMuerte");
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        salir.salirJuego();
     }
 
 }

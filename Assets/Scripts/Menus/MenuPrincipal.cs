@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class MenuPrincipal : MonoBehaviour
 {
     private TranscionMenus transcion;
+    private UISalir salir;
     
     private void Awake()
     {
         transcion = FindObjectOfType<TranscionMenus>();
+        salir = FindObjectOfType<UISalir>();
         Cursor.visible = true;
     }
     public void OnClick()
@@ -27,11 +29,7 @@ public class MenuPrincipal : MonoBehaviour
         } 
         else if (boton == "Salir Boton")
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            salir.salirJuego();
         }
     }
 }

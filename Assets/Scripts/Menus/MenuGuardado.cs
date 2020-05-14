@@ -14,11 +14,12 @@ public class MenuGuardado : MonoBehaviour
     public InputField IFslot1, IFslot2, IFslot3;
     private bool slot1Select, slot2Select, slot3Select, vacio;
     private TranscionMenus transcion;
-
+    private UISalir salir;
 
     private void Awake()
     {
         transcion = FindObjectOfType<TranscionMenus>();
+        salir = FindObjectOfType<UISalir>();
         vacio = true;
 
         // Variables para controlas donde esta el usuario pulsando.
@@ -94,6 +95,7 @@ public class MenuGuardado : MonoBehaviour
 
             if (optionsManager.NombrePartidaJugador(slot2.gameObject.name) != null)
             {
+                slot1.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(false);
                 selecionado = true;
                 slot1Select = false;
                 slot2Select = true;
@@ -107,6 +109,7 @@ public class MenuGuardado : MonoBehaviour
             }
             else
             {
+                slot2.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(false);
                 BloquearInputField(IFslot1);
                 BloquearInputField(IFslot3);
                 selecionado = true;
@@ -138,6 +141,7 @@ public class MenuGuardado : MonoBehaviour
             }
             else
             {
+                slot3.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(false);
                 BloquearInputField(IFslot1);
                 BloquearInputField(IFslot2);
                 selecionado = true;
@@ -167,11 +171,7 @@ public class MenuGuardado : MonoBehaviour
             
         } else if (boton == "Salir Boton")
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            salir.salirJuego();
         }
     }
 
@@ -283,7 +283,8 @@ public class MenuGuardado : MonoBehaviour
 
     public void CambiarNombreSlotInput(Button slot)
     {
-        if(slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper() != "")
+        
+        if (slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper() != "")
         {
             
             if (optionsManager.ExisteNombre(slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper()))
@@ -295,6 +296,7 @@ public class MenuGuardado : MonoBehaviour
                 slot.transform.GetChild(0).GetComponent<Text>().text = slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper();
                 slot.transform.GetChild(2).GetComponent<InputField>().gameObject.SetActive(false);
                 slot.transform.GetChild(1).GetComponent<Text>().text = optionsManager.ObtenerUltimoNivelJugado(slot.GetComponentInParent<GameObject>().name);
+                slot.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(true);
             }
         }
         else

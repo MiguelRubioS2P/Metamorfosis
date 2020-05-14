@@ -10,11 +10,20 @@ public class UIPausa : MonoBehaviour
     private PlayerCombate scriptPlayerCombate;
     private GameManager gameManager;
     public GameObject menuOpciones;
+<<<<<<< HEAD
     private ControladorMenu scriptControladorMenu;
+=======
+    private UISalir salir;
+>>>>>>> master
 
     private void Awake()
     {
         player = FindObjectOfType<PlayerControll>();
+<<<<<<< HEAD
+=======
+        salir = FindObjectOfType<UISalir>();
+        activo = false;
+>>>>>>> master
         gameManager = FindObjectOfType<GameManager>();
         scriptPlayerCombate = FindObjectOfType<PlayerCombate>();
         scriptControladorMenu = FindObjectOfType<ControladorMenu>();
@@ -50,12 +59,7 @@ public class UIPausa : MonoBehaviour
 
     public void Salir()
     {
-        Debug.Log("Ejecutando este método, Salir() desde UIPausa");
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        salir.salirJuego();
     }
 
     public void Opciones()
