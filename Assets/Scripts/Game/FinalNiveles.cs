@@ -131,5 +131,6 @@ public class FinalNiveles : MonoBehaviour
             }
         }
         optionsManager.PonerUltimoNivelJugado(escena, optionsManager.GetNombrePartida());
+        optionsManager.GuardarDatos();
     }
 }

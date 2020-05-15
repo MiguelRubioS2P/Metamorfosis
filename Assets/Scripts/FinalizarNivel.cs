@@ -41,9 +41,9 @@ public class FinalizarNivel : MonoBehaviour
                 {
                     if (z.Nombre.Equals(option._ultimaEscenaJugada))
                     {
-                        if(option._utlimasMonedasConseguidas >= z.Monedas)
+                        if(option._utlimasMonedasConseguidas > z.Monedas || option._ultimasEstrellasConseguidas > z.Estrellas)
                         {
-                            //si tenemos mas monedas tendremos mas estrellas
+                            
                             GuardarEstrellasYMonedas();
                         }
                     }
