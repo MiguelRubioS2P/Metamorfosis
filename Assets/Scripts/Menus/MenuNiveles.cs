@@ -44,7 +44,7 @@ public class MenuNiveles : MonoBehaviour
     public void OnClickMundo()
     {
         string boton = EventSystem.current.currentSelectedGameObject.name;
-        StartCoroutine(transcion.cambioEscena(boton));
+        transcion.cargarNivelEscena(boton);
     }
 
 
