@@ -15,6 +15,7 @@ public class MenuGuardado : MonoBehaviour
     private bool slot1Select, slot2Select, slot3Select, vacio;
     private TranscionMenus transcion;
     private UISalir salir;
+    private string nivelBorrar;
 
     private void Awake()
     {
@@ -64,6 +65,7 @@ public class MenuGuardado : MonoBehaviour
         {
             if (optionsManager.NombrePartidaJugador(slot1.gameObject.name) != null)
             {
+                nivelBorrar = slot1.transform.GetChild(0).GetComponent<Text>().text;
                 selecionado = true;
                 slot1Select = true;
                 slot2Select = false;
@@ -77,7 +79,7 @@ public class MenuGuardado : MonoBehaviour
             }
             else
             {
-                slot1.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(false);
+                slot1.gameObject.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(false);
                 BloquearInputField(IFslot2);
                 BloquearInputField(IFslot3);
                 selecionado = true;
@@ -96,6 +98,7 @@ public class MenuGuardado : MonoBehaviour
 
             if (optionsManager.NombrePartidaJugador(slot2.gameObject.name) != null)
             {
+                nivelBorrar = slot2.transform.GetChild(0).GetComponent<Text>().text;
                 selecionado = true;
                 slot1Select = false;
                 slot2Select = true;
@@ -128,6 +131,7 @@ public class MenuGuardado : MonoBehaviour
         {
             if (optionsManager.NombrePartidaJugador(slot3.gameObject.name) != null)
             {
+                nivelBorrar = slot3.transform.GetChild(0).GetComponent<Text>().text;
                 selecionado = true;
                 slot1Select = false;
                 slot2Select = false;
@@ -295,6 +299,7 @@ public class MenuGuardado : MonoBehaviour
             }
             else
             {
+                nivelBorrar = slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper();
                 slot.transform.GetChild(0).GetComponent<Text>().text = slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper();
                 ElegirNombre(slot.name, slot.transform.GetChild(2).GetComponent<InputField>().text.ToUpper());
                 slot.transform.GetChild(2).GetComponent<InputField>().gameObject.SetActive(false);
@@ -313,5 +318,32 @@ public class MenuGuardado : MonoBehaviour
             Debug.Log("Nombre de partida vacia");
         }
         
-    }    
+    }   
+    
+    public void BorrarPartida()
+    {
+        optionsManager.EliminarPartidaGuardada(nivelBorrar);
+        if(slot1Select)
+        {
+            slot1.transform.GetChild(0).GetComponent<Text>().text = "Slot 1";
+            slot1.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(true);
+            slot1.transform.GetChild(1).GetComponent<Text>().text = "Vacio";
+            slot1.image.color = Color.red;
+        }
+        else if (slot2Select)
+        {
+            slot2.transform.GetChild(0).GetComponent<Text>().text = "Slot 2";
+            slot2.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(true);
+            slot2.transform.GetChild(1).GetComponent<Text>().text = "Vacio";
+            slot2.image.color = Color.red;
+        } else if (slot3Select)
+        {
+            slot3.transform.GetChild(0).GetComponent<Text>().text = "Slot 3";
+            slot3.transform.GetChild(1).GetComponent<Text>().gameObject.SetActive(true);
+            slot3.transform.GetChild(1).GetComponent<Text>().text = "Vacio";
+            slot3.image.color = Color.red;
+        }
+        selecionado = false;
+        botones.SetActive(false);
+    }
 }

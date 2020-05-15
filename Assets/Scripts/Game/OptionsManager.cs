@@ -328,6 +328,7 @@ public class OptionsManager : MonoBehaviour
     {
         List<Nivel> niveles = new List<Nivel>();
         int numeroNiveles = 9;
+        string slotBoton = "";
 
         for(int i = 1; i <= numeroNiveles; i++)
         {
@@ -343,13 +344,23 @@ public class OptionsManager : MonoBehaviour
 
         foreach (Partida p in partidas)
         {
-            if(p.nombre == nombrePartida)
+            if (p.nombre == nombrePartida)
             {
-                p.niveles = niveles;
-                p.ultimoNivel = "";
-                p.nombre = "";
+                slotBoton = p.slot;
+                foreach(Nivel n in p.niveles)
+                {
+                    p.niveles.Remove(n);
+                }
+                partidas.Remove(p);
             }
         }
+        GuardarDatos();
+        Partida partida = new Partida();
+        partida.slot = slotBoton;
+        partida.niveles = niveles;
+        partidas.Add(partida);
+        GuardarDatos();
+
     }
 
     public void CreacionPartidas()
