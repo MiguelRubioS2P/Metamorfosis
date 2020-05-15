@@ -60,6 +60,7 @@ public class FinalizarNivel : MonoBehaviour
     {
         option.SumarMonedasNivel(option._ultimaEscenaJugada, option.GetNombrePartida(), option._utlimasMonedasConseguidas);
         option.SumarEstrellasNivel(option._ultimaEscenaJugada, option.GetNombrePartida(), option._ultimasEstrellasConseguidas);
+        option.GuardarDatos();
     }
 
 }
