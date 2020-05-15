@@ -347,20 +347,28 @@ public class OptionsManager : MonoBehaviour
             if (p.nombre == nombrePartida)
             {
                 slotBoton = p.slot;
-                foreach(Nivel n in p.niveles)
-                {
-                    p.niveles.Remove(n);
-                }
                 partidas.Remove(p);
+                CrearPartidaEliminada(slotBoton, niveles);
+                break;
             }
+
         }
-        GuardarDatos();
+        
+    }
+
+    /// <summary>
+    /// Método que nos va a permitir crear una nueva partida con los datos que nosotros necesitamos, una vez se elimina la partida guardada.
+    /// </summary>
+    /// <param name="posicion">El slot de la partida eliminada</param>
+    /// <param name="nivelesNuevos">Lista de los niveles</param>
+    private void CrearPartidaEliminada(string posicion, List<Nivel> nivelesNuevos)
+    {
+        nombrePartida = "";
         Partida partida = new Partida();
-        partida.slot = slotBoton;
-        partida.niveles = niveles;
+        partida.slot = posicion;
+        partida.niveles = nivelesNuevos;
         partidas.Add(partida);
         GuardarDatos();
-
     }
 
     public void CreacionPartidas()
