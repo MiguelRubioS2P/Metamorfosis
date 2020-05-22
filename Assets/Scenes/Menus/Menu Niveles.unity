@@ -1140,6 +1140,9 @@ MonoBehaviour:
   - {fileID: 692188818}
   - {fileID: 677443816}
   - {fileID: 1328141839}
+  - {fileID: 1096694926}
+  - {fileID: 1151456226}
+  - {fileID: 1597012980}
   fotosNivel:
   - {fileID: 21300000, guid: 6825c44e517d71441986c0a66b2d8f7d, type: 3}
   - {fileID: 21300000, guid: 7dc9cc8f06f154640980399feb1980f5, type: 3}
@@ -1147,6 +1150,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c0523feb93fa46a43bb01e8d2fe59145, type: 3}
   - {fileID: 21300000, guid: 56bfaafc418f582489972c586559f532, type: 3}
   - {fileID: 21300000, guid: a1fa328265cccde43a27d97344d8fe8a, type: 3}
+  - {fileID: 21300000, guid: 983b986b1009f7b4f97e1e3d89d599ef, type: 3}
+  - {fileID: 21300000, guid: 983b986b1009f7b4f97e1e3d89d599ef, type: 3}
+  - {fileID: 21300000, guid: 983b986b1009f7b4f97e1e3d89d599ef, type: 3}
 --- !u!114 &377489545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2376,7 +2382,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1096694929}
   m_OnClick:
     m_PersistentCalls:
@@ -2676,7 +2682,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1151456229}
   m_OnClick:
     m_PersistentCalls:
@@ -4255,7 +4261,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1597012983}
   m_OnClick:
     m_PersistentCalls:
