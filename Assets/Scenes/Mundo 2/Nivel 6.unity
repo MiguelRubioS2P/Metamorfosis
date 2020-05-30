@@ -4999,7 +4999,7 @@ PrefabInstance:
     - target: {fileID: 8531951276548078853, guid: 94e976609ec8e7443bf8900b2056ee67,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8531951276548078853, guid: 94e976609ec8e7443bf8900b2056ee67,
         type: 3}
@@ -5621,12 +5621,12 @@ PrefabInstance:
     - target: {fileID: 3481917900544003698, guid: caf99e0ce74defe40b3fd95308b7478b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 3481917900544003698, guid: caf99e0ce74defe40b3fd95308b7478b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.22
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 3481917900544003698, guid: caf99e0ce74defe40b3fd95308b7478b,
         type: 3}
@@ -8886,6 +8886,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI de Pausa
       objectReference: {fileID: 0}
+    - target: {fileID: 5096987647149823568, guid: 0896619c00e36c24e89a4424741cdb44,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5096987647149823580, guid: 0896619c00e36c24e89a4424741cdb44,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9142,6 +9147,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5207677540030217402, guid: 0896619c00e36c24e89a4424741cdb44,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298169236661727571, guid: 0896619c00e36c24e89a4424741cdb44,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298169236661727571, guid: 0896619c00e36c24e89a4424741cdb44,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298169236661727571, guid: 0896619c00e36c24e89a4424741cdb44,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298169236661727571, guid: 0896619c00e36c24e89a4424741cdb44,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298169236661727571, guid: 0896619c00e36c24e89a4424741cdb44,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298169236661727571, guid: 0896619c00e36c24e89a4424741cdb44,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -118253,6 +118288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI de Opciones
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760019502206181482, guid: 345d9da942dd2d64cbe82de26af12c64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2760019502206181485, guid: 345d9da942dd2d64cbe82de26af12c64,
         type: 3}

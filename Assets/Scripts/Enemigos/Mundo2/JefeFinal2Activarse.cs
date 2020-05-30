@@ -16,6 +16,7 @@ public class JefeFinal2Activarse : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.transform.name);
         if(collision.transform.tag == "Player")
         {
             animator.SetBool("Moverse", true);
@@ -23,7 +24,7 @@ public class JefeFinal2Activarse : MonoBehaviour
             interfazJefeFinal.gameObject.SetActive(true);
         }
 
-        if(collision.transform.tag == "Jefes")
+        if(collision.transform.tag == "jefefinal2")
         {
             jefeFinal2.moverse = false;
         }
