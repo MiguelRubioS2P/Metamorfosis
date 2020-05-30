@@ -42,14 +42,15 @@ public class PlayerCombate : MonoBehaviour
             }else if(enemigo.tag == "Jefes")
             {
                 enemigo.GetComponent<Jefe1>().RecibirDaño();
+            }else if(enemigo.tag == "jefefinal3")
+            {
+                enemigo.GetComponent<JefeFinal3>().RecibirDaño(1);
             }
         }
     }
 
     void OnDrawGizmosSelected()
     {
-        
-
         Gizmos.DrawWireSphere(puntoAtaque.position, rangoAtaque);
     }
 }

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JefeFinal3MoverseNormal : StateMachineBehaviour
+public class JefeFinal3MoverseDePie : StateMachineBehaviour
 {
-    public float velocidad = 2.5f;
+
+    public float velocidad = 4f;
 
     private Transform player;
     private Rigidbody2D rb2d;
@@ -21,37 +22,22 @@ public class JefeFinal3MoverseNormal : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        jefeFinal3.LookAtPlayer();
+        Vector2 target = new Vector2(player.position.x, rb2d.position.y);
+        Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
+        rb2d.MovePosition(nuevaPosicion);
 
-        if (jefeFinal3.levantado)
+        if (Vector2.Distance(player.position, rb2d.position) <= 6f)
         {
-            animator.SetBool("Levantado", true);
+            animator.SetTrigger("Disparar");
         }
-        else
-        {
-            // El jefe final ya sigue al player.
-            jefeFinal3.LookAtPlayer();
-            Vector2 target = new Vector2(player.position.x, rb2d.position.y);
-            Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
-            rb2d.MovePosition(nuevaPosicion);
-
-            if (Vector2.Distance(player.position, rb2d.position) <= 2.5f)
-            {
-                animator.SetTrigger("Atacar");
-            }
-
-            if (Vector2.Distance(player.position, rb2d.position) > 3)
-            {
-                animator.SetTrigger("Correr");
-                animator.SetBool("MoverseRapido", true);
-            }
-        }
-
-        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Atacar");
+        animator.ResetTrigger("Disparar");
     }
+
+
 }

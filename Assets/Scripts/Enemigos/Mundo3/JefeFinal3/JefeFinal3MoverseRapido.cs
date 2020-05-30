@@ -28,7 +28,7 @@ public class JefeFinal3MoverseRapido : StateMachineBehaviour
         Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
         rb2d.MovePosition(nuevaPosicion);
 
-        if (Vector2.Distance(player.position, rb2d.position) < 6)
+        if (Vector2.Distance(player.position, rb2d.position) < 3)
         {
             animator.SetBool("MoverseRapido", false);
         }

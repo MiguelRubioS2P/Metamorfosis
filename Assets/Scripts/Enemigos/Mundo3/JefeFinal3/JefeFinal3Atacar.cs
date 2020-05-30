@@ -8,11 +8,11 @@ public class JefeFinal3Atacar : MonoBehaviour
 	public float attackRange = 2f;
 	public LayerMask attackMask;
 
-	//private GameManager gameManager;
+	private GameManager gameManager;
 
 	public void Attack()
 	{
-		//gameManager = FindObjectOfType<GameManager>();
+		gameManager = FindObjectOfType<GameManager>();
 
 		Vector3 pos = transform.position;
 		pos += transform.right * attackOffset.x;
@@ -22,7 +22,7 @@ public class JefeFinal3Atacar : MonoBehaviour
 		if (colInfo != null)
 		{
 			Debug.Log("Ataque");
-			//gameManager.PerderVida();
+			gameManager.PerderVida();
 		}
 	}
 
