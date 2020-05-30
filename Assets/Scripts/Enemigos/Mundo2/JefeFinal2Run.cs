@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class JefeFinal2Run : StateMachineBehaviour
 {
@@ -17,7 +15,7 @@ public class JefeFinal2Run : StateMachineBehaviour
         player = FindObjectOfType<PlayerControll>().transform;
         rb2d = animator.GetComponent<Rigidbody2D>();
         jefeFinal2 = animator.GetComponent<JefeFinal2>();
-        
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

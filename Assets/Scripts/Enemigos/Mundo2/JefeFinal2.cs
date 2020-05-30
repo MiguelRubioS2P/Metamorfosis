@@ -43,40 +43,6 @@ public class JefeFinal2 : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.transform.tag == "Ataque")
-    //    {
-    //        Debug.Log("Me has dado");
-    //        Destroy(collision.gameObject);
-    //        vida--;
-    //        vidas[vida].gameObject.SetActive(false);
-    //        if (vida == 0)
-    //        {
-    //            muerto = true;
-    //            Destroy(gameObject,1.3f);
-    //            final.GetComponent<SpriteRenderer>().enabled = true;
-    //            final.GetComponent<BoxCollider2D>().enabled = true;
-    //        }
-    //        Debug.Log("Mi vida es: " + vida);
-    //    }
-
-    //    if(collision.transform.tag == "Rango espada")
-    //    {
-    //        Debug.Log("Me has dado");
-    //        vida--;
-    //        vidas[vida].gameObject.SetActive(false);
-    //        if (vida == 0)
-    //        {
-    //            muerto = true;
-    //            Destroy(gameObject, 1.3f);
-    //            final.GetComponent<SpriteRenderer>().enabled = true;
-    //            final.GetComponent<BoxCollider2D>().enabled = true;
-    //        }
-    //        Debug.Log("Mi vida es: " + vida);
-    //    }
-    //}
-
 
     public void RecibirDaño(int daño)
     {
