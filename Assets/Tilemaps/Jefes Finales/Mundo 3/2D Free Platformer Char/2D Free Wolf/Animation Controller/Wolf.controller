@@ -80,6 +80,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -858311461814733463}
+  - {fileID: -5102567569058884233}
   m_StateMachineBehaviours:
   - {fileID: 5005335680877350047}
   m_Position: {x: 50, y: 50, z: 0}
@@ -96,6 +97,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-5102567569058884233
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Muerto
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -4193622852644951342}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.6
+  m_TransitionOffset: 0
+  m_ExitTime: 0.6071428
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-4815301640809477855
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -154,8 +180,10 @@ AnimatorState:
   m_Name: PistolDieFront
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
+  m_Transitions:
+  - {fileID: -488666717992481499}
+  m_StateMachineBehaviours:
+  - {fileID: -1016621935650255894}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -195,6 +223,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-1016621935650255894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635e947876277bf45a2e2c93b25cadbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1101 &-858311461814733463
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -216,6 +256,28 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.6071428
   m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-488666717992481499
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.6944444
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -260,6 +322,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Disparar
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Muerto
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -360,7 +428,7 @@ AnimatorStateMachine:
     m_Position: {x: -270, y: -340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4193622852644951342}
-    m_Position: {x: -240, y: -560, z: 0}
+    m_Position: {x: -20, y: -490, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -368,7 +436,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -100, y: -10, z: 0}
   m_EntryPosition: {x: -100, y: 90, z: 0}
-  m_ExitPosition: {x: -84, y: 180, z: 0}
+  m_ExitPosition: {x: 380, y: -480, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 9222502692505605693}
 --- !u!1102 &1776150067271367426
