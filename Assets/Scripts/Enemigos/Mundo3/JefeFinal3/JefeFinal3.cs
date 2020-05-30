@@ -69,7 +69,7 @@ public class JefeFinal3 : MonoBehaviour
             if(vida == 0)
             {
                 muerto = true;
-                Destroy(gameObject);
+                
             }
         }
         else
