@@ -704,7 +704,7 @@ PrefabInstance:
     - target: {fileID: 3918338344258302731, guid: 7c4f210766e96ed419485d7cffea2e7b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4f210766e96ed419485d7cffea2e7b, type: 3}
@@ -2314,6 +2314,7 @@ GameObject:
   - component: {fileID: 1096694929}
   - component: {fileID: 1096694928}
   - component: {fileID: 1096694931}
+  - component: {fileID: 1096694932}
   m_Layer: 0
   m_Name: Nivel 7
   m_TagString: Untagged
@@ -2454,6 +2455,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1096694932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096694926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a48a241184bc0f479aee1620770a3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1113766363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,6 +2627,7 @@ GameObject:
   - component: {fileID: 1151456229}
   - component: {fileID: 1151456228}
   - component: {fileID: 1151456231}
+  - component: {fileID: 1151456232}
   m_Layer: 0
   m_Name: Nivel 8
   m_TagString: Untagged
@@ -2754,6 +2768,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1151456232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151456226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a48a241184bc0f479aee1620770a3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1178603108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,6 +4219,7 @@ GameObject:
   - component: {fileID: 1597012983}
   - component: {fileID: 1597012982}
   - component: {fileID: 1597012985}
+  - component: {fileID: 1597012986}
   m_Layer: 0
   m_Name: Nivel 9
   m_TagString: Untagged
@@ -4333,6 +4360,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1597012986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597012980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a48a241184bc0f479aee1620770a3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1634565285
 GameObject:
   m_ObjectHideFlags: 0
