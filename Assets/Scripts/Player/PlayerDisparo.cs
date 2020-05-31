@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerDisparo : MonoBehaviour
 {
-    public Transform disparoIzquierda, disparoDerecha;
-    public GameObject espadaIzquierda,espadaDerecha;
+    public Animator animator;
     private PlayerControll player;
+
+    public float ratioAtaque = 2f;
+    private float siguienteAtaque = 0f;
+
+    public GameObject bolaFuegoDerecha,bolaFuegoIzquierda;
+    public Transform posicionDerecha,posicionIzquierda;
 
     private void Awake()
     {
@@ -15,26 +20,31 @@ public class PlayerDisparo : MonoBehaviour
 
     private void Update()
     {
-        if (!player.muerto)
+        if (Time.time >= siguienteAtaque)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1) && player.GetComponent<SpriteRenderer>().flipX)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                LanzarIzquierda();
-            }
-            else if (Input.GetKeyDown(KeyCode.Mouse1) && !player.GetComponent<SpriteRenderer>().flipX)
-            {
-                LanzarDerecha();
+                Disparar();
+                siguienteAtaque = Time.time + 1f / ratioAtaque;
             }
         }
     }
 
-    private void LanzarIzquierda()
+    public void DispararDerecha()
     {
-        Instantiate(espadaIzquierda, disparoIzquierda.position, disparoIzquierda.rotation);
+        
+        Instantiate(bolaFuegoDerecha, posicionDerecha.position, posicionDerecha.rotation);
     }
 
-    private void LanzarDerecha()
+    public void DispararIzquierda()
     {
-        Instantiate(espadaDerecha, disparoDerecha.position, disparoDerecha.rotation);
+        
+        Instantiate(bolaFuegoIzquierda, posicionIzquierda.position, posicionIzquierda.rotation);
     }
+
+    public void Disparar()
+    {
+        animator.SetBool("Disparar", true);
+    }
+
 }

@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1605125422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1605125423}
+  m_Layer: 10
+  m_Name: Zona Disparo Derecha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1605125423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605125422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3481917900544003698}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1020337990398867481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7209375058692455167}
+  m_Layer: 10
+  m_Name: Zona Disparo Izquierda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7209375058692455167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020337990398867481}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.4, y: -0.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3481917900544003698}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &2097481609821548980
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +193,7 @@ GameObject:
   - component: {fileID: 693424753254477689}
   - component: {fileID: 2661226666902270779}
   - component: {fileID: 1079881739045239575}
+  - component: {fileID: 604276190}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -154,6 +215,8 @@ Transform:
   - {fileID: 4617644394897764981}
   - {fileID: 4813066282446189908}
   - {fileID: 9060664816217027818}
+  - {fileID: 1605125423}
+  - {fileID: 7209375058692455167}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -238,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a85ab1545933634d889474cb17b3e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transformado: 0
   escena: 
   sonidoSalto: {fileID: 8300000, guid: b55b63d4fd215f34aafcb32786805d69, type: 3}
   muerto: 0
@@ -435,6 +499,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4456904, y: 0.98971236}
   m_EdgeRadius: 0
+--- !u!114 &604276190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3481917900544003703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8308010268336104ca2633b7e1565b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3481917900544003701}
+  ratioAtaque: 2
+  bolaFuegoDerecha: {fileID: 6038793152443973416, guid: 25c11fce4f7aac1409b2a08ea69bdff7,
+    type: 3}
+  bolaFuegoIzquierda: {fileID: 497431885025024498, guid: 4dc74500e7e318f4d92676b699c62f51,
+    type: 3}
+  posicionDerecha: {fileID: 1605125423}
+  posicionIzquierda: {fileID: 7209375058692455167}
 --- !u!1 &5648016853935379537
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,17 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControll : MonoBehaviour
 {
-    private bool salto, atacar;
+    public bool transformado;
+    private bool salto, atacar,dobleSalto;
     private Animator animator;
     private Rigidbody2D rigidbody2d;
     private SpriteRenderer spriteRenderer;
     private float fuerzaMovimiento = 6f;
     private float fuerzaSalto = 10f;
+    private float fuerzaSaltoDoble = 8f;
     public string escena;
     private GameManager gameManager;
     public AudioClip sonidoSalto;
     private AudioSource audioSource;
-
+    private PlayerCombate scriptPlayerCombate;
+    private PlayerDisparo scriptPlayerDisparo;
     private GameObject RangoAtaque;
     public bool muerto;
 
@@ -26,8 +29,11 @@ public class PlayerControll : MonoBehaviour
         salto = true;
         atacar = true;
         RangoAtaque = gameObject.transform.GetChild(0).gameObject;
+        scriptPlayerCombate = FindObjectOfType<PlayerCombate>();
+        scriptPlayerDisparo = FindObjectOfType<PlayerDisparo>();
         Cursor.visible = false;
         muerto = false;
+        
     }
 
     void Start()
@@ -44,13 +50,10 @@ public class PlayerControll : MonoBehaviour
 
     void Update()
     {
-
-        if (spriteRenderer.sprite.name == "Knight_die_08")
+        // Añadir la condición del sprite final de la transformación dragón.
+        if (spriteRenderer.sprite.name == "Knight_die_08" || spriteRenderer.sprite.name == "die_009")
         {
-            gameManager.PerderDinero();
-            gameManager.PerderVida();
-            muerto = false;
-            SceneManager.LoadScene(escena);
+            RecargarEscenaPorMuerte();
         }
 
         if (Input.GetKey("a") && (salto || !salto) && !muerto)
@@ -87,36 +90,45 @@ public class PlayerControll : MonoBehaviour
             animator.SetBool("moverse", false);
         }
         Salto();
-        //if (atacar)
-        //{
-        //    StartCoroutine(Atacar());
-        //}
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            animator.SetTrigger("Transformar");
+            animator.SetBool("Transformado", true);
+            transformado = true;
+            scriptPlayerCombate.enabled = false;
+            scriptPlayerDisparo.enabled = true;
+        }
         
     }
-  
-    IEnumerator Atacar()
+
+    private void RecargarEscenaPorMuerte()
     {
-        if (Input.GetButtonDown("Fire1") && !muerto)
-        {
-            atacar = false;
-            animator.SetBool("atacar", true);
-            RangoAtaque.SetActive(true);
-            yield return new WaitForSeconds(0.05f);
-            RangoAtaque.SetActive(false);
-            yield return new WaitForSeconds(0.3f);
-            atacar = true;
-            animator.SetBool("atacar", false);
-        }
+        gameManager.PerderDinero();
+        gameManager.PerderVida();
+        muerto = false;
+        transformado = false;
+        scriptPlayerCombate.enabled = true;
+        scriptPlayerDisparo.enabled = false;
+        SceneManager.LoadScene(escena);
     }
 
     void Salto()
     {
-        if (Input.GetKeyDown("space") && salto && !muerto)
+        if (Input.GetKeyDown("space") && !muerto)
         {
-            salto = false;
-            animator.SetBool("saltar", true);
-            rigidbody2d.AddForce(new Vector2(0f, 1f) * fuerzaSalto, ForceMode2D.Impulse);
-            audioSource.Play();
+            if (salto)
+            {
+                salto = false;
+                dobleSalto = true;
+                animator.SetBool("saltar", true);
+                rigidbody2d.AddForce(new Vector2(0f, 1f) * fuerzaSalto, ForceMode2D.Impulse);
+                audioSource.Play();
+            }else if (dobleSalto && transformado)
+            {
+                rigidbody2d.AddForce(new Vector2(0f, 1f) * fuerzaSaltoDoble, ForceMode2D.Impulse);
+                audioSource.Play();
+                dobleSalto = false;
+            }
         }
     }
 
@@ -125,6 +137,7 @@ public class PlayerControll : MonoBehaviour
         if (collision.transform.tag == "suelo")
         {
             salto = true;
+            dobleSalto = false;
             animator.SetBool("saltar", false);
         }
         if(collision.transform.tag == "pincho" || collision.transform.tag == "muerte")
@@ -183,5 +196,7 @@ public class PlayerControll : MonoBehaviour
         salto = false;
         animator.SetBool("saltar", false);
         animator.SetBool("muerto", true);
+        scriptPlayerCombate.enabled = false;
+        scriptPlayerDisparo.enabled = false;
     }
 }

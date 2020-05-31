@@ -1154,6 +1154,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 604276190, guid: caf99e0ce74defe40b3fd95308b7478b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3481917900544003698, guid: caf99e0ce74defe40b3fd95308b7478b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1655,6 +1659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lobo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778204652457732384, guid: 2db4c1192bb78074194855f747c68f53,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db4c1192bb78074194855f747c68f53, type: 3}

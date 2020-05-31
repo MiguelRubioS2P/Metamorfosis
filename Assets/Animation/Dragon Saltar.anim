@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Knight Block
+  m_Name: Dragon Saltar
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 5cfc8e09a9a6be647958e6f33e5337d6, type: 3}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: 276de7332cc176343be57d605b70bdb3, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: f19194380b336484099aab78a0470803, type: 3}
+      value: {fileID: 21300000, guid: b7297c1f2406fc74eaedd34307edb24b, type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: 18ffd7c532c870c4d8ac5bfa7f53be4f, type: 3}
+      value: {fileID: 21300000, guid: d2df597a04a76de4a96a4c5e9a6f0ca4, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 5cfc8e09a9a6be647958e6f33e5337d6, type: 3}
-    - {fileID: 21300000, guid: 276de7332cc176343be57d605b70bdb3, type: 3}
-    - {fileID: 21300000, guid: f19194380b336484099aab78a0470803, type: 3}
-    - {fileID: 21300000, guid: 18ffd7c532c870c4d8ac5bfa7f53be4f, type: 3}
+    - {fileID: 21300000, guid: b7297c1f2406fc74eaedd34307edb24b, type: 3}
+    - {fileID: 21300000, guid: d2df597a04a76de4a96a4c5e9a6f0ca4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
