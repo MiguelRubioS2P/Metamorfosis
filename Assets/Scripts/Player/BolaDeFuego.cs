@@ -20,6 +20,31 @@ public class BolaDeFuego : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		Destroy(gameObject, 2f);
+
+		if(collision.transform.name == "Jefe Final 2")
+		{
+			collision.GetComponent<JefeFinal2>().RecibirDaño(2);
+			Destroy(gameObject);
+		}else if(collision.transform.tag == "Ataque")
+		{
+			collision.GetComponent<Pinchos>().RecibirDaño(2);
+			Destroy(gameObject);
+		}
+		else if (collision.transform.tag == "Jefes")
+		{
+			collision.GetComponent<Jefe1>().RecibirDaño();
+			collision.GetComponent<Jefe1>().RecibirDaño();
+			Destroy(gameObject);
+		}
+		else if (collision.transform.tag == "jefefinal3")
+		{
+			collision.GetComponent<JefeFinal3>().RecibirDaño(2);
+			Destroy(gameObject);
+		}
+		else 
+		{
+			Destroy(gameObject, 2f);
+		}
+		
 	}
 }
