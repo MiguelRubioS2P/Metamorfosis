@@ -7,6 +7,7 @@ public class JefeFinal3 : MonoBehaviour
     public bool isFlipped = false;
     public bool levantado,inmortal,muerto,moverse;
     public GameObject final;
+    public GameObject canvasVidas;
     public Text vidasTexto;
 
    
@@ -78,6 +79,7 @@ public class JefeFinal3 : MonoBehaviour
                 muerto = true;
                 final.GetComponent<SpriteRenderer>().enabled = true;
                 final.GetComponent<BoxCollider2D>().enabled = true;
+                canvasVidas.SetActive(false);
 
             }
         }
