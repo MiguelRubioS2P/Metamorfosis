@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class JefeFinal3 : MonoBehaviour
 {
     public Transform player;
     public bool isFlipped = false;
     public bool levantado,inmortal,muerto,moverse;
-    // Para añadir cuando ya este colocado en el nivel.
-    //public GameObject final;
+    public GameObject final;
+    public Text vidasTexto;
 
-    // Al tener 20 vidas el sistema del canvas no ira como los demás, 
-    // este boss funcionara como las vidas del propio player un indicador
-    // en todo momento, añadir cuando el boss este en el lugar correcto.
+   
 
     private int vida;
     private JefeFinal3Atacar scriptJefeFinalAtacar;
@@ -35,8 +34,6 @@ public class JefeFinal3 : MonoBehaviour
         levantado = false;
         inmortal = false;
         muerto = false;
-        // La variable moverse es para añadir el desarrollo de que cuando el player entre en la zona
-        // del combate el jefe final se empiece a mover.
         moverse = false;
         vida = 20;
     }
@@ -66,6 +63,7 @@ public class JefeFinal3 : MonoBehaviour
         if (!inmortal)
         {
             vida -= daño;
+            vidasTexto.text = vida.ToString();
             Debug.Log("Mi vida es del valor: " + vida);
             if (vida == 10)
             {
@@ -78,7 +76,9 @@ public class JefeFinal3 : MonoBehaviour
             if(vida == 0)
             {
                 muerto = true;
-                
+                final.GetComponent<SpriteRenderer>().enabled = true;
+                final.GetComponent<BoxCollider2D>().enabled = true;
+
             }
         }
         else

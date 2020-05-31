@@ -22,27 +22,30 @@ public class JefeFinal3MoverseNormal : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-        if (jefeFinal3.levantado)
+        if (jefeFinal3.moverse)
         {
-            animator.SetBool("Levantado", true);
-        }
-        else
-        {
-            // El jefe final ya sigue al player.
-            jefeFinal3.LookAtPlayer();
-            Vector2 target = new Vector2(player.position.x, rb2d.position.y);
-            Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
-            rb2d.MovePosition(nuevaPosicion);
-
-            if (Vector2.Distance(player.position, rb2d.position) <= 2.5f)
+            if (jefeFinal3.levantado)
             {
-                animator.SetTrigger("Atacar");
+                animator.SetBool("Levantado", true);
             }
-
-            if (Vector2.Distance(player.position, rb2d.position) > 3)
+            else
             {
-                animator.SetTrigger("Correr");
-                animator.SetBool("MoverseRapido", true);
+                // El jefe final ya sigue al player.
+                jefeFinal3.LookAtPlayer();
+                Vector2 target = new Vector2(player.position.x, rb2d.position.y);
+                Vector2 nuevaPosicion = Vector2.MoveTowards(rb2d.position, target, velocidad * Time.fixedDeltaTime);
+                rb2d.MovePosition(nuevaPosicion);
+
+                if (Vector2.Distance(player.position, rb2d.position) <= 2.5f)
+                {
+                    animator.SetTrigger("Atacar");
+                }
+
+                if (Vector2.Distance(player.position, rb2d.position) > 3)
+                {
+                    animator.SetTrigger("Correr");
+                    animator.SetBool("MoverseRapido", true);
+                }
             }
         }
 
