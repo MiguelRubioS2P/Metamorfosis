@@ -76,11 +76,10 @@ public class JefeFinal3 : MonoBehaviour
             }
             if(vida == 0)
             {
-                muerto = true;
                 final.GetComponent<SpriteRenderer>().enabled = true;
                 final.GetComponent<BoxCollider2D>().enabled = true;
                 canvasVidas.SetActive(false);
-
+                muerto = true;
             }
         }
         else

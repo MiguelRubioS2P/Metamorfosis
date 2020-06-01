@@ -23,7 +23,7 @@ public class BolaDeFuego : MonoBehaviour
 
 		if(collision.transform.name == "Jefe Final 2")
 		{
-			collision.GetComponent<JefeFinal2>().RecibirDaño(2);
+			collision.GetComponent<JefeFinal2>().RecibirDaño(1);
 			Destroy(gameObject);
 		}else if(collision.transform.tag == "Ataque")
 		{
@@ -32,7 +32,6 @@ public class BolaDeFuego : MonoBehaviour
 		}
 		else if (collision.transform.tag == "Jefes")
 		{
-			collision.GetComponent<Jefe1>().RecibirDaño();
 			collision.GetComponent<Jefe1>().RecibirDaño();
 			Destroy(gameObject);
 		}
